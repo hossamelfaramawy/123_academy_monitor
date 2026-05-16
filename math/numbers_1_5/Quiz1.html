@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ألعاب الحضانة التفاعلية 🎈</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; text-align: center; background-color: #f0f8ff; padding: 20px; }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); display: inline-block; max-width: 500px; width: 100%; }
+        .btn { background-color: #ff6b6b; color: white; border: none; padding: 15px 30px; font-size: 20px; border-radius: 50px; cursor: pointer; margin: 10px; transition: 0.2s; }
+        .btn:hover { transform: scale(1.05); }
+        .options-container { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2 id="welcome-msg">مرحباً بك في اللعبة! 👋</h2>
+    <div id="quiz-area">
+        <p id="question-text" style="font-size: 24px; font-weight: bold;"></p>
+        <div id="options" class="options-container"></div>
+    </div>
+</div>
+
+<script>
+    // 1. قراءة بيانات الطالب والمهارة من الـ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const studentId = urlParams.get('student_id') || "test_user";
+    const skill = urlParams.get('skill') || "skill_1";
+
+    // 2. بنك أسئلة مبسط للمرحلة التجريبية (مهارة 1: الأرقام من 1-5)
+    const questionsBank = {
+        "skill_1": [
+            { question: "كم عدد البالونات في الصورة؟ 🎈🎈🎈", options: ["2", "3", "4"], correct: "3" }
+        ]
+    };
+
+    let currentQuestionIndex = 0;
+    const currentQuiz = questionsBank[skill] || questionsBank["skill_1"];
+
+    function loadQuestion() {
+        if (currentQuestionIndex < currentQuiz.length) {
+            const q = currentQuiz[currentQuestionIndex];
+            document.getElementById('question-text').innerText = q.question;
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+            
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'btn';
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(opt, q.correct);
+                optionsDiv.appendChild(btn);
+            });
+        } else {
+            endQuiz(true); // نجح في الاختبار التجريبي
+        }
+    }
+
+    function checkAnswer(selected, correct) {
+        if (selected === correct) {
+            currentQuestionIndex++;
+            loadQuestion();
+        } else {
+            endQuiz(false); // واجه صعوبة
+        }
+    }
+
+    function endQuiz(isPassed) {
+        document.getElementById('quiz-area').innerHTML = `<h3>شكراً لك! تم تسجيل النتيجة بنجاح لـ الـ Agent الخاص بك. 🎉</h3>`;
+        
+        // 3. إرسال النتيجة إلى الـ Webhook الخاص بـ Make.com (سيتم استبدال الرابط لاحقاً)
+        const webhookUrl = "https://hook.make.com/YOUR_WEBHOOK_ID"; 
+        
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                student_id: studentId,
+                skill_id: skill,
+                status: isPassed ? "Passed" : "Needs Review"
+            })
+        }).then(response => console.log("Data sent to Agent"));
+    }
+
+    // تشغيل السؤال الأول عند فتح الصفحة
+    loadQuestion();
+</script>
+</body>
+</html>
