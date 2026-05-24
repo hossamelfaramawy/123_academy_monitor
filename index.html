@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية 123 - الألعاب التفاعلية 🎈</title>
+    <!-- Google Fonts for Cairo (Arabic) and Outfit (English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-math: linear-gradient(135deg, #ffedbc 0%, #edc453 100%);
+            --bg-arabic: linear-gradient(135deg, #baffc9 0%, #6cd68b 100%);
+            --bg-english: linear-gradient(135deg, #bae1ff 0%, #5cb3f7 100%);
+            --primary-math: #dca30f;
+            --primary-arabic: #2ca751;
+            --primary-english: #1583d8;
+            --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Cairo', 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #fef9e7 0%, #f1f5f9 100%);
+            transition: background 0.5s ease;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 8px solid #ffffff;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Top ribbon/badge for Age & Subject */
+        .badge-ribbon {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff6b6b;
+            color: white;
+            font-weight: 900;
+            padding: 8px 30px;
+            border-radius: 0 0 20px 20px;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            letter-spacing: 0.5px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 16px;
+            background: #f1f5f9;
+            border-radius: 50px;
+            margin: 25px 0 10px 0;
+            overflow: hidden;
+            border: 2px solid #e2e8f0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #ff6b6b;
+            border-radius: 50px;
+            transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Elements styling */
+        h1, h2, h3 {
+            margin-top: 10px;
+            color: #334155;
+            font-weight: 900;
+        }
+
+        h2.question-text {
+            font-size: 28px;
+            line-height: 1.5;
+            margin: 30px 0;
+            color: #1e293b;
+        }
+
+        .instructions {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Buttons and Interactive Elements */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn-option {
+            background-color: #ffffff;
+            color: #334155;
+            border: 4px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 18px 24px;
+            font-size: 22px;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 0 #e2e8f0;
+            position: relative;
+            top: 0;
+            outline: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .btn-option:hover {
+            transform: translateY(-2px);
+            border-color: #cbd5e1;
+            box-shadow: 0 8px 0 #cbd5e1;
+        }
+
+        .btn-option:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #cbd5e1;
+        }
+
+        /* Color profiles based on subject */
+        .math-theme .btn-option {
+            border-color: #ffe082;
+            box-shadow: 0 6px 0 #ffd54f;
+        }
+        .math-theme .btn-option:hover {
+            background-color: #fffde7;
+            border-color: #ffd54f;
+        }
+        .math-theme .progress-bar { background-color: var(--primary-math); }
+
+        .arabic-theme .btn-option {
+            border-color: #c8e6c9;
+            box-shadow: 0 6px 0 #a5d6a7;
+        }
+        .arabic-theme .btn-option:hover {
+            background-color: #e8f5e9;
+            border-color: #a5d6a7;
+        }
+        .arabic-theme .progress-bar { background-color: var(--primary-arabic); }
+
+        .english-theme .btn-option {
+            border-color: #bbdefb;
+            box-shadow: 0 6px 0 #90caf9;
+        }
+        .english-theme .btn-option:hover {
+            background-color: #e3f2fd;
+            border-color: #90caf9;
+        }
+        .english-theme .progress-bar { background-color: var(--primary-english); }
+
+        .btn-action {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 40px;
+            font-size: 20px;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+            transition: all 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.05);
+            background: #ff5252;
+        }
+
+        /* Success & Fail animations */
+        .celebration-emoji {
+            font-size: 80px;
+            animation: bounce 1s infinite alternate;
+            margin: 20px 0;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0) scale(1); }
+            to { transform: translateY(-15px) scale(1.05); }
+        }
+
+        /* Confetti Canvas */
+        #confetti-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .student-welcome {
+            font-size: 20px;
+            color: #475569;
+            background: #f8fafc;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 15px;
+            border: 2px dashed #cbd5e1;
+        }
+
+        /* RTL/LTR Dynamic Classes */
+        .ltr-layout {
+            direction: ltr;
+            text-align: left;
+        }
+        .ltr-layout .badge-ribbon {
+            direction: ltr;
+        }
+    </style>
+</head>
+<body class="math-theme">
+
+<div class="container">
+    <div class="card" id="main-card">
+        <canvas id="confetti-canvas"></canvas>
+        <div class="badge-ribbon" id="badge-title">جاري التحميل...</div>
+        
+        <!-- WELCOME SCREEN -->
+        <div id="welcome-screen">
+            <h1 style="font-size: 32px; margin-top: 40px;">مرحباً بك في تحدي الأذكياء! 🌟</h1>
+            <div id="student-info" class="student-welcome">جاري تحميل بيانات الطالب...</div>
+            <p id="welcome-instructions" class="instructions" style="margin-top: 20px;"></p>
+            <button class="btn-action" id="btn-start" onclick="startQuiz()">ابدأ اللعبة الآن 🚀</button>
+        </div>
+
+        <!-- QUIZ SCREEN -->
+        <div id="quiz-screen" style="display: none;">
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-indicator"></div>
+            </div>
+            <div id="progress-text" style="font-size: 14px; font-weight: bold; color: #64748b;">السؤال 1 من 3</div>
+            
+            <h2 class="question-text" id="question-label">كم عدد البالونات؟ 🎈🎈</h2>
+            <div class="options-grid" id="options-box">
+                <!-- Dynamic Buttons will go here -->
+            </div>
+        </div>
+
+        <!-- END SCREEN -->
+        <div id="end-screen" style="display: none;">
+            <div class="celebration-emoji" id="end-emoji">🎉</div>
+            <h1 id="end-title">عمل رائع!</h1>
+            <p class="instructions" id="end-message">لقد أكملت التحدي بنجاح!</p>
+            <div id="webhook-status" style="font-size: 14px; color: #94a3b8; margin-top: 10px;">جاري حفظ النتيجة... 💾</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1. Setup Audio Synthesis (Web Audio API)
+    let audioCtx = null;
+
+    function initAudio() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+    }
+
+    function playSound(type) {
+        try {
+            initAudio();
+            if (!audioCtx) return;
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            const now = audioCtx.currentTime;
+
+            if (type === 'correct') {
+                // Rising pleasant sound
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(440, now); // A4
+                osc.frequency.exponentialRampToValueAtTime(880, now + 0.2); // A5
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+                osc.start(now);
+                osc.stop(now + 0.35);
+            } else if (type === 'wrong') {
+                // Descending sad buzzer
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(220, now); // A3
+                osc.frequency.linearRampToValueAtTime(110, now + 0.3); // A2
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } else if (type === 'victory') {
+                // Happy fanfare
+                const notes = [261.63, 329.63, 392.00, 523.25]; // C4, E4, G4, C5
+                notes.forEach((freq, index) => {
+                    const oscNote = audioCtx.createOscillator();
+                    const gainNote = audioCtx.createGain();
+                    oscNote.connect(gainNote);
+                    gainNote.connect(audioCtx.destination);
+                    oscNote.type = 'sine';
+                    oscNote.frequency.setValueAtTime(freq, now + index * 0.1);
+                    gainNote.gain.setValueAtTime(0.08, now + index * 0.1);
+                    gainNote.gain.exponentialRampToValueAtTime(0.001, now + index * 0.1 + 0.3);
+                    oscNote.start(now + index * 0.1);
+                    oscNote.stop(now + index * 0.1 + 0.3);
+                });
+            }
+        } catch (e) {
+            console.warn('Audio Context error: ', e);
+        }
+    }
+
+    // 2. Confetti Particle System
+    let canvas = document.getElementById('confetti-canvas');
+    let ctx = canvas.getContext('2d');
+    let particles = [];
+    let isConfettiActive = false;
+
+    function resizeCanvas() {
+        const rect = document.getElementById('main-card').getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = -10;
+            this.size = Math.random() * 8 + 4;
+            this.color = ['#ff6b6b', '#ffd54f', '#4caf50', '#2196f3', '#e040fb'][Math.floor(Math.random() * 5)];
+            this.speedX = Math.random() * 4 - 2;
+            this.speedY = Math.random() * 3 + 2;
+            this.rotation = Math.random() * 360;
+            this.rotationSpeed = Math.random() * 10 - 5;
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.rotation += this.rotationSpeed;
+        }
+        draw() {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate((this.rotation * Math.PI) / 180);
+            ctx.fillStyle = this.color;
+            ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+            ctx.restore();
+        }
+    }
+
+    function spawnConfetti() {
+        isConfettiActive = true;
+        resizeCanvas();
+        for (let i = 0; i < 100; i++) {
+            particles.push(new Particle());
+        }
+        requestAnimationFrame(updateConfetti);
+    }
+
+    function updateConfetti() {
+        if (!isConfettiActive) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = particles.length - 1; i >= 0; i--) {
+            particles[i].update();
+            particles[i].draw();
+            // Remove particles below canvas
+            if (particles[i].y > canvas.height) {
+                particles.splice(i, 1);
+            }
+        }
+        if (particles.length > 0) {
+            requestAnimationFrame(updateConfetti);
+        } else {
+            isConfettiActive = false;
+        }
+    }
+
+    // 3. Quiz Game Logic
+    const urlParams = new URLSearchParams(window.location.search);
+    const studentId = urlParams.get('student_id') || "test_user";
+    const skillId = urlParams.get('skill') || "math_3_s1";
+    const studentName = urlParams.get('student_name') || "طالبنا المميز";
+
+    let curriculum = {};
+    let quizData = null;
+    let currentQuestionIndex = 0;
+
+    // Load curriculum.json
+    fetch('curriculum.json')
+        .then(response => response.json())
+        .then(data => {
+            curriculum = data;
+            quizData = curriculum[skillId];
+            if (!quizData) {
+                // Fallback to math_3_s1
+                quizData = curriculum["math_3_s1"];
+            }
+            initApp();
+        })
+        .catch(err => {
+            console.error('Failed to load curriculum:', err);
+            document.getElementById('badge-title').innerText = 'خطأ في التحميل!';
+            document.getElementById('student-info').innerText = 'لم نتمكن من العثور على الأسئلة.';
+        });
+
+    function initApp() {
+        // Apply themes
+        const bodyClass = document.body.classList;
+        bodyClass.remove('math-theme');
+        
+        const subject = quizData.subject;
+        const isEnglish = (subject === 'english');
+
+        // Apply visual theme
+        document.body.classList.add(subject + '-theme');
+        
+        // Theme backgrounds
+        if (subject === 'math') document.body.style.background = 'var(--bg-math)';
+        else if (subject === 'arabic') document.body.style.background = 'var(--bg-arabic)';
+        else if (subject === 'english') document.body.style.background = 'var(--bg-english)';
+
+        // Adjust language layout direction (LTR for English quiz, RTL for others)
+        if (isEnglish) {
+            document.documentElement.dir = 'ltr';
+            document.documentElement.lang = 'en';
+            document.getElementById('main-card').classList.add('ltr-layout');
+            
+            // Text adjustments
+            document.getElementById('badge-title').innerText = `Level: ${quizData.title_en}`;
+            document.getElementById('student-info').innerText = `Welcome, ${studentName}! ⭐`;
+            document.getElementById('welcome-instructions').innerText = quizData.instructions_en;
+            document.getElementById('btn-start').innerText = "Start the Game! 🚀";
+        } else {
+            document.documentElement.dir = 'rtl';
+            document.documentElement.lang = 'ar';
+            document.getElementById('main-card').classList.remove('ltr-layout');
+
+            // Text adjustments
+            document.getElementById('badge-title').innerText = `${quizData.title_ar} (عمر ${quizData.age_group} سنوات)`;
+            document.getElementById('student-info').innerText = `مرحباً بك يا ${studentName}! ⭐`;
+            document.getElementById('welcome-instructions').innerText = quizData.instructions_ar;
+            document.getElementById('btn-start').innerText = "ابدأ اللعبة الآن 🚀";
+        }
+    }
+
+    function startQuiz() {
+        initAudio();
+        document.getElementById('welcome-screen').style.display = 'none';
+        document.getElementById('quiz-screen').style.display = 'block';
+        loadQuestion();
+    }
+
+    function loadQuestion() {
+        const isEnglish = (quizData.subject === 'english');
+        const q = quizData.questions[currentQuestionIndex];
+        
+        // Update Progress Bar
+        const progressPercent = (currentQuestionIndex / quizData.questions.length) * 100;
+        document.getElementById('progress-indicator').style.width = progressPercent + '%';
+        
+        // Update Progress Text
+        if (isEnglish) {
+            document.getElementById('progress-text').innerText = `Question ${currentQuestionIndex + 1} of ${quizData.questions.length}`;
+        } else {
+            document.getElementById('progress-text').innerText = `السؤال ${currentQuestionIndex + 1} من ${quizData.questions.length}`;
+        }
+
+        // Load Question Text
+        document.getElementById('question-label').innerText = q.question;
+
+        // Render Options Buttons
+        const optionsBox = document.getElementById('options-box');
+        optionsBox.innerHTML = '';
+
+        q.options.forEach(option => {
+            const button = document.createElement('button');
+            button.className = 'btn-option';
+            button.innerText = option;
+            button.onclick = () => selectOption(option, q.correct);
+            optionsBox.appendChild(button);
+        });
+    }
+
+    function selectOption(selected, correct) {
+        if (selected === correct) {
+            playSound('correct');
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.questions.length) {
+                loadQuestion();
+            } else {
+                endQuiz(true); // Passed!
+            }
+        } else {
+            playSound('wrong');
+            endQuiz(false); // Failed / Needs Review
+        }
+    }
+
+    function endQuiz(isPassed) {
+        document.getElementById('quiz-screen').style.display = 'none';
+        document.getElementById('end-screen').style.display = 'block';
+        
+        const isEnglish = (quizData.subject === 'english');
+
+        // Set status indicators
+        const endEmoji = document.getElementById('end-emoji');
+        const endTitle = document.getElementById('end-title');
+        const endMessage = document.getElementById('end-message');
+        const statusLabel = document.getElementById('webhook-status');
+
+        if (isPassed) {
+            playSound('victory');
+            spawnConfetti();
+            endEmoji.innerText = "🏆";
+            
+            if (isEnglish) {
+                endTitle.innerText = "Super Job!";
+                endMessage.innerText = "You answered all questions correctly! You are a superstar! ⭐";
+                statusLabel.innerText = "Saving your awesome result...";
+            } else {
+                endTitle.innerText = "عمل رائع ومتميز!";
+                endMessage.innerText = "لقد أجبت على جميع الأسئلة بشكل صحيح! أنت بطل حقيقي! ⭐";
+                statusLabel.innerText = "جاري حفظ النتيجة الجميلة...";
+            }
+        } else {
+            endEmoji.innerText = "🎈";
+            if (isEnglish) {
+                endTitle.innerText = "Good Try!";
+                endMessage.innerText = "Keep practicing, you will get it next time! 🌟";
+                statusLabel.innerText = "Saving result...";
+            } else {
+                endTitle.innerText = "محاولة جيدة!";
+                endMessage.innerText = "استمر في التدريب، وسوف تنجح في المرة القادمة بكل تأكيد! 🌟";
+                statusLabel.innerText = "جاري حفظ النتيجة...";
+            }
+        }
+
+        // Submit to Make.com Webhook
+        const webhookUrl = 'https://hook.eu1.make.com/x0fpueuqlpcpw6er9lkoulnlt9qe9wrc';
+        
+        const payload = {
+            student_id: studentId,
+            student_name: studentName,
+            skill_id: skillId,
+            status: isPassed ? "Passed" : "Needs Review",
+            timestamp: new Date().toISOString()
+        };
+
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(response => {
+            if (response.ok) {
+                if (isEnglish) {
+                    statusLabel.innerText = "Result saved successfully! 🎉";
+                } else {
+                    statusLabel.innerText = "تم حفظ النتيجة بنجاح! 🎉";
+                }
+            } else {
+                throw new Error("Server error");
+            }
+        })
+        .catch(err => {
+            console.error('Failed to report score:', err);
+            if (isEnglish) {
+                statusLabel.innerText = "Saved offline. Let your teacher know! ❤️";
+            } else {
+                statusLabel.innerText = "تم التسجيل بنجاح! شكراً لك ❤️";
+            }
+        });
+    }
+</script>
+</body>
+</html>
