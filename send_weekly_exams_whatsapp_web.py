@@ -275,20 +275,33 @@ def main():
             # Open tab in default browser
             webbrowser.open(whatsapp_url)
             
-            # Wait for WhatsApp Web to load (adjust if your internet is slow)
-            load_wait_time = 20
+            # Wait for WhatsApp Web to load
+            load_wait_time = 18
             print(f"  ⏳ Waiting {load_wait_time} seconds for page to load. DO NOT touch your mouse/keyboard...")
             time.sleep(load_wait_time)
             
-            # Press 'Enter' key to send the message (double-tap for reliability)
-            time.sleep(2)
-            pyautogui.press('enter')
-            time.sleep(1)
-            pyautogui.press('enter')
-            print("  ✅ Keystrokes 'Enter' simulated (Message sent).")
+            # Click on the chat input area to guarantee focus
+            # (Usually located around 60% width and 90% height from top-left)
+            width, height = pyautogui.size()
+            click_x = int(width * 0.60)
+            click_y = int(height * 0.90)
+            print(f"  🎯 Clicking at screen coordinate ({click_x}, {click_y}) to focus chat box...")
+            pyautogui.click(click_x, click_y)
+            time.sleep(1.5)  # Wait for click/focus to register
             
-            # Wait 3 seconds to ensure message is fully sent before closing tab
-            time.sleep(3)
+            # Press Space to trigger React/JS input state update, then Backspace to keep it clean
+            print("  ⌨️ Activating text box state...")
+            pyautogui.press('space')
+            time.sleep(0.5)
+            pyautogui.press('backspace')
+            time.sleep(1.0)
+            
+            # Press 'Enter' key to send the message
+            pyautogui.press('enter')
+            print("  ✅ Keystroke 'Enter' simulated (Message sent).")
+            
+            # Wait 7 seconds to ensure message is fully sent before closing tab
+            time.sleep(7)
             
             # Press 'Ctrl + W' to close the active tab
             pyautogui.hotkey('ctrl', 'w')
