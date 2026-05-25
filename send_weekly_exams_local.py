@@ -82,7 +82,15 @@ def main():
 
     # 3. Authenticate with Google Sheets API
     try:
-        creds_dict = json.loads(service_account_json)
+        # Check if the variable points to a local .json file
+        clean_json_val = service_account_json.strip()
+        if clean_json_val.endswith(".json") and os.path.exists(clean_json_val):
+            print(f"📂 Loading Google credentials from local key file: '{clean_json_val}'")
+            with open(clean_json_val, "r", encoding="utf-8") as f:
+                creds_dict = json.load(f)
+        else:
+            creds_dict = json.loads(service_account_json)
+        
         scopes = [
             "https://spreadsheets.google.com/feeds",
             "https://www.googleapis.com/auth/drive"
