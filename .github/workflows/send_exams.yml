@@ -28,7 +28,7 @@ jobs:
 
     - name: Run Exam Dispatcher
       env:
-        GITHUB_PAGES_BASE_URL: ${{ secrets.GITHUB_PAGES_BASE_URL || vars.GITHUB_PAGES_BASE_URL }}
+        PAGES_BASE_URL: ${{ secrets.PAGES_BASE_URL || vars.PAGES_BASE_URL }}
         GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
         GOOGLE_SHEET_NAME: ${{ secrets.GOOGLE_SHEET_NAME || 'Sheet1' }}
         GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}

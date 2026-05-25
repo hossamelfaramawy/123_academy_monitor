@@ -1,0 +1,4 @@
+academy-monitor-*.json
+Twilio.txt
+.env
+*.log

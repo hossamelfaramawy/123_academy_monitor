@@ -19,7 +19,7 @@ def main():
         return
 
     # 2. Get Environment Variables
-    github_pages_base = os.environ.get("GITHUB_PAGES_BASE_URL")
+    github_pages_base = os.environ.get("PAGES_BASE_URL")
     sheet_id = os.environ.get("GOOGLE_SHEET_ID")
     sheet_name = os.environ.get("GOOGLE_SHEET_NAME", "Sheet1")
     service_account_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
@@ -29,7 +29,7 @@ def main():
 
     # Validate essential environment variables
     missing_vars = []
-    if not github_pages_base: missing_vars.append("GITHUB_PAGES_BASE_URL")
+    if not github_pages_base: missing_vars.append("PAGES_BASE_URL")
     if not sheet_id: missing_vars.append("GOOGLE_SHEET_ID")
     if not service_account_json: missing_vars.append("GOOGLE_SERVICE_ACCOUNT_JSON")
     if not twilio_sid: missing_vars.append("TWILIO_ACCOUNT_SID")
