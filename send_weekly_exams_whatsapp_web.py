@@ -276,13 +276,16 @@ def main():
             webbrowser.open(whatsapp_url)
             
             # Wait for WhatsApp Web to load (adjust if your internet is slow)
-            load_wait_time = 18
+            load_wait_time = 20
             print(f"  ⏳ Waiting {load_wait_time} seconds for page to load. DO NOT touch your mouse/keyboard...")
             time.sleep(load_wait_time)
             
-            # Press 'Enter' key to send the message
+            # Press 'Enter' key to send the message (double-tap for reliability)
+            time.sleep(2)
             pyautogui.press('enter')
-            print("  ✅ Keystroke 'Enter' simulated (Message sent).")
+            time.sleep(1)
+            pyautogui.press('enter')
+            print("  ✅ Keystrokes 'Enter' simulated (Message sent).")
             
             # Wait 3 seconds to ensure message is fully sent before closing tab
             time.sleep(3)
