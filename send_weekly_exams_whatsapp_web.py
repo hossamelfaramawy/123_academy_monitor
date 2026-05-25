@@ -1,0 +1,296 @@
+import os
+import json
+import datetime
+import sys
+import time
+import webbrowser
+from urllib.parse import quote_plus
+import gspread
+from google.oauth2.service_account import Credentials
+
+# Import pyautogui to automate keystrokes
+try:
+    import pyautogui
+except ImportError:
+    print("❌ Error: The 'pyautogui' package is not installed.")
+    print("Please run: python -m pip install pyautogui")
+    sys.exit(1)
+
+# Reconfigure stdout for Windows terminal emojis
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
+def load_dotenv():
+    """Manually parse .env file to load variables into os.environ."""
+    env_path = ".env"
+    if os.path.exists(env_path):
+        print(f"📝 Loading local credentials from '{env_path}'...")
+        with open(env_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                if "=" in line:
+                    key, val = line.split("=", 1)
+                    key = key.strip()
+                    val = val.strip().strip("'").strip('"')
+                    os.environ[key] = val
+    else:
+        print("⚠️ Warning: No '.env' file found. Running with system environment variables.")
+
+def main():
+    load_dotenv()
+    print("🚀 Starting 123 Academy WhatsApp Web Browser Dispatcher...")
+    print("📢 IMPORTANT: Make sure you have scanned your WhatsApp Web QR code in your default browser first!")
+
+    # 1. Load Curriculum Data
+    try:
+        with open("curriculum.json", "r", encoding="utf-8") as f:
+            curriculum = json.load(f)
+        print(f"📖 Loaded {len(curriculum)} skills from curriculum.json")
+    except Exception as e:
+        print(f"❌ Error loading curriculum.json: {e}")
+        return
+
+    # 2. Get Environment Variables
+    pages_base = os.environ.get("PAGES_BASE_URL")
+    sheet_id = os.environ.get("GOOGLE_SHEET_ID")
+    sheet_name = os.environ.get("GOOGLE_SHEET_NAME", "Sheet1")
+    service_account_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
+
+    # Display configuration
+    print("\n📋 Current Configuration:")
+    print(f"  - PAGES_BASE_URL: '{pages_base}'")
+    print(f"  - GOOGLE_SHEET_ID: '{sheet_id[:6]}...'" if sheet_id else "  - GOOGLE_SHEET_ID: None")
+    print(f"  - GOOGLE_SHEET_NAME: '{sheet_name}'")
+    print(f"  - GOOGLE_SERVICE_ACCOUNT_JSON: {'[LOADED]' if service_account_json else '[MISSING]'}\n")
+
+    # Validate essential environment variables
+    missing_vars = []
+    if not pages_base: missing_vars.append("PAGES_BASE_URL")
+    if not sheet_id: missing_vars.append("GOOGLE_SHEET_ID")
+    if not service_account_json: missing_vars.append("GOOGLE_SERVICE_ACCOUNT_JSON")
+
+    if missing_vars:
+        print(f"❌ Missing required environment variables: {', '.join(missing_vars)}")
+        print("Please check your '.env' file. Stopping execution.")
+        return
+
+    # Make sure base URL ends with a slash
+    if not pages_base.endswith("/"):
+        pages_base += "/"
+
+    # 3. Authenticate with Google Sheets API
+    try:
+        clean_json_val = service_account_json.strip()
+        if clean_json_val.endswith(".json") and os.path.exists(clean_json_val):
+            print(f"📂 Loading Google credentials from local key file: '{clean_json_val}'")
+            with open(clean_json_val, "r", encoding="utf-8") as f:
+                creds_dict = json.load(f)
+        else:
+            try:
+                creds_dict = json.loads(service_account_json)
+            except json.JSONDecodeError as je:
+                try:
+                    fixed_json = service_account_json.replace("'", '"')
+                    creds_dict = json.loads(fixed_json)
+                except Exception:
+                    print(f"❌ Google Credentials JSON Parse Error: {je}")
+                    raise je
+
+        scopes = [
+            "https://spreadsheets.google.com/feeds",
+            "https://www.googleapis.com/auth/drive"
+        ]
+        credentials = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+        gc = gspread.authorize(credentials)
+        
+        # Open sheet
+        sheet = gc.open_by_key(sheet_id).worksheet(sheet_name)
+        print(f"✅ Successfully opened Google Sheet: '{sheet.title}'")
+    except Exception as e:
+        print(f"❌ Google Sheets Auth / Connection failed: {e}")
+        return
+
+    # 4. Read Spreadsheet and Header Mapping
+    all_records = sheet.get_all_values()
+    if len(all_records) < 2:
+        print("⚠️ Spreadsheet is empty or only has headers. No students to notify.")
+        return
+
+    headers = [h.strip().lower() for h in all_records[0]]
+
+    # Map general column headers
+    try:
+        col_student_id = headers.index("student id")
+        col_student_name = headers.index("student name")
+        col_parent_phone = headers.index("parent phone")
+        col_age_group = headers.index("age group")
+        col_last_sent = headers.index("last sent date")
+    except ValueError as e:
+        print(f"❌ Header structure error: {e}")
+        print("Ensure general columns exist: 'Student ID', 'Student Name', 'Parent Phone', 'Age Group', 'Last Sent Date'")
+        return
+
+    # Map the 12 skill columns to their 0-indexed column coordinates
+    subjects = ["math", "arabic", "english"]
+    subject_columns = {
+        "math": [],
+        "arabic": [],
+        "english": []
+    }
+
+    for idx, header in enumerate(headers):
+        for sub in subjects:
+            if header.startswith(sub + " s"):
+                try:
+                    skill_num = int(header.split(" s")[1])
+                    subject_columns[sub].append((skill_num, idx))
+                except ValueError:
+                    pass
+
+    # Sort each subject's columns in order of S1, S2, S3, S4
+    for sub in subjects:
+        subject_columns[sub].sort(key=lambda x: x[0])
+
+    # 5. Iterate through student rows and send exams
+    sent_count = 0
+    fail_count = 0
+    current_time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    for row_idx, row in enumerate(all_records[1:], start=2):
+        if len(row) <= max(col_student_id, col_student_name, col_parent_phone, col_age_group):
+            continue
+
+        student_id = row[col_student_id].strip()
+        student_name = row[col_student_name].strip()
+        parent_phone = row[col_parent_phone].strip()
+        age_group_str = row[col_age_group].strip()
+
+        if not student_id or not parent_phone or not age_group_str:
+            continue
+
+        try:
+            age_group = int(age_group_str)
+            if age_group not in [3, 5]:
+                raise ValueError
+        except ValueError:
+            print(f"⚠️ Row {row_idx}: Invalid age group '{age_group_str}'. Skipping.")
+            continue
+
+        # Find the first pending skill for each subject
+        pending_skills = []
+
+        for sub in subjects:
+            cols = subject_columns[sub]
+            for skill_num, col_idx in cols:
+                status = ""
+                if col_idx < len(row):
+                    status = row[col_idx].strip().lower()
+
+                if status != "passed":
+                    skill_id = f"{sub}_{age_group}_s{skill_num}"
+                    
+                    if skill_id in curriculum:
+                        pending_skills.append({
+                            "subject": sub,
+                            "skill_num": skill_num,
+                            "col_idx": col_idx,
+                            "skill_id": skill_id,
+                            "curriculum_data": curriculum[skill_id]
+                        })
+                    break
+
+        if not pending_skills:
+            continue
+
+        print(f"\n📧 Preparing message for: '{student_name}' (ID: {student_id}, Age: {age_group})")
+
+        # 6. Construct combined WhatsApp message
+        message_lines = []
+        message_lines.append(f"مرحباً يا ولي أمر {student_name} 👋")
+        message_lines.append("")
+        message_lines.append("حان وقت الألعاب التعليمية التفاعلية لهذا الأسبوع لطفلكم المتميز في أكاديمية 123! 🌟")
+        message_lines.append("الرجاء من البطل الصغير حل التحديات التالية:")
+        message_lines.append("")
+
+        subject_metadata = {
+            "math": {"emoji": "➕", "name": "الرياضيات (Math)", "title_key": "title_ar"},
+            "arabic": {"emoji": "✏️", "name": "اللغة العربية (Arabic)", "title_key": "title_ar"},
+            "english": {"emoji": "🔤", "name": "اللغة الإنجليزية (English)", "title_key": "title_en"}
+        }
+
+        for skill in pending_skills:
+            sub = skill["subject"]
+            meta = subject_metadata[sub]
+            skill_id = skill["skill_id"]
+            
+            title_key = meta["title_key"]
+            skill_title = skill["curriculum_data"].get(title_key, skill_id)
+            
+            escaped_name = quote_plus(student_name)
+            exam_url = f"{pages_base}?student_id={student_id}&skill={skill_id}&student_name={escaped_name}"
+            
+            message_lines.append(f"{meta['emoji']} {meta['name']}: {skill_title}")
+            message_lines.append(f"رابط اللعبة: {exam_url}")
+            message_lines.append("")
+
+        message_lines.append("بالتوفيق للبطل! 🏆🎈")
+        message_body = "\n".join(message_lines)
+
+        # Standardize phone number for WhatsApp Web URL (digits only, no '+' sign)
+        clean_phone = parent_phone.replace(" ", "").replace("-", "").replace("+", "")
+        if clean_phone.startswith("00"):
+            clean_phone = clean_phone[2:]
+            
+        # 7. Automate browser navigation and keystrokes
+        try:
+            print(f"  💬 Opening WhatsApp Web chat for {student_name} (+{clean_phone})...")
+            # Build WhatsApp API URL with text
+            encoded_text = quote_plus(message_body)
+            whatsapp_url = f"https://web.whatsapp.com/send?phone={clean_phone}&text={encoded_text}"
+            
+            # Open tab in default browser
+            webbrowser.open(whatsapp_url)
+            
+            # Wait for WhatsApp Web to load (adjust if your internet is slow)
+            load_wait_time = 18
+            print(f"  ⏳ Waiting {load_wait_time} seconds for page to load. DO NOT touch your mouse/keyboard...")
+            time.sleep(load_wait_time)
+            
+            # Press 'Enter' key to send the message
+            pyautogui.press('enter')
+            print("  ✅ Keystroke 'Enter' simulated (Message sent).")
+            
+            # Wait 3 seconds to ensure message is fully sent before closing tab
+            time.sleep(3)
+            
+            # Press 'Ctrl + W' to close the active tab
+            pyautogui.hotkey('ctrl', 'w')
+            print("  🚪 Browser tab closed.")
+            
+            # Update cells to "sent" in Google Sheets
+            for skill in pending_skills:
+                col_idx_1based = skill["col_idx"] + 1
+                sheet.update_cell(row_idx, col_idx_1based, "sent")
+                print(f"  ✅ Updated '{skill['subject'].capitalize()} S{skill['skill_num']}' cell to 'sent'")
+            
+            # Update Last Sent Date
+            sheet.update_cell(row_idx, col_last_sent + 1, current_time_str)
+            print(f"  ✅ Updated Last Sent Date for row {row_idx}")
+            sent_count += 1
+            
+            # Give a small 3-second break between different parents
+            time.sleep(3)
+            
+        except Exception as err:
+            print(f"  ❌ Failed to send message via WhatsApp Web / update sheet: {err}")
+            fail_count += 1
+
+    print("\n-------------------------------------------------------")
+    print(f"🏁 Browser Dispatch Completed at {current_time_str}")
+    print(f"📬 Sent: {sent_count} | ⚠️ Failed: {fail_count}")
+    print("-------------------------------------------------------")
+
+if __name__ == "__main__":
+    main()

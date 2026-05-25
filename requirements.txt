@@ -1,3 +1,4 @@
 gspread>=5.10.0
 google-auth>=2.20.0
 twilio>=8.2.0
+pyautogui>=0.9.54
