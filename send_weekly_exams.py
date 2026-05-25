@@ -27,6 +27,16 @@ def main():
     twilio_token = os.environ.get("TWILIO_AUTH_TOKEN")
     twilio_sender = os.environ.get("TWILIO_WHATSAPP_SENDER")
 
+    # Safe debug prints to verify variables are loaded
+    print("📋 Loaded Environment Variables Configuration:")
+    print(f"  - PAGES_BASE_URL: '{github_pages_base}'")
+    print(f"  - GOOGLE_SHEET_ID: '{sheet_id[:6]}...'" if sheet_id else "  - GOOGLE_SHEET_ID: None")
+    print(f"  - GOOGLE_SHEET_NAME: '{sheet_name}'")
+    print(f"  - GOOGLE_SERVICE_ACCOUNT_JSON: {'[PRESENT]' if service_account_json else '[MISSING]'}")
+    print(f"  - TWILIO_ACCOUNT_SID: '{twilio_sid[:8]}...'" if twilio_sid else "  - TWILIO_ACCOUNT_SID: None")
+    print(f"  - TWILIO_AUTH_TOKEN: {'[PRESENT]' if twilio_token else '[MISSING]'}")
+    print(f"  - TWILIO_WHATSAPP_SENDER: '{twilio_sender}'")
+
     # Validate essential environment variables
     missing_vars = []
     if not github_pages_base: missing_vars.append("PAGES_BASE_URL")
