@@ -64,7 +64,19 @@ def main():
             with open(clean_json_val, "r", encoding="utf-8") as f:
                 creds_dict = json.load(f)
         else:
-            creds_dict = json.loads(service_account_json)
+            try:
+                creds_dict = json.loads(service_account_json)
+            except json.JSONDecodeError as je:
+                # Try to recover by replacing single quotes with double quotes
+                try:
+                    fixed_json = service_account_json.replace("'", '"')
+                    creds_dict = json.loads(fixed_json)
+                    print("⚠️ Note: Automatically corrected single quotes to double quotes in Google JSON credentials.")
+                except Exception:
+                    print(f"❌ Google Credentials JSON Parse Error: {je}")
+                    print(f"  Value starts with: '{service_account_json[:50]}...'")
+                    print(f"  Is file path check: exists={os.path.exists(clean_json_val)}")
+                    raise je
             
         scopes = [
             "https://spreadsheets.google.com/feeds",
