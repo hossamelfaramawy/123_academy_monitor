@@ -21,20 +21,42 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 def load_dotenv():
-    """Manually parse .env file to load variables into os.environ."""
+    """Manually parse .env file to load variables into os.environ without dependencies."""
     env_path = ".env"
     if os.path.exists(env_path):
         print(f"📝 Loading local credentials from '{env_path}'...")
         with open(env_path, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith("#"):
+            lines = f.readlines()
+            
+        current_key = None
+        current_value = []
+        
+        for line in lines:
+            line_strip = line.strip()
+            
+            # If we are not currently collecting a multi-line value
+            if not current_key:
+                if not line_strip or line_strip.startswith("#"):
                     continue
                 if "=" in line:
                     key, val = line.split("=", 1)
                     key = key.strip()
-                    val = val.strip().strip("'").strip('"')
-                    os.environ[key] = val
+                    val = val.strip()
+                    
+                    # Check if it starts a JSON block
+                    if val.startswith("{") and not val.endswith("}"):
+                        current_key = key
+                        current_value = [val]
+                    else:
+                        # Strip whitespace and surrounding quotes
+                        os.environ[key] = val.strip("'").strip('"')
+            else:
+                # We are collecting a multi-line value
+                current_value.append(line.rstrip())
+                if line_strip == "}" or line_strip.endswith("}"):
+                    os.environ[current_key] = "\n".join(current_value)
+                    current_key = None
+                    current_value = []
     else:
         print("⚠️ Warning: No '.env' file found. Running with system environment variables.")
 
