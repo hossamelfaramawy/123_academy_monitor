@@ -60,10 +60,49 @@ def load_dotenv():
     else:
         print("⚠️ Warning: No '.env' file found. Running with system environment variables.")
 
+def resolve_skill_id(sheet_val, subject, age_group, curriculum):
+    """Resolves a friendly sheet value like 'Letter B', 'B', 'b' to curriculum ID like 'english_3_s2'."""
+    val_clean = sheet_val.strip().lower()
+    if not val_clean:
+        return None
+        
+    # 1. Direct ID match
+    if val_clean in curriculum:
+        return val_clean
+        
+    # 2. Direct title match (case insensitive)
+    for skill_id, skill in curriculum.items():
+        if skill.get("subject") == subject and skill.get("age_group") == age_group:
+            if val_clean == skill.get("title_en", "").strip().lower():
+                return skill_id
+            if val_clean == skill.get("title_ar", "").strip().lower():
+                return skill_id
+                
+    # 3. Clean up prefix like "letter ", "حرف " to match just the core value (e.g. "b", "c")
+    core_val = val_clean.replace("letter", "").replace("حرف", "").strip()
+    
+    # 4. Try matching the core value
+    for skill_id, skill in curriculum.items():
+        if skill.get("subject") == subject and skill.get("age_group") == age_group:
+            title_en_core = skill.get("title_en", "").strip().lower().replace("letter", "").replace("حرف", "").strip()
+            title_ar_core = skill.get("title_ar", "").strip().lower().replace("letter", "").replace("حرف", "").strip()
+            if core_val == title_en_core or core_val == title_ar_core:
+                return skill_id
+                
+    return None
+
 def main():
     load_dotenv()
-    print("🚀 Starting 123 Academy WhatsApp Web Browser Dispatcher...")
-    print("📢 IMPORTANT: Make sure you have scanned your WhatsApp Web QR code in your default browser first!")
+    
+    # Check if running in dry-run mode
+    dry_run = "--dry-run" in sys.argv or os.environ.get("DRY_RUN", "").lower() == "true"
+    dry_run_messages = []
+    
+    if dry_run:
+        print("🧪 RUNNING IN DRY-RUN (TEST) MODE - Browser will not be opened, Google Sheet will not be modified.")
+    else:
+        print("🚀 Starting 123 Academy WhatsApp Web Browser Dispatcher...")
+        print("📢 IMPORTANT: Make sure you have scanned your WhatsApp Web QR code in your default browser first!")
 
     # 1. Load Curriculum Data
     try:
@@ -154,26 +193,21 @@ def main():
         print("Ensure general columns exist: 'Student ID', 'Student Name', 'Parent Phone', 'Age Group', 'Last Sent Date'")
         return
 
-    # Map the 12 skill columns to their 0-indexed column coordinates
+    # Map the subject Level and Status columns to their 0-indexed column coordinates
     subjects = ["math", "arabic", "english"]
-    subject_columns = {
-        "math": [],
-        "arabic": [],
-        "english": []
-    }
-
-    for idx, header in enumerate(headers):
-        for sub in subjects:
-            if header.startswith(sub + " s"):
-                try:
-                    skill_num = int(header.split(" s")[1])
-                    subject_columns[sub].append((skill_num, idx))
-                except ValueError:
-                    pass
-
-    # Sort each subject's columns in order of S1, S2, S3, S4
+    subject_cols = {}
     for sub in subjects:
-        subject_columns[sub].sort(key=lambda x: x[0])
+        try:
+            level_idx = headers.index(f"{sub} level")
+            status_idx = headers.index(f"{sub} status")
+            subject_cols[sub] = {
+                "level_idx": level_idx,
+                "status_idx": status_idx
+            }
+        except ValueError as e:
+            print(f"❌ Header structure error: {e}")
+            print(f"Ensure level & status columns exist: '{sub.capitalize()} Level', '{sub.capitalize()} Status'")
+            return
 
     # 5. Iterate through student rows and send exams
     sent_count = 0
@@ -200,28 +234,40 @@ def main():
             print(f"⚠️ Row {row_idx}: Invalid age group '{age_group_str}'. Skipping.")
             continue
 
-        # Find the first pending skill for each subject
+        # Find the pending skill for each subject using level & status pairs
         pending_skills = []
 
         for sub in subjects:
-            cols = subject_columns[sub]
-            for skill_num, col_idx in cols:
-                status = ""
-                if col_idx < len(row):
-                    status = row[col_idx].strip().lower()
+            level_idx = subject_cols[sub]["level_idx"]
+            status_idx = subject_cols[sub]["status_idx"]
+            
+            skill_id = ""
+            if level_idx < len(row):
+                skill_id = row[level_idx].strip()
+                
+            status = ""
+            if status_idx < len(row):
+                status = row[status_idx].strip().lower()
 
-                if status != "passed":
-                    skill_id = f"{sub}_{age_group}_s{skill_num}"
-                    
-                    if skill_id in curriculum:
-                        pending_skills.append({
-                            "subject": sub,
-                            "skill_num": skill_num,
-                            "col_idx": col_idx,
-                            "skill_id": skill_id,
-                            "curriculum_data": curriculum[skill_id]
-                        })
-                    break
+            # If Level is empty, there is no exam assigned for this subject yet
+            if not skill_id:
+                continue
+
+            # Resolve friendly name/ID to actual skill_id from curriculum
+            resolved_id = resolve_skill_id(skill_id, sub, age_group, curriculum)
+
+            # If status is not "passed" (meaning it is pending, sent, needs_review, or empty)
+            if status != "passed":
+                if resolved_id:
+                    pending_skills.append({
+                        "subject": sub,
+                        "level_idx": level_idx,
+                        "status_idx": status_idx,
+                        "skill_id": resolved_id,
+                        "curriculum_data": curriculum[resolved_id]
+                    })
+                else:
+                    print(f"  ⚠️ Warning: Could not resolve Level name '{skill_id}' to a valid skill ID in curriculum.json")
 
         if not pending_skills:
             continue
@@ -266,6 +312,15 @@ def main():
             clean_phone = clean_phone[2:]
             
         # 7. Automate browser navigation and keystrokes
+        if dry_run:
+            print(f"  [DRY RUN] Would open WhatsApp Web for {student_name} (+{clean_phone}) with message:")
+            print("-" * 40)
+            print(message_body)
+            print("-" * 40)
+            dry_run_messages.append(f"To: {student_name} ({clean_phone})\nMessage:\n{message_body}")
+            sent_count += 1
+            continue
+
         try:
             print(f"  💬 Opening WhatsApp Web chat for {student_name} (+{clean_phone})...")
             # Build WhatsApp API URL with text
@@ -281,7 +336,6 @@ def main():
             time.sleep(load_wait_time)
             
             # Click on the chat input area to guarantee focus
-            # (Usually located around 60% width and 90% height from top-left)
             width, height = pyautogui.size()
             click_x = int(width * 0.60)
             click_y = int(height * 0.90)
@@ -309,9 +363,9 @@ def main():
             
             # Update cells to "sent" in Google Sheets
             for skill in pending_skills:
-                col_idx_1based = skill["col_idx"] + 1
-                sheet.update_cell(row_idx, col_idx_1based, "sent")
-                print(f"  ✅ Updated '{skill['subject'].capitalize()} S{skill['skill_num']}' cell to 'sent'")
+                status_col_1based = skill["status_idx"] + 1
+                sheet.update_cell(row_idx, status_col_1based, "sent")
+                print(f"  ✅ Updated '{skill['subject'].capitalize()} Status' cell to 'sent'")
             
             # Update Last Sent Date
             sheet.update_cell(row_idx, col_last_sent + 1, current_time_str)
@@ -329,6 +383,18 @@ def main():
     print(f"🏁 Browser Dispatch Completed at {current_time_str}")
     print(f"📬 Sent: {sent_count} | ⚠️ Failed: {fail_count}")
     print("-------------------------------------------------------")
+
+    if dry_run and dry_run_messages:
+        output_file = "dry_run_output.txt"
+        try:
+            with open(output_file, "w", encoding="utf-8") as f:
+                f.write(f"=== DRY RUN ASSESSMENTS GENERATED AT {current_time_str} ===\n\n")
+                for msg in dry_run_messages:
+                    f.write(msg + "\n")
+                    f.write("=" * 60 + "\n\n")
+            print(f"\n📝 Dry-run completed! All {len(dry_run_messages)} generated messages saved to '{output_file}'.")
+        except Exception as e:
+            print(f"❌ Failed to write dry-run output to file: {e}")
 
 if __name__ == "__main__":
     main()

@@ -1,443 +1,38 @@
 {
-  "math_3_s1": {
-    "id": "math_3_s1",
-    "age_group": 3,
-    "subject": "math",
-    "title_ar": "عد الأرقام 1-3",
-    "title_en": "Counting Numbers 1-3",
-    "instructions_ar": "عد الأشياء الجميلة واختر الرقم الصحيح يا بطل! 🎈",
-    "instructions_en": "Count the items and choose the correct number! 🎈",
-    "questions": [
-      {
-        "question": "كم عدد البالونات في الصورة؟ 🎈🎈",
-        "options": ["1", "2", "3"],
-        "correct": "2"
-      },
-      {
-        "question": "كم عدد السيارات في الصورة؟ 🚗",
-        "options": ["1", "2", "3"],
-        "correct": "1"
-      },
-      {
-        "question": "كم عدد النجمات المضيئة؟ ⭐️⭐️⭐️",
-        "options": ["2", "3", "1"],
-        "correct": "3"
-      }
-    ]
-  },
-  "math_3_s2": {
-    "id": "math_3_s2",
-    "age_group": 3,
-    "subject": "math",
-    "title_ar": "عد الأرقام 1-5",
-    "title_en": "Counting Numbers 1-5",
-    "instructions_ar": "عد الأشياء الجميلة واختر الرقم الصحيح يا بطل! 🍎",
-    "instructions_en": "Count the items and choose the correct number! 🍎",
-    "questions": [
-      {
-        "question": "كم عدد التفاحات اللذيذة؟ 🍎🍎🍎🍎",
-        "options": ["3", "4", "5"],
-        "correct": "4"
-      },
-      {
-        "question": "كم عدد الأرانب القافزة؟ 🐰🐰🐰🐰🐰",
-        "options": ["4", "5", "3"],
-        "correct": "5"
-      },
-      {
-        "question": "كم عدد الأقلام الملونة؟ ✏️✏️✏️",
-        "options": ["2", "3", "4"],
-        "correct": "3"
-      }
-    ]
-  },
-  "math_3_s3": {
-    "id": "math_3_s3",
-    "age_group": 3,
-    "subject": "math",
-    "title_ar": "التعرف على الأشكال",
-    "title_en": "Shape Recognition",
-    "instructions_ar": "اختر الشكل الصحيح يا ذكي! 🟡🔺🟦",
-    "instructions_en": "Choose the correct shape! 🟡🔺🟦",
-    "questions": [
-      {
-        "question": "أي من هذه الأشكال هو الدائرة؟ 🟡",
-        "options": ["دائرة", "مربع", "مثلث"],
-        "correct": "دائرة"
-      },
-      {
-        "question": "أي من هذه الأشكال هو المثلث؟ 🔺",
-        "options": ["مربع", "دائرة", "مثلث"],
-        "correct": "مثلث"
-      },
-      {
-        "question": "أي من هذه الأشكال هو المربع؟ 🟦",
-        "options": ["مربع", "مثلث", "دائرة"],
-        "correct": "مربع"
-      }
-    ]
-  },
-  "math_3_s4": {
-    "id": "math_3_s4",
-    "age_group": 3,
-    "subject": "math",
-    "title_ar": "مقارنة الأحجام (كبير وصغير)",
-    "title_en": "Size Comparison (Big & Small)",
-    "instructions_ar": "قارن الأحجام واختر الإجابة الصحيحة! 🐘🐭",
-    "instructions_en": "Compare sizes and choose the correct answer! 🐘🐭",
-    "questions": [
-      {
-        "question": "أي لعبة هي الأكبر؟ 🧸 (كبير) أم 🧸 (صغير)؟",
-        "options": ["🧸 الكبير", "🧸 الصغير"],
-        "correct": "🧸 الكبير"
-      },
-      {
-        "question": "أي فاكهة هي الأصغر؟ 🍉 (كبير) أم 🍓 (صغير)؟",
-        "options": ["🍓 الأصغر", "🍉 الأكبر"],
-        "correct": "🍓 الأصغر"
-      },
-      {
-        "question": "أي حيوان هو الأكبر؟ 🐘 أم 🐭؟",
-        "options": ["🐘 الفيل الأكبر", "🐭 الفأر الأصغر"],
-        "correct": "🐘 الفيل الأكبر"
-      }
-    ]
-  },
-  "math_5_s1": {
-    "id": "math_5_s1",
-    "age_group": 5,
-    "subject": "math",
-    "title_ar": "الجمع حتى 5",
-    "title_en": "Addition up to 5",
-    "instructions_ar": "اجمع الأشياء واكتب المجموع يا بطل! ➕",
-    "instructions_en": "Add the items and find the total! ➕",
-    "questions": [
-      {
-        "question": "كم مجموع: 1 + 2 = ؟ (🍎 + 🍎🍎)",
-        "options": ["2", "3", "4"],
-        "correct": "3"
-      },
-      {
-        "question": "كم مجموع: 2 + 2 = ؟ (🐱🐱 + 🐱🐱)",
-        "options": ["3", "4", "5"],
-        "correct": "4"
-      },
-      {
-        "question": "كم مجموع: 3 + 1 = ؟ (🚗🚗🚗 + 🚗)",
-        "options": ["4", "5", "3"],
-        "correct": "4"
-      }
-    ]
-  },
-  "math_5_s2": {
-    "id": "math_5_s2",
-    "age_group": 5,
-    "subject": "math",
-    "title_ar": "الطرح حتى 5",
-    "title_en": "Subtraction up to 5",
-    "instructions_ar": "اطرح الأشياء واختر الباقي الصحيح! ➖",
-    "instructions_en": "Subtract the items and find the remainder! ➖",
-    "questions": [
-      {
-        "question": "3 - 1 = ؟ (كان هناك 3 بالونات 🎈🎈🎈 وطار منها 1 🎈)",
-        "options": ["1", "2", "3"],
-        "correct": "2"
-      },
-      {
-        "question": "5 - 2 = ؟ (كان هناك 5 تفاحات 🍎🍎🍎🍎🍎 وأكلنا منها 2 🍎🍎)",
-        "options": ["3", "4", "2"],
-        "correct": "3"
-      },
-      {
-        "question": "4 - 2 = ؟ (كان هناك 4 ألعاب 🧸🧸🧸🧸 وضاع منها 2 🧸🧸)",
-        "options": ["1", "2", "3"],
-        "correct": "2"
-      }
-    ]
-  },
-  "math_5_s3": {
-    "id": "math_5_s3",
-    "age_group": 5,
-    "subject": "math",
-    "title_ar": "مقارنة الأرقام (أكبر وأصغر)",
-    "title_en": "Number Comparison",
-    "instructions_ar": "قارن الأرقام واختر العلاقة الصحيحة! 🔴🔵",
-    "instructions_en": "Compare the numbers and choose the correct answer! 🔴🔵",
-    "questions": [
-      {
-        "question": "الرقم 5 أكبر من أم أصغر من 3؟ (5 🔴🔴🔴🔴🔴 vs 3 🔵🔵🔵)",
-        "options": ["أكبر من", "أصغر من", "يساوي"],
-        "correct": "أكبر من"
-      },
-      {
-        "question": "الرقم 2 أكبر من أم أصغر من 4؟ (2 🔴🔴 vs 4 🔵🔵🔵🔵)",
-        "options": ["أكبر من", "أصغر من", "يساوي"],
-        "correct": "أصغر من"
-      },
-      {
-        "question": "أي رقم يساوي الرقم 3؟",
-        "options": ["3", "4", "2"],
-        "correct": "3"
-      }
-    ]
-  },
-  "math_5_s4": {
-    "id": "math_5_s4",
-    "age_group": 5,
-    "subject": "math",
-    "title_ar": "الأنماط المتكررة",
-    "title_en": "Patterns",
-    "instructions_ar": "أكمل النمط بالرمز المناسب! 🔴🔵🔴🔵",
-    "instructions_en": "Complete the pattern with the correct symbol! 🔴🔵🔴🔵",
-    "questions": [
-      {
-        "question": "ما هو الشكل التالي في النمط؟ 🔴 🔵 🔴 🔵 [؟]",
-        "options": ["🔴", "🔵", "🟡"],
-        "correct": "🔴"
-      },
-      {
-        "question": "ما هو الشكل التالي في النمط؟ 🍎 🍌 🍎 🍌 [؟]",
-        "options": ["🍎", "🍌", "🍇"],
-        "correct": "🍎"
-      },
-      {
-        "question": "ما هو الشكل التالي في النمط؟ 🐱 🐶 🐱 🐶 [؟]",
-        "options": ["🐱", "🐶", "🦁"],
-        "correct": "🐱"
-      }
-    ]
-  },
-  "arabic_3_s1": {
-    "id": "arabic_3_s1",
-    "age_group": 3,
-    "subject": "arabic",
-    "title_ar": "الحروف (أ - ج)",
-    "title_en": "Arabic Letters (Ales - Jeem)",
-    "instructions_ar": "اختر الحرف الصحيح الذي يبدأ به اسم الصورة! 🐰🦆🐪",
-    "instructions_en": "Choose the correct starting letter for the picture! 🐰🦆🐪",
-    "questions": [
-      {
-        "question": "ما هو الحرف الأول في كلمة أرنب 🐰؟",
-        "options": ["أ", "ب", "ت"],
-        "correct": "أ"
-      },
-      {
-        "question": "ما هو الحرف الأول في كلمة بطة 🦆؟",
-        "options": ["ب", "ت", "ج"],
-        "correct": "ب"
-      },
-      {
-        "question": "ما هو الحرف الأول في كلمة جمل 🐪؟",
-        "options": ["ج", "ح", "خ"],
-        "correct": "ج"
-      }
-    ]
-  },
-  "arabic_3_s2": {
-    "id": "arabic_3_s2",
-    "age_group": 3,
-    "subject": "arabic",
-    "title_ar": "الحروف (د - ش)",
-    "title_en": "Arabic Letters (Dal - Sheen)",
-    "instructions_ar": "اختر الحرف الصحيح الذي تبدأ به الكلمة! 🐓☀️",
-    "instructions_en": "Choose the correct starting letter for the word! 🐓☀️",
-    "questions": [
-      {
-        "question": "ما هو الحرف الأول في كلمة ديك 🐓؟",
-        "options": ["د", "ذ", "ر"],
-        "correct": "د"
-      },
-      {
-        "question": "ما هو الحرف الأول في كلمة رمان 🍎؟",
-        "options": ["ر", "ز", "س"],
-        "correct": "ر"
-      },
-      {
-        "question": "ما هو الحرف الأول في كلمة شمس ☀️؟",
-        "options": ["ش", "س", "ص"],
-        "correct": "ش"
-      }
-    ]
-  },
-  "arabic_3_s3": {
-    "id": "arabic_3_s3",
-    "age_group": 3,
-    "subject": "arabic",
-    "title_ar": "الحروف (ص - ق)",
-    "title_en": "Arabic Letters (Saad - Qaaf)",
-    "instructions_ar": "انظر إلى الصورة واختر الحرف الأول الصحيح! 🦅✈️🐱",
-    "instructions_en": "Look at the picture and choose the correct starting letter! 🦅✈️🐱",
-    "questions": [
-      {
-        "question": "ما هو الحرف الأول في كلمة صقر 🦅؟",
-        "options": ["ص", "ض", "ط"],
-        "correct": "ص"
-      },
-      {
-        "question": "ما هو الحرف الأول في كلمة طائرة ✈️؟",
-        "options": ["ط", "ظ", "ع"],
-        "correct": "ط"
-      },
-      {
-        "question": "ما هو الحرف الأول في كلمة قطة 🐱؟",
-        "options": ["ق", "ف", "ك"],
-        "correct": "ق"
-      }
-    ]
-  },
-  "arabic_3_s4": {
-    "id": "arabic_3_s4",
-    "age_group": 3,
-    "subject": "arabic",
-    "title_ar": "الحروف (ك - ي)",
-    "title_en": "Arabic Letters (Kaaf - Yaa)",
-    "instructions_ar": "انظر إلى الصورة واختر الحرف الأول الصحيح! 📖🍌🤚",
-    "instructions_en": "Look at the picture and choose the correct starting letter! 📖🍌🤚",
-    "questions": [
-      {
-        "question": "ما هو الحرف الأول في كلمة كتاب 📖؟",
-        "options": ["ك", "ل", "م"],
-        "correct": "ك"
-      },
-      {
-        "question": "ما هو الحرف الأول في كلمة موز 🍌؟",
-        "options": ["م", "ن", "هـ"],
-        "correct": "م"
-      },
-      {
-        "question": "ما هو الحرف الأول في كلمة يد 🤚؟",
-        "options": ["ي", "و", "هـ"],
-        "correct": "ي"
-      }
-    ]
-  },
-  "arabic_5_s1": {
-    "id": "arabic_5_s1",
-    "age_group": 5,
-    "subject": "arabic",
-    "title_ar": "الحركات القصيرة",
-    "title_en": "Short Vowels (Tashkeel)",
-    "instructions_ar": "انطق الكلمة جيداً وحدد حركة الحرف الأول! ✍️",
-    "instructions_en": "Pronounce the word and identify the vowel of the first letter! ✍️",
-    "questions": [
-      {
-        "question": "الحرف الأول في كَلِمة (أَرْنَب) مفتوح أم مضموم؟ (أَ)",
-        "options": ["مفتوح (أَ)", "مضموم (أُ)", "مكسور (إِ)"],
-        "correct": "مفتوح (أَ)"
-      },
-      {
-        "question": "الحرف الأول في كَلِمة (أُذُن) مفتوح أم مضموم؟ (أُ)",
-        "options": ["مفتوح (أَ)", "مضموم (أُ)", "مكسور (إِ)"],
-        "correct": "مضموم (أُ)"
-      },
-      {
-        "question": "الحرف الأول في كَلِمة (إِبْرِيق) مفتوح أم مكسور؟ (إِ)",
-        "options": ["مفتوح (أَ)", "مضموم (أُ)", "مكسور (إِ)"],
-        "correct": "مكسور (إِ)"
-      }
-    ]
-  },
-  "arabic_5_s2": {
-    "id": "arabic_5_s2",
-    "age_group": 5,
-    "subject": "arabic",
-    "title_ar": "كلمات ثلاثية بسيطة",
-    "title_en": "Simple Three-Letter Words",
-    "instructions_ar": "صل الحروف لتكون كلمة صحيحة ومفيدة! ✏️",
-    "instructions_en": "Join the letters to form a correct word! ✏️",
-    "questions": [
-      {
-        "question": "ما هي الكلمة الصحيحة التي تتكون من الحروف (كـ - تـ - ب)؟",
-        "options": ["كَتَبَ", "قَرَأَ", "رَسَمَ"],
-        "correct": "كَتَبَ"
-      },
-      {
-        "question": "ما هي الكلمة الصحيحة التي تتكون من الحروف (د - ر - س)؟",
-        "options": ["شَرِبَ", "دَرَسَ", "لَعِبَ"],
-        "correct": "دَرَسَ"
-      },
-      {
-        "question": "ما هي الكلمة الصحيحة التي تتكون من الحروف (أ - كـ - ل)؟",
-        "options": ["أَكَلَ", "شَرِبَ", "نَامَ"],
-        "correct": "أَكَلَ"
-      }
-    ]
-  },
-  "arabic_5_s3": {
-    "id": "arabic_5_s3",
-    "age_group": 5,
-    "subject": "arabic",
-    "title_ar": "المدود (الألف، الواو، الياء)",
-    "title_en": "Long Vowels (Madd)",
-    "instructions_ar": "استمع للكلمة وحدد نوع حرف المد فيها! 🚪🍇",
-    "instructions_en": "Listen to the word and identify the type of Madd! 🚪🍇",
-    "questions": [
-      {
-        "question": "ما نوع المد في كلمة (بَاب) 🚪؟",
-        "options": ["مد بالألف", "مد بالواو", "مد بالياء"],
-        "correct": "مد بالألف"
-      },
-      {
-        "question": "ما نوع المد في كلمة (تُوت) 🍇؟",
-        "options": ["مد بالألف", "مد بالواو", "مد بالياء"],
-        "correct": "مد بالواو"
-      },
-      {
-        "question": "ما نوع المد في كلمة (تِين) 🥝؟",
-        "options": ["مد بالألف", "مد بالواو", "مد بالياء"],
-        "correct": "مد بالياء"
-      }
-    ]
-  },
-  "arabic_5_s4": {
-    "id": "arabic_5_s4",
-    "age_group": 5,
-    "subject": "arabic",
-    "title_ar": "أسماء الإشارة (هذا / هذه)",
-    "title_en": "Demonstrative Pronouns",
-    "instructions_ar": "اختر اسم الإشارة المناسب للجملة! 👦👧🚗",
-    "instructions_en": "Choose the correct demonstrative pronoun! 👦👧🚗",
-    "questions": [
-      {
-        "question": "ماذا نقول للإشارة إلى ولد جميل 👦؟",
-        "options": ["هذا ولد", "هذه ولد"],
-        "correct": "هذا ولد"
-      },
-      {
-        "question": "ماذا نقول للإشارة إلى بنت جميلة 👧؟",
-        "options": ["هذا بنت", "هذه بنت"],
-        "correct": "هذه بنت"
-      },
-      {
-        "question": "ماذا نقول للإشارة إلى سيارة سريعة 🚗؟",
-        "options": ["هذا سيارة", "هذه سيارة"],
-        "correct": "هذه سيارة"
-      }
-    ]
-  },
   "english_3_s1": {
     "id": "english_3_s1",
     "age_group": 3,
     "subject": "english",
-    "title_ar": "الحروف A - G",
-    "title_en": "Letters A - G",
-    "instructions_ar": "اختر الحرف الكبير الصحيح المطابق للصورة! 🍎🐱🐶",
-    "instructions_en": "Choose the correct capital letter for the picture! 🍎🐱🐶",
+    "title_ar": "حرف A",
+    "title_en": "Letter A",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف A الرائع! 🍎",
+    "instructions_en": "Let's learn and play with the wonderful letter A! 🍎",
     "questions": [
       {
-        "question": "Which letter matches Apple? 🍎",
+        "type": "multiple-choice",
+        "question": "Click the capital letter A!",
         "options": ["A", "B", "C"],
         "correct": "A"
       },
       {
-        "question": "Which letter matches Cat? 🐱",
-        "options": ["B", "C", "D"],
-        "correct": "C"
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Apple",
+        "options": [
+          {"text": "Apple", "image": "assets/images/apple.png"},
+          {"text": "Ball", "image": "assets/images/ball.png"}
+        ],
+        "correct": "Apple"
       },
       {
-        "question": "Which letter matches Dog? 🐶",
-        "options": ["C", "D", "E"],
-        "correct": "D"
+        "type": "drag-and-drop",
+        "question": "Drag the capital letter A to the lowercase basket!",
+        "items": [
+          {"id": "drag-A", "text": "A"}
+        ],
+        "targets": [
+          {"id": "drop-a", "text": "a", "matches": "drag-A"}
+        ]
       }
     ]
   },
@@ -445,25 +40,38 @@
     "id": "english_3_s2",
     "age_group": 3,
     "subject": "english",
-    "title_ar": "الحروف H - N",
-    "title_en": "Letters H - N",
-    "instructions_ar": "اختر الحرف الصحيح للكلمة المصورة! 🏠🦁🐒",
-    "instructions_en": "Choose the correct letter for the picture! 🏠🦁🐒",
+    "title_ar": "حرف B",
+    "title_en": "Letter B",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف B الجميل! ⚽️",
+    "instructions_en": "Let's learn and play with the beautiful letter B! ⚽️",
     "questions": [
       {
-        "question": "Which letter matches House? 🏠",
-        "options": ["H", "I", "J"],
-        "correct": "H"
+        "type": "multiple-choice",
+        "question": "Click the capital letter B!",
+        "options": ["C", "B", "A"],
+        "correct": "B"
       },
       {
-        "question": "Which letter matches Lion? 🦁",
-        "options": ["L", "M", "N"],
-        "correct": "L"
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Ball",
+        "options": [
+          {"text": "Apple", "image": "assets/images/apple.png"},
+          {"text": "Ball", "image": "assets/images/ball.png"}
+        ],
+        "correct": "Ball"
       },
       {
-        "question": "Which letter matches Monkey? 🐒",
-        "options": ["K", "L", "M"],
-        "correct": "M"
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {"id": "drag-B", "text": "B"},
+          {"id": "drag-A", "text": "A"}
+        ],
+        "targets": [
+          {"id": "drop-a", "text": "a", "matches": "drag-A"},
+          {"id": "drop-b", "text": "b", "matches": "drag-B"}
+        ]
       }
     ]
   },
@@ -471,25 +79,38 @@
     "id": "english_3_s3",
     "age_group": 3,
     "subject": "english",
-    "title_ar": "الحروف O - T",
-    "title_en": "Letters O - T",
-    "instructions_ar": "اختر الحرف الصحيح يا شاطر! 🍊☀️🐯",
-    "instructions_en": "Choose the correct letter! 🍊☀️🐯",
+    "title_ar": "حرف C",
+    "title_en": "Letter C",
+    "instructions_ar": "هيا نلعب مع صديقنا القط وحرف C! 🐱",
+    "instructions_en": "Let's play with our cat friend and letter C! 🐱",
     "questions": [
       {
-        "question": "Which letter matches Orange? 🍊",
-        "options": ["O", "P", "Q"],
-        "correct": "O"
+        "type": "multiple-choice",
+        "question": "Click the capital letter C!",
+        "options": ["A", "B", "C"],
+        "correct": "C"
       },
       {
-        "question": "Which letter matches Sun? ☀️",
-        "options": ["R", "S", "T"],
-        "correct": "S"
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Cat",
+        "options": [
+          {"text": "Cat", "image": "assets/images/cat.png"},
+          {"text": "Ball", "image": "assets/images/ball.png"}
+        ],
+        "correct": "Cat"
       },
       {
-        "question": "Which letter matches Tiger? 🐯",
-        "options": ["P", "S", "T"],
-        "correct": "T"
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {"id": "drag-C", "text": "C"},
+          {"id": "drag-B", "text": "B"}
+        ],
+        "targets": [
+          {"id": "drop-b", "text": "b", "matches": "drag-B"},
+          {"id": "drop-c", "text": "c", "matches": "drag-C"}
+        ]
       }
     ]
   },
@@ -497,129 +118,40 @@
     "id": "english_3_s4",
     "age_group": 3,
     "subject": "english",
-    "title_ar": "الحروف U - Z",
-    "title_en": "Letters U - Z",
-    "instructions_ar": "اختر الحرف الأخير الصحيح في المجموعات! ☂️🍉🦓",
-    "instructions_en": "Choose the correct starting letter! ☂️🍉🦓",
+    "title_ar": "حرف D",
+    "title_en": "Letter D",
+    "instructions_ar": "هيا نلعب مع الكلب اللطيف وحرف D! 🐶",
+    "instructions_en": "Let's play with the friendly dog and letter D! 🐶",
     "questions": [
       {
-        "question": "Which letter matches Umbrella? ☂️",
-        "options": ["U", "V", "W"],
-        "correct": "U"
+        "type": "multiple-choice",
+        "question": "Click the capital letter D!",
+        "options": ["C", "B", "D"],
+        "correct": "D"
       },
       {
-        "question": "Which letter matches Watermelon? 🍉",
-        "options": ["W", "X", "Y"],
-        "correct": "W"
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Dog",
+        "options": [
+          {"text": "Cat", "image": "assets/images/cat.png"},
+          {"text": "Dog", "image": "assets/images/dog.png"}
+        ],
+        "correct": "Dog"
       },
       {
-        "question": "Which letter matches Zebra? 🦓",
-        "options": ["X", "Y", "Z"],
-        "correct": "Z"
-      }
-    ]
-  },
-  "english_5_s1": {
-    "id": "english_5_s1",
-    "age_group": 5,
-    "subject": "english",
-    "title_ar": "الصوتيات والحروف المتحركة",
-    "title_en": "Phonics & Short Vowels",
-    "instructions_ar": "اختر الحرف المتحرك الناقص لتكمل الكلمة! 🐱🐷🐞",
-    "instructions_en": "Choose the missing short vowel to complete the word! 🐱🐷🐞",
-    "questions": [
-      {
-        "question": "Fill in the missing letter for C_T (Cat) 🐱",
-        "options": ["a", "e", "i"],
-        "correct": "a"
-      },
-      {
-        "question": "Fill in the missing letter for P_G (Pig) 🐷",
-        "options": ["u", "e", "i"],
-        "correct": "i"
-      },
-      {
-        "question": "Fill in the missing letter for B_G (Bug) 🐞",
-        "options": ["u", "o", "a"],
-        "correct": "u"
-      }
-    ]
-  },
-  "english_5_s2": {
-    "id": "english_5_s2",
-    "age_group": 5,
-    "subject": "english",
-    "title_ar": "الكلمات البصرية البسيطة",
-    "title_en": "Sight Words",
-    "instructions_ar": "اختر الكلمة المناسبة لتكملة الجملة! ⚽️🐶📖",
-    "instructions_en": "Choose the correct word to complete the sentence! ⚽️🐶📖",
-    "questions": [
-      {
-        "question": "Complete the sentence: ____ ball is red. 🔴⚽️",
-        "options": ["The", "She", "He"],
-        "correct": "The"
-      },
-      {
-        "question": "Complete the sentence: Where ____ the dog? 🐶❓",
-        "options": ["is", "in", "on"],
-        "correct": "is"
-      },
-      {
-        "question": "Complete the sentence: The book is ____ the table. 📖 table",
-        "options": ["on", "he", "she"],
-        "correct": "on"
-      }
-    ]
-  },
-  "english_5_s3": {
-    "id": "english_5_s3",
-    "age_group": 5,
-    "subject": "english",
-    "title_ar": "مفردات الألوان والحيوانات",
-    "title_en": "Color & Animal Vocabulary",
-    "instructions_ar": "انظر للصورة واختر الكلمة المطابقة لها! 🦁🍏🐘",
-    "instructions_en": "Look at the picture and choose the matching word! 🦁🍏🐘",
-    "questions": [
-      {
-        "question": "What animal is this? 🦁",
-        "options": ["Lion", "Monkey", "Dog"],
-        "correct": "Lion"
-      },
-      {
-        "question": "What color is this apple? 🍏",
-        "options": ["Green", "Red", "Blue"],
-        "correct": "Green"
-      },
-      {
-        "question": "What animal is this? 🐘",
-        "options": ["Elephant", "Cat", "Rabbit"],
-        "correct": "Elephant"
-      }
-    ]
-  },
-  "english_5_s4": {
-    "id": "english_5_s4",
-    "age_group": 5,
-    "subject": "english",
-    "title_ar": "قراءة الجمل القصيرة",
-    "title_en": "Reading Simple Sentences",
-    "instructions_ar": "اختر الجملة الصحيحة المطابقة للصورة! 🐱👦🔴",
-    "instructions_en": "Choose the correct sentence that matches the picture! 🐱👦🔴",
-    "questions": [
-      {
-        "question": "Which sentence matches the picture? 🐱 sitting on a mat",
-        "options": ["The cat is on the mat.", "The dog is big.", "A hot sun."],
-        "correct": "The cat is on the mat."
-      },
-      {
-        "question": "Which sentence matches the picture? 👦 running fast",
-        "options": ["The boy can run.", "A fat cat.", "A red box."],
-        "correct": "The boy can run."
-      },
-      {
-        "question": "Which sentence matches the picture? 🔴 a red box",
-        "options": ["The box is red.", "The pig is fat.", "A sad dog."],
-        "correct": "The box is red."
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {"id": "drag-D", "text": "D"},
+          {"id": "drag-C", "text": "C"},
+          {"id": "drag-A", "text": "A"}
+        ],
+        "targets": [
+          {"id": "drop-a", "text": "a", "matches": "drag-A"},
+          {"id": "drop-c", "text": "c", "matches": "drag-C"},
+          {"id": "drop-d", "text": "d", "matches": "drag-D"}
+        ]
       }
     ]
   }

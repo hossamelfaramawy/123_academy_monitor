@@ -35,4 +35,4 @@ jobs:
         TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
         TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
         TWILIO_WHATSAPP_SENDER: ${{ secrets.TWILIO_WHATSAPP_SENDER }}
-      run: python send_weekly_exams.py
+      run: python twilio_cloud_dispatcher.py

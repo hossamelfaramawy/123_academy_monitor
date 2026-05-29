@@ -34,8 +34,8 @@
         }
 
         .container {
-            width: 90%;
-            max-width: 600px;
+            width: 95%;
+            max-width: 650px;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -44,7 +44,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 30px;
-            padding: 40px 30px;
+            padding: 40px 25px;
             text-align: center;
             box-shadow: var(--card-shadow);
             border: 8px solid #ffffff;
@@ -67,6 +67,7 @@
             font-size: 16px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             letter-spacing: 0.5px;
+            white-space: nowrap;
         }
 
         /* Progress Bar */
@@ -88,7 +89,6 @@
             transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Elements styling */
         h1, h2, h3 {
             margin-top: 10px;
             color: #334155;
@@ -96,9 +96,9 @@
         }
 
         h2.question-text {
-            font-size: 28px;
-            line-height: 1.5;
-            margin: 30px 0;
+            font-size: 24px;
+            line-height: 1.4;
+            margin: 20px 0;
             color: #1e293b;
         }
 
@@ -109,75 +109,7 @@
             font-weight: 700;
         }
 
-        /* Buttons and Interactive Elements */
-        .options-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .btn-option {
-            background-color: #ffffff;
-            color: #334155;
-            border: 4px solid #e2e8f0;
-            border-radius: 24px;
-            padding: 18px 24px;
-            font-size: 22px;
-            font-weight: bold;
-            font-family: inherit;
-            cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 6px 0 #e2e8f0;
-            position: relative;
-            top: 0;
-            outline: none;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        .btn-option:hover {
-            transform: translateY(-2px);
-            border-color: #cbd5e1;
-            box-shadow: 0 8px 0 #cbd5e1;
-        }
-
-        .btn-option:active {
-            transform: translateY(4px);
-            box-shadow: 0 2px 0 #cbd5e1;
-        }
-
-        /* Color profiles based on subject */
-        .math-theme .btn-option {
-            border-color: #ffe082;
-            box-shadow: 0 6px 0 #ffd54f;
-        }
-        .math-theme .btn-option:hover {
-            background-color: #fffde7;
-            border-color: #ffd54f;
-        }
-        .math-theme .progress-bar { background-color: var(--primary-math); }
-
-        .arabic-theme .btn-option {
-            border-color: #c8e6c9;
-            box-shadow: 0 6px 0 #a5d6a7;
-        }
-        .arabic-theme .btn-option:hover {
-            background-color: #e8f5e9;
-            border-color: #a5d6a7;
-        }
-        .arabic-theme .progress-bar { background-color: var(--primary-arabic); }
-
-        .english-theme .btn-option {
-            border-color: #bbdefb;
-            box-shadow: 0 6px 0 #90caf9;
-        }
-        .english-theme .btn-option:hover {
-            background-color: #e3f2fd;
-            border-color: #90caf9;
-        }
-        .english-theme .progress-bar { background-color: var(--primary-english); }
-
+        /* General Buttons */
         .btn-action {
             background: #ff6b6b;
             color: white;
@@ -197,19 +129,177 @@
             background: #ff5252;
         }
 
-        /* Success & Fail animations */
-        .celebration-emoji {
-            font-size: 80px;
-            animation: bounce 1s infinite alternate;
+        /* Option Grid (Multiple Choice / Audio Choice) */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .options-grid.two-columns {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .btn-option {
+            background-color: #ffffff;
+            color: #334155;
+            border: 4px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 15px 20px;
+            font-size: 22px;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 0 #e2e8f0;
+            position: relative;
+            top: 0;
+            outline: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-option img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            pointer-events: none;
+            border-radius: 12px;
+        }
+
+        .btn-option:hover {
+            transform: translateY(-2px);
+            border-color: #cbd5e1;
+            box-shadow: 0 8px 0 #cbd5e1;
+        }
+
+        .btn-option:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #cbd5e1;
+        }
+
+        /* Audio Question UI */
+        .audio-button-container {
             margin: 20px 0;
+            display: flex;
+            justify-content: center;
         }
 
-        @keyframes bounce {
-            from { transform: translateY(0) scale(1); }
-            to { transform: translateY(-15px) scale(1.05); }
+        .btn-audio {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ff7675;
+            border: 6px solid #ffffff;
+            box-shadow: 0 10px 20px rgba(255, 118, 117, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            transition: all 0.2s ease;
+            outline: none;
         }
 
-        /* Confetti Canvas */
+        .btn-audio:hover {
+            transform: scale(1.1);
+        }
+
+        .btn-audio:active {
+            transform: scale(0.95);
+        }
+
+        /* Drag & Drop Playground */
+        .drag-playground {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 30px;
+            min-height: 250px;
+            gap: 20px;
+            position: relative;
+        }
+
+        .drag-column, .drop-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 45%;
+        }
+
+        .drag-item {
+            background-color: #ffffff;
+            color: #2c3e50;
+            border: 4px solid #90caf9;
+            border-radius: 20px;
+            padding: 20px;
+            font-size: 32px;
+            font-weight: 900;
+            box-shadow: 0 6px 0 #90caf9;
+            cursor: grab;
+            user-select: none;
+            touch-action: none;
+            position: relative;
+            z-index: 100;
+            text-align: center;
+            transition: transform 0.1s ease;
+        }
+
+        .drag-item.dragging {
+            cursor: grabbing;
+            opacity: 0.8;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+        }
+
+        .drop-target {
+            background-color: #f8fafc;
+            border: 4px dashed #94a3b8;
+            color: #64748b;
+            border-radius: 20px;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: 800;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .drop-target.hovered {
+            background-color: #f1f5f9;
+            border-color: #3b82f6;
+            transform: scale(1.02);
+        }
+
+        .drop-target.matched {
+            background-color: #e8f5e9;
+            border: 4px solid #4caf50;
+            color: #2e7d32;
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+        }
+
+        /* Color profiles based on subject */
+        .math-theme .btn-option { border-color: #ffe082; box-shadow: 0 6px 0 #ffd54f; }
+        .math-theme .btn-option:hover { background-color: #fffde7; border-color: #ffd54f; }
+        .math-theme .progress-bar { background-color: var(--primary-math); }
+
+        .arabic-theme .btn-option { border-color: #c8e6c9; box-shadow: 0 6px 0 #a5d6a7; }
+        .arabic-theme .btn-option:hover { background-color: #e8f5e9; border-color: #a5d6a7; }
+        .arabic-theme .progress-bar { background-color: var(--primary-arabic); }
+
+        .english-theme .btn-option { border-color: #bbdefb; box-shadow: 0 6px 0 #90caf9; }
+        .english-theme .btn-option:hover { background-color: #e3f2fd; border-color: #90caf9; }
+        .english-theme .progress-bar { background-color: var(--primary-english); }
+
+        /* Celebration Confetti */
         #confetti-canvas {
             position: absolute;
             top: 0;
@@ -232,28 +322,23 @@
         }
 
         /* RTL/LTR Dynamic Classes */
-        .ltr-layout {
-            direction: ltr;
-            text-align: left;
-        }
-        .ltr-layout .badge-ribbon {
-            direction: ltr;
-        }
+        .ltr-layout { direction: ltr; text-align: left; }
+        .ltr-layout .badge-ribbon { direction: ltr; }
     </style>
 </head>
-<body class="math-theme">
+<body class="english-theme">
 
 <div class="container">
     <div class="card" id="main-card">
         <canvas id="confetti-canvas"></canvas>
-        <div class="badge-ribbon" id="badge-title">جاري التحميل...</div>
+        <div class="badge-ribbon" id="badge-title">Loading...</div>
         
         <!-- WELCOME SCREEN -->
         <div id="welcome-screen">
-            <h1 style="font-size: 32px; margin-top: 40px;">مرحباً بك في تحدي الأذكياء! 🌟</h1>
-            <div id="student-info" class="student-welcome">جاري تحميل بيانات الطالب...</div>
+            <h1 style="font-size: 30px; margin-top: 40px;" id="welcome-title">Loading...</h1>
+            <div id="student-info" class="student-welcome">Loading...</div>
             <p id="welcome-instructions" class="instructions" style="margin-top: 20px;"></p>
-            <button class="btn-action" id="btn-start" onclick="startQuiz()">ابدأ اللعبة الآن 🚀</button>
+            <button class="btn-action" id="btn-start" onclick="startQuiz()">Start 🚀</button>
         </div>
 
         <!-- QUIZ SCREEN -->
@@ -261,28 +346,29 @@
             <div class="progress-container">
                 <div class="progress-bar" id="progress-indicator"></div>
             </div>
-            <div id="progress-text" style="font-size: 14px; font-weight: bold; color: #64748b;">السؤال 1 من 3</div>
+            <div id="progress-text" style="font-size: 14px; font-weight: bold; color: #64748b;">Question 1 of 5</div>
             
-            <h2 class="question-text" id="question-label">كم عدد البالونات؟ 🎈🎈</h2>
-            <div class="options-grid" id="options-box">
-                <!-- Dynamic Buttons will go here -->
+            <h2 class="question-text" id="question-label">Question Text</h2>
+            
+            <!-- Dynamic Work Area -->
+            <div id="quiz-work-area">
+                <!-- Question types will render inside this container -->
             </div>
         </div>
 
         <!-- END SCREEN -->
         <div id="end-screen" style="display: none;">
             <div class="celebration-emoji" id="end-emoji">🎉</div>
-            <h1 id="end-title">عمل رائع!</h1>
-            <p class="instructions" id="end-message">لقد أكملت التحدي بنجاح!</p>
-            <div id="webhook-status" style="font-size: 14px; color: #94a3b8; margin-top: 10px;">جاري حفظ النتيجة... 💾</div>
+            <h1 id="end-title">Excellent!</h1>
+            <p class="instructions" id="end-message">Quiz completed!</p>
+            <div id="webhook-status" style="font-size: 14px; color: #94a3b8; margin-top: 10px;">Saving result... 💾</div>
         </div>
     </div>
 </div>
 
 <script>
-    // 1. Setup Audio Synthesis (Web Audio API)
+    // 1. Setup Audio Synthesis (Web Audio API for effects)
     let audioCtx = null;
-
     function initAudio() {
         if (!audioCtx) {
             audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -296,35 +382,30 @@
         try {
             initAudio();
             if (!audioCtx) return;
-
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
             osc.connect(gain);
             gain.connect(audioCtx.destination);
-
             const now = audioCtx.currentTime;
 
             if (type === 'correct') {
-                // Rising pleasant sound
                 osc.type = 'triangle';
-                osc.frequency.setValueAtTime(440, now); // A4
-                osc.frequency.exponentialRampToValueAtTime(880, now + 0.2); // A5
+                osc.frequency.setValueAtTime(440, now);
+                osc.frequency.exponentialRampToValueAtTime(880, now + 0.2);
                 gain.gain.setValueAtTime(0.1, now);
                 gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
                 osc.start(now);
                 osc.stop(now + 0.35);
             } else if (type === 'wrong') {
-                // Descending sad buzzer
                 osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(220, now); // A3
-                osc.frequency.linearRampToValueAtTime(110, now + 0.3); // A2
+                osc.frequency.setValueAtTime(220, now);
+                osc.frequency.linearRampToValueAtTime(110, now + 0.3);
                 gain.gain.setValueAtTime(0.1, now);
                 gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
                 osc.start(now);
                 osc.stop(now + 0.3);
             } else if (type === 'victory') {
-                // Happy fanfare
-                const notes = [261.63, 329.63, 392.00, 523.25]; // C4, E4, G4, C5
+                const notes = [261.63, 329.63, 392.00, 523.25];
                 notes.forEach((freq, index) => {
                     const oscNote = audioCtx.createOscillator();
                     const gainNote = audioCtx.createGain();
@@ -340,6 +421,19 @@
             }
         } catch (e) {
             console.warn('Audio Context error: ', e);
+        }
+    }
+
+    // Web Speech API for Listen & Answer pronunciation
+    function speakText(text, lang = 'en-US') {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel(); // stop current speech
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            utterance.rate = 0.75; // clear and slow for children
+            window.speechSynthesis.speak(utterance);
+        } else {
+            console.warn("Speech Synthesis API not supported in this browser.");
         }
     }
 
@@ -397,7 +491,6 @@
         for (let i = particles.length - 1; i >= 0; i--) {
             particles[i].update();
             particles[i].draw();
-            // Remove particles below canvas
             if (particles[i].y > canvas.height) {
                 particles.splice(i, 1);
             }
@@ -412,11 +505,15 @@
     // 3. Quiz Game Logic
     const urlParams = new URLSearchParams(window.location.search);
     const studentId = urlParams.get('student_id') || "test_user";
-    const skillId = urlParams.get('skill') || "math_3_s1";
+    const skillId = urlParams.get('skill') || "english_3_s1";
     const studentName = urlParams.get('student_name') || "طالبنا المميز";
 
+    // Sequential curriculum list for English age 3 spaced repetition
+    const english3Sequence = ["english_3_s1", "english_3_s2", "english_3_s3", "english_3_s4"];
+    
     let curriculum = {};
-    let quizData = null;
+    let activeLevelData = null;
+    let selectedQuizQuestions = [];
     let currentQuestionIndex = 0;
 
     // Load curriculum.json
@@ -424,57 +521,88 @@
         .then(response => response.json())
         .then(data => {
             curriculum = data;
-            quizData = curriculum[skillId];
-            if (!quizData) {
-                // Fallback to math_3_s1
-                quizData = curriculum["math_3_s1"];
-            }
+            activeLevelData = curriculum[skillId] || curriculum["english_3_s1"];
             initApp();
+            generateSpacedRepetitionQuiz();
         })
         .catch(err => {
             console.error('Failed to load curriculum:', err);
-            document.getElementById('badge-title').innerText = 'خطأ في التحميل!';
-            document.getElementById('student-info').innerText = 'لم نتمكن من العثور على الأسئلة.';
+            document.getElementById('badge-title').innerText = 'Error!';
+            document.getElementById('student-info').innerText = 'Could not load the curriculum questions.';
         });
 
     function initApp() {
-        // Apply themes
-        const bodyClass = document.body.classList;
-        bodyClass.remove('math-theme');
-        
-        const subject = quizData.subject;
+        const subject = activeLevelData.subject;
         const isEnglish = (subject === 'english');
 
-        // Apply visual theme
+        // Apply theme backgrounds
+        document.body.className = '';
         document.body.classList.add(subject + '-theme');
-        
-        // Theme backgrounds
         if (subject === 'math') document.body.style.background = 'var(--bg-math)';
         else if (subject === 'arabic') document.body.style.background = 'var(--bg-arabic)';
         else if (subject === 'english') document.body.style.background = 'var(--bg-english)';
 
-        // Adjust language layout direction (LTR for English quiz, RTL for others)
+        // Adjust language layout
         if (isEnglish) {
             document.documentElement.dir = 'ltr';
             document.documentElement.lang = 'en';
             document.getElementById('main-card').classList.add('ltr-layout');
             
-            // Text adjustments
-            document.getElementById('badge-title').innerText = `Level: ${quizData.title_en}`;
+            document.getElementById('badge-title').innerText = `Level: ${activeLevelData.title_en}`;
+            document.getElementById('welcome-title').innerText = "Welcome to the Quiz Challenge! 🌟";
             document.getElementById('student-info').innerText = `Welcome, ${studentName}! ⭐`;
-            document.getElementById('welcome-instructions').innerText = quizData.instructions_en;
+            document.getElementById('welcome-instructions').innerText = activeLevelData.instructions_en;
             document.getElementById('btn-start').innerText = "Start the Game! 🚀";
         } else {
             document.documentElement.dir = 'rtl';
             document.documentElement.lang = 'ar';
             document.getElementById('main-card').classList.remove('ltr-layout');
 
-            // Text adjustments
-            document.getElementById('badge-title').innerText = `${quizData.title_ar} (عمر ${quizData.age_group} سنوات)`;
+            document.getElementById('badge-title').innerText = `${activeLevelData.title_ar} (عمر ${activeLevelData.age_group} سنوات)`;
+            document.getElementById('welcome-title').innerText = "مرحباً بك في تحدي الأذكياء! 🌟";
             document.getElementById('student-info').innerText = `مرحباً بك يا ${studentName}! ⭐`;
-            document.getElementById('welcome-instructions').innerText = quizData.instructions_ar;
+            document.getElementById('welcome-instructions').innerText = activeLevelData.instructions_ar;
             document.getElementById('btn-start').innerText = "ابدأ اللعبة الآن 🚀";
         }
+    }
+
+    // 4. Generate Spaced Repetition Quiz (3 new questions + 2 past review questions)
+    function generateSpacedRepetitionQuiz() {
+        const currentLevelIndex = english3Sequence.indexOf(skillId);
+        
+        // If the level is not found, or it's the very first week (no review possible yet)
+        if (currentLevelIndex <= 0) {
+            // Load all 3 questions from current level
+            selectedQuizQuestions = [...activeLevelData.questions];
+            return;
+        }
+
+        // 1. Get 3 questions from current level
+        const currentQuestions = shuffleArray([...activeLevelData.questions]).slice(0, 3);
+
+        // 2. Gather all questions from all PRECEDING levels in the sequence
+        let pastQuestionsPool = [];
+        for (let i = 0; i < currentLevelIndex; i++) {
+            const pastLevelId = english3Sequence[i];
+            if (curriculum[pastLevelId]) {
+                pastQuestionsPool = pastQuestionsPool.concat(curriculum[pastLevelId].questions);
+            }
+        }
+
+        // 3. Select 2 random review questions
+        const reviewQuestions = shuffleArray(pastQuestionsPool).slice(0, 2);
+
+        // 4. Combine and shuffle the 5 total questions
+        selectedQuizQuestions = shuffleArray(currentQuestions.concat(reviewQuestions));
+        console.log(`Generated spaced-rep quiz. New: ${currentQuestions.length}, Review: ${reviewQuestions.length}`);
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
     }
 
     function startQuiz() {
@@ -484,45 +612,277 @@
         loadQuestion();
     }
 
+    // 5. Load and Render Question Types
     function loadQuestion() {
-        const isEnglish = (quizData.subject === 'english');
-        const q = quizData.questions[currentQuestionIndex];
+        const isEnglish = (activeLevelData.subject === 'english');
+        const q = selectedQuizQuestions[currentQuestionIndex];
         
         // Update Progress Bar
-        const progressPercent = (currentQuestionIndex / quizData.questions.length) * 100;
+        const progressPercent = (currentQuestionIndex / selectedQuizQuestions.length) * 100;
         document.getElementById('progress-indicator').style.width = progressPercent + '%';
         
         // Update Progress Text
         if (isEnglish) {
-            document.getElementById('progress-text').innerText = `Question ${currentQuestionIndex + 1} of ${quizData.questions.length}`;
+            document.getElementById('progress-text').innerText = `Question ${currentQuestionIndex + 1} of ${selectedQuizQuestions.length}`;
         } else {
-            document.getElementById('progress-text').innerText = `السؤال ${currentQuestionIndex + 1} من ${quizData.questions.length}`;
+            document.getElementById('progress-text').innerText = `السؤال ${currentQuestionIndex + 1} من ${selectedQuizQuestions.length}`;
         }
 
         // Load Question Text
         document.getElementById('question-label').innerText = q.question;
 
-        // Render Options Buttons
-        const optionsBox = document.getElementById('options-box');
-        optionsBox.innerHTML = '';
+        // Render based on Question Type
+        const workArea = document.getElementById('quiz-work-area');
+        workArea.innerHTML = '';
 
-        q.options.forEach(option => {
-            const button = document.createElement('button');
-            button.className = 'btn-option';
-            button.innerText = option;
-            button.onclick = () => selectOption(option, q.correct);
-            optionsBox.appendChild(button);
-        });
+        if (q.type === 'multiple-choice') {
+            renderMultipleChoice(q, workArea);
+        } else if (q.type === 'audio-choice') {
+            renderAudioChoice(q, workArea);
+        } else if (q.type === 'drag-and-drop') {
+            renderDragAndDrop(q, workArea);
+        }
     }
 
-    function selectOption(selected, correct) {
+    // Multiple Choice
+    function renderMultipleChoice(q, container) {
+        const grid = document.createElement('div');
+        grid.className = 'options-grid';
+        
+        q.options.forEach(opt => {
+            const button = document.createElement('button');
+            button.className = 'btn-option';
+            button.innerText = opt;
+            button.onclick = () => selectAnswer(opt, q.correct);
+            grid.appendChild(button);
+        });
+        container.appendChild(grid);
+    }
+
+    // Listen & Answer
+    function renderAudioChoice(q, container) {
+        // Speaker Button
+        const audioContainer = document.createElement('div');
+        audioContainer.className = 'audio-button-container';
+        
+        const speakBtn = document.createElement('button');
+        speakBtn.className = 'btn-audio';
+        speakBtn.innerHTML = '🔊';
+        speakBtn.onclick = () => speakText(q.speak_text);
+        audioContainer.appendChild(speakBtn);
+        container.appendChild(audioContainer);
+
+        // Auto-play sound immediately when question loads
+        setTimeout(() => speakText(q.speak_text), 500);
+
+        // Render Options Grid (supporting Cartoon Images!)
+        const grid = document.createElement('div');
+        grid.className = 'options-grid two-columns';
+
+        q.options.forEach(opt => {
+            const button = document.createElement('button');
+            button.className = 'btn-option';
+            
+            // If option contains an image path
+            if (opt.image) {
+                const img = document.createElement('img');
+                img.src = opt.image;
+                img.alt = opt.text;
+                button.appendChild(img);
+            }
+            
+            const label = document.createElement('span');
+            label.innerText = opt.text;
+            button.appendChild(label);
+            
+            button.onclick = () => selectAnswer(opt.text, q.correct);
+            grid.appendChild(button);
+        });
+        container.appendChild(grid);
+    }
+
+    // Native Drag and Drop (optimized for Mouse & Swipe touch screens)
+    function renderDragAndDrop(q, container) {
+        const playground = document.createElement('div');
+        playground.className = 'drag-playground';
+
+        const dragCol = document.createElement('div');
+        dragCol.className = 'drag-column';
+        const dropCol = document.createElement('div');
+        dropCol.className = 'drop-column';
+
+        // Render items to drag
+        q.items.forEach(item => {
+            const el = document.createElement('div');
+            el.className = 'drag-item';
+            el.id = item.id;
+            el.innerText = item.text;
+            dragCol.appendChild(el);
+            
+            // Setup Drag Event Listeners
+            setupDragListeners(el, q);
+        });
+
+        // Render drop targets
+        q.targets.forEach(target => {
+            const el = document.createElement('div');
+            el.className = 'drop-target';
+            el.id = target.id;
+            el.innerText = target.text;
+            el.dataset.matches = target.matches;
+            dropCol.appendChild(el);
+        });
+
+        playground.appendChild(dragCol);
+        playground.appendChild(dropCol);
+        container.appendChild(playground);
+    }
+
+    // Native Mouse & Touch Drag and Drop script
+    function setupDragListeners(el, q) {
+        let active = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+
+        el.addEventListener("touchstart", dragStart, { passive: false });
+        el.addEventListener("touchend", dragEnd, { passive: false });
+        el.addEventListener("touchmove", drag, { passive: false });
+
+        el.addEventListener("mousedown", dragStart);
+        el.addEventListener("mouseup", dragEnd);
+        el.addEventListener("mousemove", drag);
+
+        function dragStart(e) {
+            if (el.classList.contains('matched')) return;
+
+            if (e.type === "touchstart") {
+                initialX = e.touches[0].clientX - xOffset;
+                initialY = e.touches[0].clientY - yOffset;
+            } else {
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+            }
+
+            active = true;
+            el.classList.add('dragging');
+        }
+
+        function drag(e) {
+            if (active) {
+                e.preventDefault();
+                
+                if (e.type === "touchmove") {
+                    currentX = e.touches[0].clientX - initialX;
+                    currentY = e.touches[0].clientY - initialY;
+                } else {
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                }
+
+                xOffset = currentX;
+                yOffset = currentY;
+
+                setTranslate(currentX, currentY, el);
+                
+                // Check if hovering over any targets
+                const rect = el.getBoundingClientRect();
+                const hoverEl = document.elementFromPoint(rect.left + rect.width/2, rect.top + rect.height/2);
+                
+                document.querySelectorAll('.drop-target').forEach(t => t.classList.remove('hovered'));
+                if (hoverEl && hoverEl.classList.contains('drop-target')) {
+                    hoverEl.classList.add('hovered');
+                }
+            }
+        }
+
+        function dragEnd(e) {
+            if (!active) return;
+            active = false;
+            el.classList.remove('dragging');
+
+            const rect = el.getBoundingClientRect();
+            // Get element at center of the dragged card
+            const dropTarget = getOverlappingDropTarget(rect);
+
+            if (dropTarget && !dropTarget.classList.contains('matched')) {
+                const targetMatches = dropTarget.dataset.matches;
+                
+                if (targetMatches === el.id) {
+                    // Correct Match!
+                    playSound('correct');
+                    dropTarget.classList.remove('hovered');
+                    dropTarget.classList.add('matched');
+                    dropTarget.innerText = `${el.innerText} ↔ ${dropTarget.innerText}`;
+                    el.remove(); // Remove original block
+                    
+                    checkDragAndDropCompletion();
+                    return;
+                }
+            }
+
+            // Wrong drop / missed: animate back to origin
+            playSound('wrong');
+            document.querySelectorAll('.drop-target').forEach(t => t.classList.remove('hovered'));
+            resetItemPosition();
+        }
+
+        function getOverlappingDropTarget(rect) {
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            let matchedTarget = null;
+            document.querySelectorAll('.drop-target').forEach(target => {
+                const tRect = target.getBoundingClientRect();
+                if (centerX >= tRect.left && centerX <= tRect.right &&
+                    centerY >= tRect.top && centerY <= tRect.bottom) {
+                    matchedTarget = target;
+                }
+            });
+            return matchedTarget;
+        }
+
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+        }
+
+        function resetItemPosition() {
+            el.style.transition = 'transform 0.3s ease';
+            el.style.transform = 'translate3d(0px, 0px, 0)';
+            xOffset = 0;
+            yOffset = 0;
+            setTimeout(() => { el.style.transition = ''; }, 300);
+        }
+    }
+
+    function checkDragAndDropCompletion() {
+        const totalTargets = document.querySelectorAll('.drop-target').length;
+        const matchedTargets = document.querySelectorAll('.drop-target.matched').length;
+
+        if (totalTargets === matchedTargets) {
+            // Completed the drag-and-drop question successfully!
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < selectedQuizQuestions.length) {
+                    loadQuestion();
+                } else {
+                    endQuiz(true); // Completed the entire quiz
+                }
+            }, 1200);
+        }
+    }
+
+    function selectAnswer(selected, correct) {
         if (selected === correct) {
             playSound('correct');
             currentQuestionIndex++;
-            if (currentQuestionIndex < quizData.questions.length) {
+            if (currentQuestionIndex < selectedQuizQuestions.length) {
                 loadQuestion();
             } else {
-                endQuiz(true); // Passed!
+                endQuiz(true); // Completed the entire quiz
             }
         } else {
             playSound('wrong');
@@ -530,13 +890,12 @@
         }
     }
 
+    // 6. Complete and submit results
     function endQuiz(isPassed) {
         document.getElementById('quiz-screen').style.display = 'none';
         document.getElementById('end-screen').style.display = 'block';
         
-        const isEnglish = (quizData.subject === 'english');
-
-        // Set status indicators
+        const isEnglish = (activeLevelData.subject === 'english');
         const endEmoji = document.getElementById('end-emoji');
         const endTitle = document.getElementById('end-title');
         const endMessage = document.getElementById('end-message');
@@ -546,7 +905,6 @@
             playSound('victory');
             spawnConfetti();
             endEmoji.innerText = "🏆";
-            
             if (isEnglish) {
                 endTitle.innerText = "Super Job!";
                 endMessage.innerText = "You answered all questions correctly! You are a superstar! ⭐";
@@ -587,22 +945,14 @@
         })
         .then(response => {
             if (response.ok) {
-                if (isEnglish) {
-                    statusLabel.innerText = "Result saved successfully! 🎉";
-                } else {
-                    statusLabel.innerText = "تم حفظ النتيجة بنجاح! 🎉";
-                }
+                statusLabel.innerText = isEnglish ? "Result saved successfully! 🎉" : "تم حفظ النتيجة بنجاح! 🎉";
             } else {
                 throw new Error("Server error");
             }
         })
         .catch(err => {
             console.error('Failed to report score:', err);
-            if (isEnglish) {
-                statusLabel.innerText = "Saved offline. Let your teacher know! ❤️";
-            } else {
-                statusLabel.innerText = "تم التسجيل بنجاح! شكراً لك ❤️";
-            }
+            statusLabel.innerText = isEnglish ? "Saved offline. Let your teacher know! ❤️" : "تم التسجيل بنجاح! شكراً لك ❤️";
         });
     }
 </script>

@@ -1,13 +1,52 @@
 import os
 import json
 import datetime
+import sys
 from urllib.parse import quote_plus
 import gspread
 from google.oauth2.service_account import Credentials
 from twilio.rest import Client
 
+def resolve_skill_id(sheet_val, subject, age_group, curriculum):
+    """Resolves a friendly sheet value like 'Letter B', 'B', 'b' to curriculum ID like 'english_3_s2'."""
+    val_clean = sheet_val.strip().lower()
+    if not val_clean:
+        return None
+        
+    # 1. Direct ID match
+    if val_clean in curriculum:
+        return val_clean
+        
+    # 2. Direct title match (case insensitive)
+    for skill_id, skill in curriculum.items():
+        if skill.get("subject") == subject and skill.get("age_group") == age_group:
+            if val_clean == skill.get("title_en", "").strip().lower():
+                return skill_id
+            if val_clean == skill.get("title_ar", "").strip().lower():
+                return skill_id
+                
+    # 3. Clean up prefix like "letter ", "حرف " to match just the core value (e.g. "b", "c")
+    core_val = val_clean.replace("letter", "").replace("حرف", "").strip()
+    
+    # 4. Try matching the core value
+    for skill_id, skill in curriculum.items():
+        if skill.get("subject") == subject and skill.get("age_group") == age_group:
+            title_en_core = skill.get("title_en", "").strip().lower().replace("letter", "").replace("حرف", "").strip()
+            title_ar_core = skill.get("title_ar", "").strip().lower().replace("letter", "").replace("حرف", "").strip()
+            if core_val == title_en_core or core_val == title_ar_core:
+                return skill_id
+                
+    return None
+
 def main():
-    print("🚀 Starting 123 Academy Grid-Based Weekly Exam Dispatcher...")
+    # Check if running in dry-run mode
+    dry_run = "--dry-run" in sys.argv or os.environ.get("DRY_RUN", "").lower() == "true"
+    dry_run_messages = []
+
+    if dry_run:
+        print("🧪 RUNNING IN DRY-RUN (TEST) MODE - Messages will not be sent, Google Sheet will not be modified.")
+    else:
+        print("🚀 Starting 123 Academy Grid-Based Weekly Exam Dispatcher...")
 
     # 1. Load Curriculum Data
     try:
@@ -42,9 +81,11 @@ def main():
     if not github_pages_base: missing_vars.append("PAGES_BASE_URL")
     if not sheet_id: missing_vars.append("GOOGLE_SHEET_ID")
     if not service_account_json: missing_vars.append("GOOGLE_SERVICE_ACCOUNT_JSON")
-    if not twilio_sid: missing_vars.append("TWILIO_ACCOUNT_SID")
-    if not twilio_token: missing_vars.append("TWILIO_AUTH_TOKEN")
-    if not twilio_sender: missing_vars.append("TWILIO_WHATSAPP_SENDER")
+    
+    if not dry_run:
+        if not twilio_sid: missing_vars.append("TWILIO_ACCOUNT_SID")
+        if not twilio_token: missing_vars.append("TWILIO_AUTH_TOKEN")
+        if not twilio_sender: missing_vars.append("TWILIO_WHATSAPP_SENDER")
 
     if missing_vars:
         print(f"❌ Missing required environment variables: {', '.join(missing_vars)}")
@@ -93,12 +134,16 @@ def main():
         return
 
     # 4. Initialize Twilio client
-    try:
-        twilio_client = Client(twilio_sid, twilio_token)
-        print("✅ Twilio Client initialized successfully")
-    except Exception as e:
-        print(f"❌ Twilio initialization failed: {e}")
-        return
+    twilio_client = None
+    if not dry_run:
+        try:
+            twilio_client = Client(twilio_sid, twilio_token)
+            print("✅ Twilio Client initialized successfully")
+        except Exception as e:
+            print(f"❌ Twilio initialization failed: {e}")
+            return
+    else:
+        print("⏭️ Dry-run: Skipping Twilio Client initialization")
 
     # 5. Read Spreadsheet and Header Mapping
     all_records = sheet.get_all_values()
@@ -121,29 +166,21 @@ def main():
         print("Ensure general columns exist: 'Student ID', 'Student Name', 'Parent Phone', 'Age Group', 'Last Sent Date'")
         return
 
-    # Map the 12 skill columns to their 0-indexed column coordinates
+    # Map the subject Level and Status columns to their 0-indexed column coordinates
     subjects = ["math", "arabic", "english"]
-    subject_columns = {
-        "math": [],     # Stores tuples of (skill_num_1_to_4, col_index)
-        "arabic": [],
-        "english": []
-    }
-
-    # Populate subject columns mapping based on sheet headers
-    for idx, header in enumerate(headers):
-        for sub in subjects:
-            # Check if header matches e.g. "math s1" or "arabic s3"
-            if header.startswith(sub + " s"):
-                try:
-                    skill_num = int(header.split(" s")[1])
-                    subject_columns[sub].append((skill_num, idx))
-                except ValueError:
-                    pass
-
-    # Sort each subject's columns in order of S1, S2, S3, S4
+    subject_cols = {}
     for sub in subjects:
-        subject_columns[sub].sort(key=lambda x: x[0])
-        print(f"Mapped {sub.capitalize()} columns: {[f'S{n} (col {c})' for n, c in subject_columns[sub]]}")
+        try:
+            level_idx = headers.index(f"{sub} level")
+            status_idx = headers.index(f"{sub} status")
+            subject_cols[sub] = {
+                "level_idx": level_idx,
+                "status_idx": status_idx
+            }
+        except ValueError as e:
+            print(f"❌ Header structure error: {e}")
+            print(f"Ensure level & status columns exist: '{sub.capitalize()} Level', '{sub.capitalize()} Status'")
+            return
 
     # 6. Iterate through student rows and send exams
     sent_count = 0
@@ -177,36 +214,40 @@ def main():
 
         print(f"\nScanning Row {row_idx}: Student '{student_name}' (ID: {student_id}, Age: {age_group})")
 
-        # Find the first pending skill for each subject
+        # Find the pending skill for each subject using level & status pairs
         pending_skills = [] # Stores dicts with skill info
 
         for sub in subjects:
-            cols = subject_columns[sub]
-            for skill_num, col_idx in cols:
-                # If row is shorter than col_idx, treat value as empty (which implies pending)
-                status = ""
-                if col_idx < len(row):
-                    status = row[col_idx].strip().lower()
+            level_idx = subject_cols[sub]["level_idx"]
+            status_idx = subject_cols[sub]["status_idx"]
+            
+            skill_id = ""
+            if level_idx < len(row):
+                skill_id = row[level_idx].strip()
+                
+            status = ""
+            if status_idx < len(row):
+                status = row[status_idx].strip().lower()
 
-                # A skill is eligible to be sent if status is empty, "pending", "sent", or "needs_review"
-                # If status is "passed", we skip it and look at the next number (S2, S3, S4)
-                if status != "passed":
-                    # Generate the curriculum unique ID, e.g., "math_3_s1"
-                    skill_id = f"{sub}_{age_group}_s{skill_num}"
-                    
-                    if skill_id in curriculum:
-                        pending_skills.append({
-                            "subject": sub,
-                            "skill_num": skill_num,
-                            "col_idx": col_idx,
-                            "skill_id": skill_id,
-                            "curriculum_data": curriculum[skill_id]
-                        })
-                    else:
-                        print(f"  ⚠️ Warning: Skill ID '{skill_id}' not found in curriculum.json")
-                    
-                    # Break out of this subject's S1-S4 loop once we find the first incomplete skill
-                    break
+            # If Level is empty, there is no exam assigned for this subject yet
+            if not skill_id:
+                continue
+
+            # Resolve friendly name/ID to actual skill_id from curriculum
+            resolved_id = resolve_skill_id(skill_id, sub, age_group, curriculum)
+
+            # If status is not "passed" (meaning it is pending, sent, needs_review, or empty)
+            if status != "passed":
+                if resolved_id:
+                    pending_skills.append({
+                        "subject": sub,
+                        "level_idx": level_idx,
+                        "status_idx": status_idx,
+                        "skill_id": resolved_id,
+                        "curriculum_data": curriculum[resolved_id]
+                    })
+                else:
+                    print(f"  ⚠️ Warning: Could not resolve Level name '{skill_id}' to a valid skill ID in curriculum.json")
 
         if not pending_skills:
             print(f"  ℹ️ No pending skills to send for '{student_name}' (all skills are completed/passed).")
@@ -258,6 +299,15 @@ def main():
         whatsapp_recipient = f"whatsapp:{clean_phone}"
 
         # 8. Dispatch WhatsApp Message
+        if dry_run:
+            print(f"  [DRY RUN] Would send combined WhatsApp to {whatsapp_recipient}:")
+            print("-" * 40)
+            print(message_body)
+            print("-" * 40)
+            dry_run_messages.append(f"To: {student_name} ({whatsapp_recipient})\nMessage:\n{message_body}")
+            sent_count += 1
+            continue
+
         try:
             print(f"  Sending combined WhatsApp to {whatsapp_recipient} via Twilio...")
             message = twilio_client.messages.create(
@@ -269,9 +319,9 @@ def main():
             
             # Update cells to "sent" in Google Sheets
             for skill in pending_skills:
-                col_idx_1based = skill["col_idx"] + 1
-                sheet.update_cell(row_idx, col_idx_1based, "sent")
-                print(f"  ✅ Updated '{skill['subject'].capitalize()} S{skill['skill_num']}' cell to 'sent'")
+                status_col_1based = skill["status_idx"] + 1
+                sheet.update_cell(row_idx, status_col_1based, "sent")
+                print(f"  ✅ Updated '{skill['subject'].capitalize()} Status' cell to 'sent'")
             
             # Update Last Sent Date
             sheet.update_cell(row_idx, col_last_sent + 1, current_time_str)
@@ -286,6 +336,18 @@ def main():
     print(f"🏁 Dispatch Completed at {current_time_str}")
     print(f"📬 Sent: {sent_count} | ⚠️ Failed: {fail_count}")
     print("-------------------------------------------------------")
+
+    if dry_run and dry_run_messages:
+        output_file = "dry_run_output.txt"
+        try:
+            with open(output_file, "w", encoding="utf-8") as f:
+                f.write(f"=== DRY RUN ASSESSMENTS GENERATED AT {current_time_str} ===\n\n")
+                for msg in dry_run_messages:
+                    f.write(msg + "\n")
+                    f.write("=" * 60 + "\n\n")
+            print(f"\n📝 Dry-run completed! All {len(dry_run_messages)} generated messages saved to '{output_file}'.")
+        except Exception as e:
+            print(f"❌ Failed to write dry-run output to file: {e}")
 
 if __name__ == "__main__":
     main()
