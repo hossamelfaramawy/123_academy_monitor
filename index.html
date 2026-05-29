@@ -534,6 +534,8 @@
     let activeLevelData = null;
     let selectedQuizQuestions = [];
     let currentQuestionIndex = 0;
+    let score = 0;
+    let currentQuestionFirstAttempt = true;
 
     // Load dynamic subject curriculum file path
     const subject = skillId.split('_')[0] || 'english';
@@ -641,6 +643,7 @@
 
     // 5. Load and Render Question Types
     function loadQuestion() {
+        currentQuestionFirstAttempt = true;
         const isEnglish = (activeLevelData.subject === 'english');
         const q = selectedQuizQuestions[currentQuestionIndex];
         
@@ -694,7 +697,7 @@
             const button = document.createElement('button');
             button.className = 'btn-option';
             button.innerText = opt;
-            button.onclick = () => selectAnswer(opt, q.correct);
+            button.onclick = () => selectAnswer(opt, q.correct, button, grid);
             grid.appendChild(button);
         });
         container.appendChild(grid);
@@ -736,7 +739,7 @@
             label.innerText = opt.text;
             button.appendChild(label);
             
-            button.onclick = () => selectAnswer(opt.text, q.correct);
+            button.onclick = () => selectAnswer(opt.text, q.correct, button, grid);
             grid.appendChild(button);
         });
         container.appendChild(grid);
@@ -867,6 +870,7 @@
 
             // Wrong drop / missed: animate back to origin
             playSound('wrong');
+            currentQuestionFirstAttempt = false; // Made a mistake on this matching question
             document.querySelectorAll('.drop-target').forEach(t => t.classList.remove('hovered'));
             resetItemPosition();
         }
@@ -905,34 +909,86 @@
 
         if (totalTargets === matchedTargets) {
             // Completed the drag-and-drop question successfully!
+            if (currentQuestionFirstAttempt) {
+                score++;
+            }
             setTimeout(() => {
                 currentQuestionIndex++;
                 if (currentQuestionIndex < selectedQuizQuestions.length) {
                     loadQuestion();
                 } else {
-                    endQuiz(true); // Completed the entire quiz
+                    endQuiz(); // Completed the entire quiz
                 }
             }, 1200);
         }
     }
 
-    function selectAnswer(selected, correct) {
+    function selectAnswer(selected, correct, button, container) {
+        // Disable all buttons in options grid to prevent spam clicking
+        container.querySelectorAll('button').forEach(btn => {
+            btn.disabled = true;
+            btn.style.pointerEvents = 'none';
+        });
+
         if (selected === correct) {
             playSound('correct');
-            currentQuestionIndex++;
-            if (currentQuestionIndex < selectedQuizQuestions.length) {
-                loadQuestion();
-            } else {
-                endQuiz(true); // Completed the entire quiz
+            button.style.backgroundColor = '#4caf50';
+            button.style.color = '#fff';
+            button.style.borderColor = '#4caf50';
+            button.style.boxShadow = '0 6px 0 #388e3c';
+
+            if (currentQuestionFirstAttempt) {
+                score++;
             }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < selectedQuizQuestions.length) {
+                    loadQuestion();
+                } else {
+                    endQuiz();
+                }
+            }, 1000);
         } else {
             playSound('wrong');
-            endQuiz(false); // Failed / Needs Review
+            currentQuestionFirstAttempt = false;
+            button.style.backgroundColor = '#f44336';
+            button.style.color = '#fff';
+            button.style.borderColor = '#f44336';
+            button.style.boxShadow = '0 6px 0 #d32f2f';
+
+            // Highlight the correct option
+            container.querySelectorAll('button').forEach(btn => {
+                let optText = btn.innerText || "";
+                // If it's a dynamic image button, extract the span label
+                const labelSpan = btn.querySelector('span');
+                if (labelSpan) {
+                    optText = labelSpan.innerText;
+                }
+                
+                if (optText.trim() === correct.trim()) {
+                    btn.style.backgroundColor = '#4caf50';
+                    btn.style.color = '#fff';
+                    btn.style.borderColor = '#4caf50';
+                    btn.style.boxShadow = '0 6px 0 #388e3c';
+                }
+            });
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < selectedQuizQuestions.length) {
+                    loadQuestion();
+                } else {
+                    endQuiz();
+                }
+            }, 1500);
         }
     }
 
     // 6. Complete and submit results
-    function endQuiz(isPassed) {
+    function endQuiz() {
+        const isPassed = (score >= 4);
+        
         document.getElementById('quiz-screen').style.display = 'none';
         document.getElementById('end-screen').style.display = 'block';
         
@@ -942,28 +998,31 @@
         const endMessage = document.getElementById('end-message');
         const statusLabel = document.getElementById('webhook-status');
 
+        // Render final score on screen
+        const scoreDisplay = isEnglish ? `Your Score: ${score} / ${selectedQuizQuestions.length}` : `درجتك: ${score} من ${selectedQuizQuestions.length}`;
+
         if (isPassed) {
             playSound('victory');
             spawnConfetti();
             endEmoji.innerText = "🏆";
             if (isEnglish) {
                 endTitle.innerText = "Super Job!";
-                endMessage.innerText = "You answered all questions correctly! You are a superstar! ⭐";
+                endMessage.innerText = `You are a superstar! ⭐\n${scoreDisplay}`;
                 statusLabel.innerText = "Saving your awesome result...";
             } else {
                 endTitle.innerText = "عمل رائع ومتميز!";
-                endMessage.innerText = "لقد أجبت على جميع الأسئلة بشكل صحيح! أنت بطل حقيقي! ⭐";
+                endMessage.innerText = `أنت بطل حقيقي! ⭐\n${scoreDisplay}`;
                 statusLabel.innerText = "جاري حفظ النتيجة الجميلة...";
             }
         } else {
             endEmoji.innerText = "🎈";
             if (isEnglish) {
                 endTitle.innerText = "Good Try!";
-                endMessage.innerText = "Keep practicing, you will get it next time! 🌟";
+                endMessage.innerText = `Keep practicing, you will get it next time! 🌟\n${scoreDisplay}`;
                 statusLabel.innerText = "Saving result...";
             } else {
                 endTitle.innerText = "محاولة جيدة!";
-                endMessage.innerText = "استمر في التدريب، وسوف تنجح في المرة القادمة بكل تأكيد! 🌟";
+                endMessage.innerText = `استمر في التدريب، وسوف تنجح في المرة القادمة بكل تأكيد! 🌟\n${scoreDisplay}`;
                 statusLabel.innerText = "جاري حفظ النتيجة...";
             }
         }
@@ -976,6 +1035,8 @@
             student_name: studentName,
             skill_id: skillId,
             status: isPassed ? "Passed" : "Needs Review",
+            score: score,
+            total: selectedQuizQuestions.length,
             timestamp: new Date().toISOString()
         };
 
