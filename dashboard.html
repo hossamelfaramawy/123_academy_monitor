@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية 123 - لوحة متابعة البطل 📊</title>
+    <!-- Google Fonts for Cairo (Arabic) and Outfit (English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-math: linear-gradient(135deg, #ffedbc 0%, #edc453 100%);
+            --bg-arabic: linear-gradient(135deg, #baffc9 0%, #6cd68b 100%);
+            --bg-english: linear-gradient(135deg, #bae1ff 0%, #5cb3f7 100%);
+            --primary-math: #dca30f;
+            --primary-arabic: #2ca751;
+            --primary-english: #1583d8;
+            --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Cairo', 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: linear-gradient(135deg, #fef9e7 0%, #f1f5f9 100%);
+            overflow-x: hidden;
+            color: #334155;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 700px;
+            padding: 30px 10px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 35px 25px;
+            box-shadow: var(--card-shadow);
+            border: 8px solid #ffffff;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Top ribbon/badge */
+        .badge-ribbon {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff6b6b;
+            color: white;
+            font-weight: 900;
+            padding: 8px 30px;
+            border-radius: 0 0 20px 20px;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        /* Language Toggle Button */
+        .lang-toggle {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            padding: 5px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .lang-toggle:hover {
+            background: #e2e8f0;
+            transform: scale(1.05);
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+            font-weight: 900;
+            color: #1e293b;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .student-avatar {
+            font-size: 60px;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        .student-name {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .age-badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 4px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Current Levels Grid */
+        .levels-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 480px) {
+            .levels-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .subject-card {
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .subject-card.math { background: var(--bg-math); color: #7f5f00; border: 3px solid #ffca28; }
+        .subject-card.arabic { background: var(--bg-arabic); color: #1e5a2f; border: 3px solid #66bb6a; }
+        .subject-card.english { background: var(--bg-english); color: #0d47a1; border: 3px solid #42a5f5; }
+
+        .subject-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .subject-name {
+            font-weight: 800;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .subject-lvl {
+            font-size: 18px;
+            font-weight: 900;
+            margin: 8px 0;
+            word-wrap: break-word;
+        }
+
+        .subject-status {
+            font-size: 13px;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.7);
+            display: inline-block;
+        }
+
+        /* Filters */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 15px;
+        }
+
+        .btn-filter {
+            background: white;
+            border: 2px solid #e2e8f0;
+            color: #64748b;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .btn-filter:hover {
+            border-color: #cbd5e1;
+            color: #334155;
+        }
+
+        .btn-filter.active {
+            background: #ff6b6b;
+            border-color: #ff6b6b;
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .timeline-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 3px solid #ffffff;
+            z-index: 2;
+        }
+
+        .timeline-badge.math { background: #ffe082; color: #7f5f00; }
+        .timeline-badge.arabic { background: #c8e6c9; color: #1e5a2f; }
+        .timeline-badge.english { background: #bbdefb; color: #0d47a1; }
+
+        .timeline-connector {
+            position: absolute;
+            top: 44px;
+            bottom: -20px;
+            right: 20px; /* RTL default */
+            width: 4px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .timeline-item:last-child .timeline-connector {
+            display: none;
+        }
+
+        .timeline-content {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin-right: 15px; /* RTL default */
+            margin-left: 0;
+            flex-grow: 1;
+            border: 2px solid #f1f5f9;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .timeline-content:hover {
+            background: #f1f5f9;
+            transform: scale(1.01);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-weight: 800;
+            font-size: 17px;
+            color: #1e293b;
+        }
+
+        .timeline-date {
+            font-size: 12px;
+            color: #94a3b8;
+            font-weight: bold;
+        }
+
+        .timeline-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timeline-score {
+            font-size: 15px;
+            color: #475569;
+            font-weight: bold;
+        }
+
+        .timeline-status {
+            font-size: 12px;
+            font-weight: 900;
+            padding: 3px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+
+        .timeline-status.passed {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .timeline-status.failed {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        /* Loading / Empty / Error States */
+        .loading-state, .empty-state, .config-state {
+            text-align: center;
+            padding: 40px 10px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f1f5f9;
+            border-top: 5px solid #ff6b6b;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn-action {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.3);
+            transition: all 0.2s ease;
+            margin-top: 20px;
+            font-family: inherit;
+        }
+
+        .btn-action:hover {
+            transform: scale(1.05);
+            background: #ff5252;
+        }
+
+        /* LTR Layout Overrides */
+        .ltr-layout { direction: ltr; text-align: left; }
+        .ltr-layout .lang-toggle { left: 20px; right: auto; }
+        .ltr-layout .timeline-connector { left: 20px; right: auto; }
+        .ltr-layout .timeline-content { margin-left: 15px; margin-right: 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card" id="main-card">
+        <!-- Ribbon Badge -->
+        <div class="badge-ribbon" id="badge-title">لوحة المتابعة 📊</div>
+        
+        <!-- Language Toggle -->
+        <button class="lang-toggle" id="lang-btn" onclick="toggleLanguage()">English</button>
+
+        <!-- Loading State -->
+        <div id="loading-box" class="loading-state">
+            <div class="spinner"></div>
+            <h3 id="loading-msg">جاري تحميل ملف البطل... 🚀</h3>
+        </div>
+
+        <!-- Configuration Instruction State -->
+        <div id="config-box" class="config-state" style="display: none;">
+            <div style="font-size: 50px; margin-bottom: 10px;">⚙️</div>
+            <h2 id="config-title">تكوين النظام مطلوب</h2>
+            <p id="config-desc">يرجى تكوين رابط Google Apps Script Web App الخاص بك في ملف <code>dashboard.html</code> لعرض تقدم الطالب.</p>
+        </div>
+
+        <!-- Dashboard Content Screen -->
+        <div id="dashboard-content" style="display: none;">
+            
+            <!-- Student Header -->
+            <div class="header-section">
+                <div class="student-avatar" id="student-avatar">🧒</div>
+                <h1 class="student-name" id="display-name">تحميل...</h1>
+                <div class="age-badge" id="display-age">عمر ٣ سنوات</div>
+            </div>
+
+            <!-- Subject Cards -->
+            <div class="levels-grid">
+                <!-- Math -->
+                <div class="subject-card math">
+                    <div class="subject-icon">➕</div>
+                    <div class="subject-name" id="card-math-title">الرياضيات</div>
+                    <div class="subject-lvl" id="lvl-math">-</div>
+                    <div class="subject-status" id="status-math">-</div>
+                </div>
+
+                <!-- Arabic -->
+                <div class="subject-card arabic">
+                    <div class="subject-icon">✏️</div>
+                    <div class="subject-name" id="card-arabic-title">العربية</div>
+                    <div class="subject-lvl" id="lvl-arabic">-</div>
+                    <div class="subject-status" id="status-arabic">-</div>
+                </div>
+
+                <!-- English -->
+                <div class="subject-card english">
+                    <div class="subject-icon">🔤</div>
+                    <div class="subject-name" id="card-english-title">English</div>
+                    <div class="subject-lvl" id="lvl-english">-</div>
+                    <div class="subject-status" id="status-english">-</div>
+                </div>
+            </div>
+
+            <!-- Timeline Filter Bar -->
+            <h2 style="font-size: 20px; margin-bottom: 15px;" id="timeline-title">تاريخ التحديات 🏆</h2>
+            <div class="filter-bar">
+                <button class="btn-filter active" id="filter-all" onclick="filterTimeline('all')">الكل</button>
+                <button class="btn-filter" id="filter-math" onclick="filterTimeline('math')">رياضيات</button>
+                <button class="btn-filter" id="filter-arabic" onclick="filterTimeline('arabic')">عربي</button>
+                <button class="btn-filter" id="filter-english" onclick="filterTimeline('english')">English</button>
+            </div>
+
+            <!-- Historical Timeline List -->
+            <div class="timeline" id="timeline-list">
+                <!-- Dynamic timeline items insert here -->
+            </div>
+
+            <!-- Back to Quiz Button -->
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn-action" id="btn-back-quiz" onclick="goBackToQuiz()">العودة للتحدي 🚀</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // ==========================================
+    // CONFIGURATION: Paste your deployed Web App URL here
+    // ==========================================
+    const APPS_SCRIPT_URL = ""; 
+
+    // Localization strings
+    const i18n = {
+        ar: {
+            badgeTitle: "لوحة المتابعة 📊",
+            loading: "جاري تحميل ملف البطل... 🚀",
+            ageSuffix: "سنوات",
+            ageBadge: "عمر {age} {suffix}",
+            lvlMath: "الرياضيات",
+            lvlArabic: "اللغة العربية",
+            lvlEnglish: "English",
+            timelineTitle: "تاريخ التحديات 🏆",
+            filterAll: "الكل",
+            filterMath: "رياضيات",
+            filterArabic: "عربي",
+            filterEnglish: "English",
+            btnBack: "العودة للتحدي 🚀",
+            statusPassed: "ناجح",
+            statusReview: "مراجعة",
+            statusPending: "قيد الانتظار",
+            statusSent: "تم الإرسال",
+            statusEmpty: "غير محدد",
+            passedBadge: "مكتمل ⭐",
+            reviewBadge: "يحتاج تدريب 🎈",
+            scoreText: "الدرجة: {score} من {total}",
+            emptyHistory: "البطل لم يبدأ أي تحدي بعد! هيا نبدأ أول لعبة! 🎉",
+            noMatchHistory: "لا توجد تحديات مطابقة لهذا الموضوع.",
+            loadError: "عذراً! لم نتمكن من العثور على سجل البطل. 💔",
+            configRequired: "تكوين النظام مطلوب",
+            configDesc: "يرجى تكوين رابط Google Apps Script Web App الخاص بك في ملف <code>dashboard.html</code> لعرض تقدم الطالب.",
+            dateText: "{date}"
+        },
+        en: {
+            badgeTitle: "Dashboard 📊",
+            loading: "Loading hero's file... 🚀",
+            ageSuffix: "years old",
+            ageBadge: "Age: {age} {suffix}",
+            lvlMath: "Math",
+            lvlArabic: "Arabic",
+            lvlEnglish: "English",
+            timelineTitle: "Timeline & Challenges 🏆",
+            filterAll: "All",
+            filterMath: "Math",
+            filterArabic: "Arabic",
+            filterEnglish: "English",
+            btnBack: "Play Quiz 🚀",
+            statusPassed: "Passed",
+            statusReview: "Needs Review",
+            statusPending: "Pending",
+            statusSent: "Sent",
+            statusEmpty: "Not Started",
+            passedBadge: "Superb ⭐",
+            reviewBadge: "Keep Trying 🎈",
+            scoreText: "Score: {score} / {total}",
+            emptyHistory: "Hero hasn't played any games yet! Let's start the first game! 🎉",
+            noMatchHistory: "No challenges match this subject.",
+            loadError: "Sorry! We couldn't find the hero's progress record. 💔",
+            configRequired: "Configuration Required",
+            configDesc: "Please configure your Google Apps Script Web App URL inside <code>dashboard.html</code> to display student progress.",
+            dateText: "{date}"
+        }
+    };
+
+    let currentLang = 'ar';
+    let rawDashboardData = null;
+    let activeFilter = 'all';
+
+    // Parse URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const studentId = urlParams.get('student_id');
+    const studentName = urlParams.get('student_name') || "طالبنا المميز";
+    const skillId = urlParams.get('skill') || "english_3_s1";
+
+    // Setup initial view
+    function init() {
+        // Detect browser default direction/locale or default to AR
+        if (skillId.startsWith('english')) {
+            setLang('en');
+        } else {
+            setLang('ar');
+        }
+
+        // If Apps Script URL is empty, verify if it was passed via URL parameter for easy testing
+        const apiParam = urlParams.get('api_url');
+        const activeApiUrl = apiParam || APPS_SCRIPT_URL;
+
+        if (!activeApiUrl || activeApiUrl === "YOUR_APPS_SCRIPT_WEB_APP_URL") {
+            document.getElementById('loading-box').style.display = 'none';
+            document.getElementById('config-box').style.display = 'block';
+            updateConfigStrings();
+            return;
+        }
+
+        loadData(activeApiUrl);
+    }
+
+    function toggleLanguage() {
+        setLang(currentLang === 'ar' ? 'en' : 'ar');
+    }
+
+    function setLang(lang) {
+        currentLang = lang;
+        const mainCard = document.getElementById('main-card');
+        const htmlDoc = document.documentElement;
+
+        if (lang === 'en') {
+            htmlDoc.dir = 'ltr';
+            htmlDoc.lang = 'en';
+            mainCard.classList.add('ltr-layout');
+            document.getElementById('lang-btn').innerText = 'العربية';
+        } else {
+            htmlDoc.dir = 'rtl';
+            htmlDoc.lang = 'ar';
+            mainCard.classList.remove('ltr-layout');
+            document.getElementById('lang-btn').innerText = 'English';
+        }
+
+        updateStaticStrings();
+        if (rawDashboardData) {
+            renderDashboard(rawDashboardData);
+        }
+    }
+
+    function updateConfigStrings() {
+        const text = i18n[currentLang];
+        document.getElementById('badge-title').innerText = text.badgeTitle;
+        document.getElementById('config-title').innerText = text.configRequired;
+        document.getElementById('config-desc').innerHTML = text.configDesc;
+    }
+
+    function updateStaticStrings() {
+        const text = i18n[currentLang];
+        document.getElementById('badge-title').innerText = text.badgeTitle;
+        document.getElementById('loading-msg').innerText = text.loading;
+        
+        document.getElementById('card-math-title').innerText = text.lvlMath;
+        document.getElementById('card-arabic-title').innerText = text.lvlArabic;
+        document.getElementById('card-english-title').innerText = text.lvlEnglish;
+        
+        document.getElementById('timeline-title').innerText = text.timelineTitle;
+        
+        document.getElementById('filter-all').innerText = text.filterAll;
+        document.getElementById('filter-math').innerText = text.filterMath;
+        document.getElementById('filter-arabic').innerText = text.filterArabic;
+        document.getElementById('filter-english').innerText = text.filterEnglish;
+        
+        document.getElementById('btn-back-quiz').innerText = text.btnBack;
+    }
+
+    // Load data from Google Apps Script Web App
+    function loadData(apiUrl) {
+        const fetchUrl = `${apiUrl}?student_id=${encodeURIComponent(studentId)}`;
+        console.log(`Fetching dashboard data from: ${fetchUrl}`);
+
+        fetch(fetchUrl)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    rawDashboardData = data;
+                    document.getElementById('loading-box').style.display = 'none';
+                    document.getElementById('dashboard-content').style.display = 'block';
+                    renderDashboard(data);
+                } else {
+                    showError(data.error || "Student record could not be found.");
+                }
+            })
+            .catch(err => {
+                console.error("Dashboard Load Error: ", err);
+                showError(i18n[currentLang].loadError);
+            });
+    }
+
+    function showError(msg) {
+        document.getElementById('loading-box').innerHTML = `
+            <div style="font-size: 50px; margin-bottom: 10px;">💔</div>
+            <h3 style="color: #c62828;">${msg}</h3>
+            <button class="btn-action" onclick="goBackToQuiz()">${i18n[currentLang].btnBack}</button>
+        `;
+    }
+
+    // Render dashboard components
+    function renderDashboard(data) {
+        const text = i18n[currentLang];
+        
+        // Display Info
+        document.getElementById('display-name').innerText = data.student_name;
+        document.getElementById('display-age').innerText = text.ageBadge
+            .replace('{age}', data.age_group)
+            .replace('{suffix}', text.ageSuffix);
+
+        // Render Current Status Cards
+        const statusMap = {
+            'passed': text.statusPassed,
+            'needs_review': text.statusReview,
+            'pending': text.statusPending,
+            'sent': text.statusSent,
+            '': text.statusEmpty
+        };
+
+        const mathInfo = data.current_status.math || { level: "", status: "" };
+        const arInfo = data.current_status.arabic || { level: "", status: "" };
+        const engInfo = data.current_status.english || { level: "", status: "" };
+
+        document.getElementById('lvl-math').innerText = mathInfo.level || "-";
+        document.getElementById('status-math').innerText = statusMap[mathInfo.status.toLowerCase()] || text.statusEmpty;
+
+        document.getElementById('lvl-arabic').innerText = arInfo.level || "-";
+        document.getElementById('status-arabic').innerText = statusMap[arInfo.status.toLowerCase()] || text.statusEmpty;
+
+        document.getElementById('lvl-english').innerText = engInfo.level || "-";
+        document.getElementById('status-english').innerText = statusMap[engInfo.status.toLowerCase()] || text.statusEmpty;
+
+        // Render Timeline
+        renderTimelineList(data.history);
+    }
+
+    function renderTimelineList(history) {
+        const listContainer = document.getElementById('timeline-list');
+        listContainer.innerHTML = '';
+        const text = i18n[currentLang];
+
+        if (!history || history.length === 0) {
+            listContainer.innerHTML = `<div class="empty-state">
+                <div style="font-size: 40px; margin-bottom: 10px;">🎉</div>
+                <p style="color: #64748b; font-weight: bold;">${text.emptyHistory}</p>
+            </div>`;
+            return;
+        }
+
+        const filtered = history.filter(item => {
+            if (activeFilter === 'all') return true;
+            return item.subject.toLowerCase() === activeFilter;
+        });
+
+        if (filtered.length === 0) {
+            listContainer.innerHTML = `<div class="empty-state">
+                <p style="color: #94a3b8; font-weight: bold;">${text.noMatchHistory}</p>
+            </div>`;
+            return;
+        }
+
+        const subjectIcons = { math: "➕", arabic: "✏️", english: "🔤" };
+
+        filtered.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'timeline-item';
+
+            const formattedDate = formatDateString(item.timestamp);
+            const statusBadgeText = item.status === "Passed" ? text.passedBadge : text.reviewBadge;
+            const statusClass = item.status === "Passed" ? 'passed' : 'failed';
+            const scoreLabel = text.scoreText.replace('{score}', item.score).replace('{total}', item.total);
+
+            // Dynamically build layout
+            itemElement.innerHTML = `
+                <div class="timeline-badge ${item.subject}">
+                    ${subjectIcons[item.subject] || "🎈"}
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-title">${item.level_title}</div>
+                        <div class="timeline-date">${formattedDate}</div>
+                    </div>
+                    <div class="timeline-body">
+                        <div class="timeline-score">${scoreLabel}</div>
+                        <div class="timeline-status ${statusClass}">${statusBadgeText}</div>
+                    </div>
+                </div>
+            `;
+            listContainer.appendChild(itemElement);
+        });
+    }
+
+    function filterTimeline(subject) {
+        activeFilter = subject;
+        
+        // Update filter button states
+        document.querySelectorAll('.btn-filter').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`filter-${subject}`).classList.add('active');
+
+        if (rawDashboardData) {
+            renderTimelineList(rawDashboardData.history);
+        }
+    }
+
+    function formatDateString(isoString) {
+        if (!isoString) return "";
+        try {
+            const d = new Date(isoString);
+            
+            // Format options
+            const options = { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            const formatted = d.toLocaleDateString(currentLang === 'ar' ? 'ar-EG' : 'en-US', options);
+            return formatted;
+        } catch(e) {
+            return isoString.split('T')[0];
+        }
+    }
+
+    function goBackToQuiz() {
+        const returnUrl = `index.html?student_id=${encodeURIComponent(studentId)}&skill=${encodeURIComponent(skillId)}&student_name=${encodeURIComponent(studentName)}`;
+        window.location.href = returnUrl;
+    }
+
+    // Start loading dashboard
+    window.onload = init;
+</script>
+</body>
+</html>
