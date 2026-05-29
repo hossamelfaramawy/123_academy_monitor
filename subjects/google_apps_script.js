@@ -30,10 +30,13 @@ function doGet(e) {
     }
     
     const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-    const mainSheet = spreadsheet.getSheetByName(MAIN_SHEET_NAME);
+    let mainSheet = spreadsheet.getSheetByName(MAIN_SHEET_NAME);
+    if (!mainSheet) {
+      mainSheet = spreadsheet.getSheets()[0]; // Fallback to the very first sheet in the spreadsheet
+    }
     
     if (!mainSheet) {
-      return jsonResponse({ success: false, error: "Main sheet 'Sheet1' not found" });
+      return jsonResponse({ success: false, error: "Main tracker sheet not found" });
     }
     
     // 1. Find student row in Sheet1
@@ -184,7 +187,10 @@ function doPost(e) {
     ]);
     
     // 2. Update Student Status in Sheet1
-    const mainSheet = spreadsheet.getSheetByName(MAIN_SHEET_NAME);
+    let mainSheet = spreadsheet.getSheetByName(MAIN_SHEET_NAME);
+    if (!mainSheet) {
+      mainSheet = spreadsheet.getSheets()[0]; // Fallback to the first sheet in the spreadsheet
+    }
     if (mainSheet) {
       const mainData = mainSheet.getDataRange().getValues();
       const mainHeaders = mainData[0].map(h => h.toString().trim().toLowerCase());
