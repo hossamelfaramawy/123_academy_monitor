@@ -94,14 +94,28 @@ def main():
     else:
         print("🚀 Starting 123 Academy Grid-Based Weekly Exam Dispatcher (LOCAL)...")
 
-    # 1. Load Curriculum Data
-    try:
-        with open("curriculum.json", "r", encoding="utf-8") as f:
-            curriculum = json.load(f)
-        print(f"📖 Loaded {len(curriculum)} skills from curriculum.json")
-    except Exception as e:
-        print(f"❌ Error loading curriculum.json: {e}")
-        return
+    # 1. Load Curriculum Data from subject subdirectories
+    curriculum = {}
+    subject_files = {
+        "math": "subjects/math/math_curriculum.json",
+        "arabic": "subjects/arabic/ar_curriculum.json",
+        "english": "subjects/english/eng_curriculum.json"
+    }
+    
+    for sub, path in subject_files.items():
+        if os.path.exists(path):
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    sub_data = json.load(f)
+                    curriculum.update(sub_data)
+                print(f"  📖 Loaded {len(sub_data)} skills from '{path}'")
+            except Exception as e:
+                print(f"  ⚠️ Error loading '{path}': {e}")
+                return
+        else:
+            print(f"  ℹ️ Subject curriculum '{path}' not found (skipping)")
+            
+    print(f"📖 Combined total: Loaded {len(curriculum)} skills across all subjects.")
 
     # 2. Get Environment Variables
     pages_base = os.environ.get("PAGES_BASE_URL")

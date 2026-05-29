@@ -171,6 +171,25 @@
             border-radius: 12px;
         }
 
+        /* Image displayed in the middle of a question */
+        .question-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .question-image {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            background-color: #fff;
+            padding: 10px;
+            border: 3px solid #f1f5f9;
+        }
+
         .btn-option:hover {
             transform: translateY(-2px);
             border-color: #cbd5e1;
@@ -516,8 +535,16 @@
     let selectedQuizQuestions = [];
     let currentQuestionIndex = 0;
 
-    // Load curriculum.json
-    fetch('curriculum.json')
+    // Load dynamic subject curriculum file path
+    const subject = skillId.split('_')[0] || 'english';
+    let fileSuffix = 'eng';
+    if (subject === 'arabic') fileSuffix = 'ar';
+    else if (subject === 'math') fileSuffix = 'math';
+    
+    const curriculumPath = `subjects/${subject}/${fileSuffix}_curriculum.json`;
+
+    console.log(`Fetching curriculum from: ${curriculumPath}`);
+    fetch(curriculumPath)
         .then(response => response.json())
         .then(data => {
             curriculum = data;
@@ -646,6 +673,20 @@
 
     // Multiple Choice
     function renderMultipleChoice(q, container) {
+        // If question has an image card, render it above the options
+        if (q.image) {
+            const imgContainer = document.createElement('div');
+            imgContainer.className = 'question-image-container';
+            
+            const img = document.createElement('img');
+            img.src = q.image;
+            img.alt = q.question;
+            img.className = 'question-image';
+            
+            imgContainer.appendChild(img);
+            container.appendChild(imgContainer);
+        }
+
         const grid = document.createElement('div');
         grid.className = 'options-grid';
         

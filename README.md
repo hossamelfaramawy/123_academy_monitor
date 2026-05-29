@@ -31,6 +31,12 @@ We have three distinct engines designed for different deployment and budget requ
 * **How it works**: Uses `webbrowser` and `pyautogui` to open WhatsApp Web tabs on your default browser, focuses the chat input, writes the prefilled exam invitation message, simulates the `Enter` key to send, and closes the tab.
 * **Best for**: Unlimited, free messaging directly from your personal WhatsApp account without Twilio API fees. (Ensure you scan the WhatsApp Web QR code in your browser first).
 
+## 📂 Curriculum Database Folders
+All levels and question banks are organized in the `subjects/` directory:
+* **English**: `subjects/english/eng_curriculum.json`
+* **Arabic**: `subjects/arabic/ar_curriculum.json`
+* **Math**: `subjects/math/math_curriculum.json`
+
 ---
 
 ## 📊 Google Sheet Grid Setup

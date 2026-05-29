@@ -10,7 +10,8 @@
     "questions": [
       {
         "type": "multiple-choice",
-        "question": "Click the capital letter A!",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/apple.png",
         "options": ["A", "B", "C"],
         "correct": "A"
       },
@@ -47,7 +48,8 @@
     "questions": [
       {
         "type": "multiple-choice",
-        "question": "Click the capital letter B!",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/ball.png",
         "options": ["C", "B", "A"],
         "correct": "B"
       },
@@ -86,7 +88,8 @@
     "questions": [
       {
         "type": "multiple-choice",
-        "question": "Click the capital letter C!",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/cat.png",
         "options": ["A", "B", "C"],
         "correct": "C"
       },
@@ -125,7 +128,8 @@
     "questions": [
       {
         "type": "multiple-choice",
-        "question": "Click the capital letter D!",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/dog.png",
         "options": ["C", "B", "D"],
         "correct": "D"
       },
