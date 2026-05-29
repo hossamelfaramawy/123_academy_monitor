@@ -40,18 +40,27 @@ All levels and question banks are organized in the `subjects/` directory:
 ---
 
 ## 📊 Google Sheet Grid Setup
-The tracking sheet columns must be structured as follows:
+
+Your Google Spreadsheet requires two worksheets/tabs:
+
+### Tab 1: `Sheet1` (Main Tracker)
+Follow the column structure in [MVP_Skills_Tracker.csv](file:///c:/Hossam/123/123Academy_MonitorSys_Repo/123_academy_monitor/MVP_Skills_Tracker.csv):
 
 `Student ID` | `Student Name` | `Parent Phone` | `Age Group` | `Math Level` | `Math Status` | `Arabic Level` | `Arabic Status` | `English Level` | `English Status` | `Last Sent Date`
 
-### Status States:
+#### Status States:
 * **`pending` (or empty)**: Ready to send.
 * **`sent`**: Dispatched to the parent (set by scripts automatically).
-* **`passed`**: Exam completed successfully (updated by Make.com webhook).
-* **`needs_review`**: Exam completed but child failed (updated by Make.com webhook).
+* **`passed`**: Exam completed successfully (updated automatically by webhook/Apps Script).
+* **`needs_review`**: Exam completed but child failed (updated automatically by webhook/Apps Script).
 
-### Smart Level Resolving:
+#### Smart Level Resolving:
 The scripts feature a smart name resolver. Sheet editors do not need to type database IDs like `english_3_s2`. You can type **"Letter B"**, **"حرف B"**, **"b"**, or **"B"** directly in the Level column, and the code will resolve it perfectly.
+
+### Tab 2: `Quiz Logs` (History Log)
+Create a second worksheet named exactly **`Quiz Logs`** to capture all quiz attempt records. Follow the structure in [MVP_Quiz_Logs_Tracker.csv](file:///c:/Hossam/123/123Academy_MonitorSys_Repo/123_academy_monitor/MVP_Quiz_Logs_Tracker.csv):
+
+`Timestamp` | `Student ID` | `Student Name` | `Subject` | `Skill ID` | `Level Title` | `Score` | `Total` | `Status`
 
 ---
 
