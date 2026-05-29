@@ -60,7 +60,7 @@ def load_dotenv():
     else:
         print("⚠️ Warning: No '.env' file found. Running with system environment variables.")
 
-def resolve_skill_id(sheet_val, subject, age_group, curriculum):
+def resolve_skill_id(sheet_val, subject, curriculum):
     """Resolves a friendly sheet value like 'Letter B', 'B', 'b' to curriculum ID like 'english_3_s2'."""
     val_clean = sheet_val.strip().lower()
     if not val_clean:
@@ -72,7 +72,7 @@ def resolve_skill_id(sheet_val, subject, age_group, curriculum):
         
     # 2. Direct title match (case insensitive)
     for skill_id, skill in curriculum.items():
-        if skill.get("subject") == subject and skill.get("age_group") == age_group:
+        if skill.get("subject") == subject:
             if val_clean == skill.get("title_en", "").strip().lower():
                 return skill_id
             if val_clean == skill.get("title_ar", "").strip().lower():
@@ -83,7 +83,7 @@ def resolve_skill_id(sheet_val, subject, age_group, curriculum):
     
     # 4. Try matching the core value
     for skill_id, skill in curriculum.items():
-        if skill.get("subject") == subject and skill.get("age_group") == age_group:
+        if skill.get("subject") == subject:
             title_en_core = skill.get("title_en", "").strip().lower().replace("letter", "").replace("حرف", "").strip()
             title_ar_core = skill.get("title_ar", "").strip().lower().replace("letter", "").replace("حرف", "").strip()
             if core_val == title_en_core or core_val == title_ar_core:
@@ -223,16 +223,13 @@ def main():
         parent_phone = row[col_parent_phone].strip()
         age_group_str = row[col_age_group].strip()
 
-        if not student_id or not parent_phone or not age_group_str:
+        if not student_id or not parent_phone:
             continue
 
         try:
             age_group = int(age_group_str)
-            if age_group not in [3, 5]:
-                raise ValueError
         except ValueError:
-            print(f"⚠️ Row {row_idx}: Invalid age group '{age_group_str}'. Skipping.")
-            continue
+            age_group = 3  # default to age group 3 if missing or invalid
 
         # Find the pending skill for each subject using level & status pairs
         pending_skills = []
@@ -253,8 +250,8 @@ def main():
             if not skill_id:
                 continue
 
-            # Resolve friendly name/ID to actual skill_id from curriculum
-            resolved_id = resolve_skill_id(skill_id, sub, age_group, curriculum)
+            # Resolve friendly name/ID to actual skill_id from curriculum (ignoring age check)
+            resolved_id = resolve_skill_id(skill_id, sub, curriculum)
 
             # If status is not "passed" (meaning it is pending, sent, needs_review, or empty)
             if status != "passed":
