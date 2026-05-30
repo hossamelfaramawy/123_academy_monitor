@@ -37,7 +37,8 @@ function shuffleArray(array) {
  */
 function loadQuizEngine(skillId) {
     const subject = skillId.split('_')[0] || 'english';
-    const configPath = `subjects/${subject}/quiz_config.json`;
+    const cacheBust = `?t=${Date.now()}`;
+    const configPath = `subjects/${subject}/quiz_config.json${cacheBust}`;
     
     console.log(`[QuizParser] Loading subject config from: ${configPath}`);
     
@@ -61,7 +62,7 @@ function loadQuizEngine(skillId) {
                 // 1. Fetch active letter
                 const activeFile = getLetterFileName(skillId) || 'letter_a.json';
                 promises.push(
-                    fetch(`subjects/english/curriculum/${activeFile}`)
+                    fetch(`subjects/english/curriculum/${activeFile}${cacheBust}`)
                         .then(res => res.json())
                         .then(data => ({ type: 'active', data }))
                 );
@@ -77,7 +78,7 @@ function loadQuizEngine(skillId) {
                         const revFile = getLetterFileName(revSkillId);
                         if (revFile) {
                             promises.push(
-                                fetch(`subjects/english/curriculum/${revFile}`)
+                                fetch(`subjects/english/curriculum/${revFile}${cacheBust}`)
                                     .then(res => {
                                         if (res.ok) return res.json();
                                         return {};
@@ -93,7 +94,7 @@ function loadQuizEngine(skillId) {
                 if (subject === 'arabic') fileSuffix = 'ar';
                 else if (subject === 'math') fileSuffix = 'math';
                 
-                const globalPath = `subjects/${subject}/${fileSuffix}_curriculum.json`;
+                const globalPath = `subjects/${subject}/${fileSuffix}_curriculum.json${cacheBust}`;
                 promises.push(
                     fetch(globalPath)
                         .then(res => res.json())
@@ -138,6 +139,8 @@ function loadQuizEngine(skillId) {
                 
                 if (qTypes && typeof qTypes === 'object' && !Array.isArray(qTypes)) {
                     // New dict-based granular question-type counts
+                    const isRandom = (config.order === 'random');
+                    
                     Object.keys(qTypes).forEach(type => {
                         const typeConfig = qTypes[type];
                         const currentCount = typeConfig.current_skill_questions_count || 0;
@@ -149,16 +152,24 @@ function loadQuizEngine(skillId) {
                         let selectedOfType = [];
                         if (currentIdx <= 0 || reviewQuestionsPool.length === 0) {
                             // First week: take all from active up to current + review count
-                            selectedOfType = shuffleArray(activeOfType).slice(0, currentCount + reviewCount);
+                            selectedOfType = isRandom 
+                                ? shuffleArray(activeOfType).slice(0, currentCount + reviewCount) 
+                                : activeOfType.slice(0, currentCount + reviewCount);
                         } else {
-                            const activeSelected = shuffleArray(activeOfType).slice(0, currentCount);
-                            const reviewSelected = shuffleArray(reviewOfType).slice(0, reviewCount);
+                            const activeSelected = isRandom 
+                                ? shuffleArray(activeOfType).slice(0, currentCount) 
+                                : activeOfType.slice(0, currentCount);
+                            const reviewSelected = isRandom 
+                                ? shuffleArray(reviewOfType).slice(0, reviewCount) 
+                                : reviewOfType.slice(0, reviewCount);
                             
                             // Fallback: if we lack review questions of this type, fill with active
                             if (reviewSelected.length < reviewCount) {
                                 const needed = reviewCount - reviewSelected.length;
                                 const remainingActive = activeOfType.filter(q => !activeSelected.includes(q));
-                                const extraActive = shuffleArray(remainingActive).slice(0, needed);
+                                const extraActive = isRandom 
+                                    ? shuffleArray(remainingActive).slice(0, needed) 
+                                    : remainingActive.slice(0, needed);
                                 selectedOfType = activeSelected.concat(reviewSelected).concat(extraActive);
                             } else {
                                 selectedOfType = activeSelected.concat(reviewSelected);
@@ -167,21 +178,28 @@ function loadQuizEngine(skillId) {
                         selectedQuestions = selectedQuestions.concat(selectedOfType);
                     });
                     
-                    if (config.order === 'random') {
+                    if (isRandom) {
                         selectedQuestions = shuffleArray(selectedQuestions);
                     }
                 } else {
                     // Old list-based global counts
+                    const isRandom = (config.order === 'random');
                     const currentCount = config.current_skill_questions_count || 3;
                     const reviewCount = config.review_questions_count || 2;
                     
                     if (currentIdx <= 0 || reviewQuestionsPool.length === 0) {
-                        selectedQuestions = shuffleArray(activeQuestions).slice(0, config.total_questions || 5);
+                        selectedQuestions = isRandom 
+                            ? shuffleArray(activeQuestions).slice(0, config.total_questions || 5) 
+                            : activeQuestions.slice(0, config.total_questions || 5);
                     } else {
-                        const currentSelected = shuffleArray(activeQuestions).slice(0, currentCount);
-                        const reviewSelected = shuffleArray(reviewQuestionsPool).slice(0, reviewCount);
+                        const currentSelected = isRandom 
+                            ? shuffleArray(activeQuestions).slice(0, currentCount) 
+                            : activeQuestions.slice(0, currentCount);
+                        const reviewSelected = isRandom 
+                            ? shuffleArray(reviewQuestionsPool).slice(0, reviewCount) 
+                            : reviewQuestionsPool.slice(0, reviewCount);
                         selectedQuestions = currentSelected.concat(reviewSelected);
-                        if (config.order === 'random') {
+                        if (isRandom) {
                             selectedQuestions = shuffleArray(selectedQuestions);
                         }
                     }

@@ -1,14 +1,14 @@
 {
   "subject": "english",
   "passing_score": 4,
-  "order": "random",
+  "order": "fixed",
   "question_types": {
     "multiple-choice": {
       "current_skill_questions_count": 2,
       "review_questions_count": 1
     },
     "audio-choice": {
-      "current_skill_questions_count": 1,
+      "current_skill_questions_count": 2,
       "review_questions_count": 1
     },
     "drag-and-drop": {
