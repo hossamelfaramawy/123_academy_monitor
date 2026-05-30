@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/elephant.svg",
         "options": [
-          "E",
-          "P",
-          "W"
+          "S",
+          "X",
+          "E"
         ],
         "correct": "E"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/egg.svg",
         "options": [
-          "L",
-          "E",
-          "F"
+          "D",
+          "C",
+          "E"
         ],
         "correct": "E"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ear.svg",
         "options": [
-          "S",
-          "E",
-          "B"
+          "Q",
+          "T",
+          "E"
         ],
         "correct": "E"
       },
@@ -47,8 +47,8 @@
         "speak_text": "Elephant",
         "options": [
           {
-            "text": "Hand",
-            "image": "assets/images/hand.svg"
+            "text": "Ruler",
+            "image": "assets/images/ruler.svg"
           },
           {
             "text": "Elephant",
@@ -63,12 +63,12 @@
         "speak_text": "Egg",
         "options": [
           {
-            "text": "Egg",
-            "image": "assets/images/egg.svg"
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
           },
           {
-            "text": "Jacket",
-            "image": "assets/images/jacket.svg"
+            "text": "Egg",
+            "image": "assets/images/egg.svg"
           }
         ],
         "correct": "Egg"
@@ -79,8 +79,8 @@
         "speak_text": "Ear",
         "options": [
           {
-            "text": "Pencil",
-            "image": "assets/images/pencil.svg"
+            "text": "Car",
+            "image": "assets/images/car.svg"
           },
           {
             "text": "Ear",
@@ -94,12 +94,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-D",
-            "text": "D"
-          },
-          {
             "id": "drag-E",
             "text": "E"
+          },
+          {
+            "id": "drag-C",
+            "text": "C"
+          },
+          {
+            "id": "drag-D",
+            "text": "D"
           }
         ],
         "targets": [
@@ -112,6 +116,11 @@
             "id": "drop-d",
             "text": "d",
             "matches": "drag-D"
+          },
+          {
+            "id": "drop-c",
+            "text": "c",
+            "matches": "drag-C"
           }
         ]
       }

@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/sun.svg",
         "options": [
-          "S",
-          "W",
-          "Q"
+          "I",
+          "J",
+          "S"
         ],
         "correct": "S"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/snake.svg",
         "options": [
-          "S",
-          "T",
-          "M"
+          "M",
+          "U",
+          "S"
         ],
         "correct": "S"
       },
@@ -35,8 +35,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/star.svg",
         "options": [
-          "I",
-          "W",
+          "Y",
+          "X",
           "S"
         ],
         "correct": "S"
@@ -47,12 +47,12 @@
         "speak_text": "Sun",
         "options": [
           {
-            "text": "Sun",
-            "image": "assets/images/sun.svg"
+            "text": "Quiet",
+            "image": "assets/images/quiet.svg"
           },
           {
-            "text": "Yacht",
-            "image": "assets/images/yacht.svg"
+            "text": "Sun",
+            "image": "assets/images/sun.svg"
           }
         ],
         "correct": "Sun"
@@ -63,12 +63,12 @@
         "speak_text": "Snake",
         "options": [
           {
-            "text": "Snake",
-            "image": "assets/images/snake.svg"
+            "text": "Cat",
+            "image": "assets/images/cat.svg"
           },
           {
-            "text": "Drum",
-            "image": "assets/images/drum.svg"
+            "text": "Snake",
+            "image": "assets/images/snake.svg"
           }
         ],
         "correct": "Snake"
@@ -83,8 +83,8 @@
             "image": "assets/images/star.svg"
           },
           {
-            "text": "Key",
-            "image": "assets/images/key.svg"
+            "text": "Goat",
+            "image": "assets/images/goat.svg"
           }
         ],
         "correct": "Star"
@@ -94,12 +94,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-R",
-            "text": "R"
-          },
-          {
             "id": "drag-S",
             "text": "S"
+          },
+          {
+            "id": "drag-Q",
+            "text": "Q"
+          },
+          {
+            "id": "drag-R",
+            "text": "R"
           }
         ],
         "targets": [
@@ -112,6 +116,11 @@
             "id": "drop-r",
             "text": "r",
             "matches": "drag-R"
+          },
+          {
+            "id": "drop-q",
+            "text": "q",
+            "matches": "drag-Q"
           }
         ]
       }

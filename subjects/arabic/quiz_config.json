@@ -1,7 +1,7 @@
 {
   "subject": "arabic",
   "passing_score": 4,
-  "order": "random",
+  "order": ["multiple-choice", "audio-choice", "drag-and-drop"],
   "question_types": {
     "multiple-choice": {
       "current_skill_questions_count": 2,

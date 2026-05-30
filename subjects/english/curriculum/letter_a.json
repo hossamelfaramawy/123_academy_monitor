@@ -14,8 +14,8 @@
         "image": "assets/images/apple.svg",
         "options": [
           "A",
-          "W",
-          "V"
+          "Y",
+          "E"
         ],
         "correct": "A"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ant.svg",
         "options": [
-          "A",
-          "W",
-          "Q"
+          "E",
+          "F",
+          "A"
         ],
         "correct": "A"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/axe.svg",
         "options": [
+          "M",
           "A",
-          "B",
-          "Y"
+          "P"
         ],
         "correct": "A"
       },
@@ -51,8 +51,8 @@
             "image": "assets/images/apple.svg"
           },
           {
-            "text": "Elephant",
-            "image": "assets/images/elephant.svg"
+            "text": "Moon",
+            "image": "assets/images/moon.svg"
           }
         ],
         "correct": "Apple"
@@ -63,12 +63,12 @@
         "speak_text": "Ant",
         "options": [
           {
-            "text": "Ant",
-            "image": "assets/images/ant.svg"
+            "text": "Tree",
+            "image": "assets/images/tree.svg"
           },
           {
-            "text": "Ring",
-            "image": "assets/images/ring.svg"
+            "text": "Ant",
+            "image": "assets/images/ant.svg"
           }
         ],
         "correct": "Ant"
@@ -79,8 +79,8 @@
         "speak_text": "Axe",
         "options": [
           {
-            "text": "Zebra",
-            "image": "assets/images/zebra.svg"
+            "text": "Sun",
+            "image": "assets/images/sun.svg"
           },
           {
             "text": "Axe",

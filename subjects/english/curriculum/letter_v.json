@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/vegetable.svg",
         "options": [
+          "V",
           "S",
-          "Q",
-          "V"
+          "L"
         ],
         "correct": "V"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/violin.svg",
         "options": [
-          "H",
+          "A",
           "V",
-          "U"
+          "W"
         ],
         "correct": "V"
       },
@@ -36,8 +36,8 @@
         "image": "assets/images/vase.svg",
         "options": [
           "V",
-          "B",
-          "N"
+          "O",
+          "Z"
         ],
         "correct": "V"
       },
@@ -47,8 +47,8 @@
         "speak_text": "Vegetable",
         "options": [
           {
-            "text": "Zebra",
-            "image": "assets/images/zebra.svg"
+            "text": "Hen",
+            "image": "assets/images/hen.svg"
           },
           {
             "text": "Vegetable",
@@ -63,12 +63,12 @@
         "speak_text": "Violin",
         "options": [
           {
-            "text": "Juice",
-            "image": "assets/images/juice.svg"
-          },
-          {
             "text": "Violin",
             "image": "assets/images/violin.svg"
+          },
+          {
+            "text": "Gift",
+            "image": "assets/images/gift.svg"
           }
         ],
         "correct": "Violin"
@@ -79,12 +79,12 @@
         "speak_text": "Vase",
         "options": [
           {
-            "text": "Vase",
-            "image": "assets/images/vase.svg"
+            "text": "Book",
+            "image": "assets/images/book.svg"
           },
           {
-            "text": "Zebra",
-            "image": "assets/images/zebra.svg"
+            "text": "Vase",
+            "image": "assets/images/vase.svg"
           }
         ],
         "correct": "Vase"
@@ -100,6 +100,10 @@
           {
             "id": "drag-V",
             "text": "V"
+          },
+          {
+            "id": "drag-T",
+            "text": "T"
           }
         ],
         "targets": [
@@ -112,6 +116,11 @@
             "id": "drop-u",
             "text": "u",
             "matches": "drag-U"
+          },
+          {
+            "id": "drop-t",
+            "text": "t",
+            "matches": "drag-T"
           }
         ]
       }

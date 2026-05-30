@@ -13,8 +13,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/car.svg",
         "options": [
-          "N",
-          "V",
+          "R",
+          "D",
           "C"
         ],
         "correct": "C"
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/cat.svg",
         "options": [
-          "K",
           "C",
-          "F"
+          "J",
+          "P"
         ],
         "correct": "C"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/cow.svg",
         "options": [
-          "T",
+          "O",
           "C",
-          "P"
+          "K"
         ],
         "correct": "C"
       },
@@ -47,8 +47,8 @@
         "speak_text": "Car",
         "options": [
           {
-            "text": "Watch",
-            "image": "assets/images/watch.svg"
+            "text": "Man",
+            "image": "assets/images/man.svg"
           },
           {
             "text": "Car",
@@ -67,8 +67,8 @@
             "image": "assets/images/cat.svg"
           },
           {
-            "text": "Drum",
-            "image": "assets/images/drum.svg"
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
           }
         ],
         "correct": "Cat"
@@ -83,8 +83,8 @@
             "image": "assets/images/cow.svg"
           },
           {
-            "text": "Box",
-            "image": "assets/images/box.svg"
+            "text": "Moon",
+            "image": "assets/images/moon.svg"
           }
         ],
         "correct": "Cow"
@@ -94,12 +94,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-B",
-            "text": "B"
+            "id": "drag-A",
+            "text": "A"
           },
           {
             "id": "drag-C",
             "text": "C"
+          },
+          {
+            "id": "drag-B",
+            "text": "B"
           }
         ],
         "targets": [
@@ -112,6 +116,11 @@
             "id": "drop-b",
             "text": "b",
             "matches": "drag-B"
+          },
+          {
+            "id": "drop-a",
+            "text": "a",
+            "matches": "drag-A"
           }
         ]
       }

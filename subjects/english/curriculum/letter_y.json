@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/yellow.svg",
         "options": [
-          "X",
-          "U",
-          "Y"
+          "P",
+          "Y",
+          "A"
         ],
         "correct": "Y"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/yoyo.svg",
         "options": [
-          "Y",
-          "N",
-          "L"
+          "S",
+          "D",
+          "Y"
         ],
         "correct": "Y"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/yacht.svg",
         "options": [
-          "Y",
-          "O",
-          "I"
+          "U",
+          "B",
+          "Y"
         ],
         "correct": "Y"
       },
@@ -51,8 +51,8 @@
             "image": "assets/images/yellow.svg"
           },
           {
-            "text": "Rabbit",
-            "image": "assets/images/rabbit.svg"
+            "text": "Monkey",
+            "image": "assets/images/monkey.svg"
           }
         ],
         "correct": "Yellow"
@@ -63,12 +63,12 @@
         "speak_text": "Yoyo",
         "options": [
           {
-            "text": "Yoyo",
-            "image": "assets/images/yoyo.svg"
+            "text": "Oil",
+            "image": "assets/images/oil.svg"
           },
           {
-            "text": "Box",
-            "image": "assets/images/box.svg"
+            "text": "Yoyo",
+            "image": "assets/images/yoyo.svg"
           }
         ],
         "correct": "Yoyo"
@@ -79,12 +79,12 @@
         "speak_text": "Yacht",
         "options": [
           {
-            "text": "Yacht",
-            "image": "assets/images/yacht.svg"
+            "text": "Umbrella",
+            "image": "assets/images/umbrella.svg"
           },
           {
-            "text": "Kite",
-            "image": "assets/images/kite.svg"
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
           }
         ],
         "correct": "Yacht"
@@ -96,6 +96,10 @@
           {
             "id": "drag-Y",
             "text": "Y"
+          },
+          {
+            "id": "drag-W",
+            "text": "W"
           },
           {
             "id": "drag-X",
@@ -112,6 +116,11 @@
             "id": "drop-x",
             "text": "x",
             "matches": "drag-X"
+          },
+          {
+            "id": "drop-w",
+            "text": "w",
+            "matches": "drag-W"
           }
         ]
       }

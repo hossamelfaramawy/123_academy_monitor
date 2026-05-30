@@ -103,10 +103,18 @@ for idx, (letter, words) in enumerate(alphabet_vocab, start=1):
     items = [{"id": f"drag-{letter}", "text": letter}]
     targets = [{"id": f"drop-{letter.lower()}", "text": letter.lower(), "matches": f"drag-{letter}"}]
     
-    if idx > 1:
-        prev_letter, _ = alphabet_vocab[idx - 2]
+    if idx == 2:
+        # Week 2 (Letter B): match A and B
+        prev_letter, _ = alphabet_vocab[0]
         items.append({"id": f"drag-{prev_letter}", "text": prev_letter})
         targets.append({"id": f"drop-{prev_letter.lower()}", "text": prev_letter.lower(), "matches": f"drag-{prev_letter}"})
+    elif idx > 2:
+        # Week 3 onwards (Letter C to Z): match current and preceding two letters
+        prev_letter1, _ = alphabet_vocab[idx - 2]
+        prev_letter2, _ = alphabet_vocab[idx - 3]
+        for prev in [prev_letter1, prev_letter2]:
+            items.append({"id": f"drag-{prev}", "text": prev})
+            targets.append({"id": f"drop-{prev.lower()}", "text": prev.lower(), "matches": f"drag-{prev}"})
         
     # Shuffle drag items so they are not in the same order as drop targets
     random.shuffle(items)

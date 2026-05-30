@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ball.svg",
         "options": [
-          "Q",
-          "B",
-          "H"
+          "D",
+          "F",
+          "B"
         ],
         "correct": "B"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/bee.svg",
         "options": [
-          "F",
-          "D",
-          "B"
+          "B",
+          "T",
+          "M"
         ],
         "correct": "B"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/book.svg",
         "options": [
-          "J",
-          "I",
-          "B"
+          "B",
+          "K",
+          "X"
         ],
         "correct": "B"
       },
@@ -47,12 +47,12 @@
         "speak_text": "Ball",
         "options": [
           {
-            "text": "Plane",
-            "image": "assets/images/plane.svg"
-          },
-          {
             "text": "Ball",
             "image": "assets/images/ball.svg"
+          },
+          {
+            "text": "Zipper",
+            "image": "assets/images/zipper.svg"
           }
         ],
         "correct": "Ball"
@@ -67,8 +67,8 @@
             "image": "assets/images/bee.svg"
           },
           {
-            "text": "Plane",
-            "image": "assets/images/plane.svg"
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
           }
         ],
         "correct": "Bee"
@@ -79,12 +79,12 @@
         "speak_text": "Book",
         "options": [
           {
-            "text": "Apple",
-            "image": "assets/images/apple.svg"
-          },
-          {
             "text": "Book",
             "image": "assets/images/book.svg"
+          },
+          {
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
           }
         ],
         "correct": "Book"

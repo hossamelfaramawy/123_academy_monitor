@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/hand.svg",
         "options": [
-          "S",
-          "H",
-          "B"
+          "M",
+          "W",
+          "H"
         ],
         "correct": "H"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/hen.svg",
         "options": [
-          "Y",
+          "N",
           "H",
-          "B"
+          "W"
         ],
         "correct": "H"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/hair.svg",
         "options": [
-          "T",
           "H",
-          "L"
+          "T",
+          "J"
         ],
         "correct": "H"
       },
@@ -47,12 +47,12 @@
         "speak_text": "Hand",
         "options": [
           {
-            "text": "Hand",
-            "image": "assets/images/hand.svg"
+            "text": "Jam",
+            "image": "assets/images/jam.svg"
           },
           {
-            "text": "Table",
-            "image": "assets/images/table.svg"
+            "text": "Hand",
+            "image": "assets/images/hand.svg"
           }
         ],
         "correct": "Hand"
@@ -67,8 +67,8 @@
             "image": "assets/images/hen.svg"
           },
           {
-            "text": "Kite",
-            "image": "assets/images/kite.svg"
+            "text": "Lion",
+            "image": "assets/images/lion.svg"
           }
         ],
         "correct": "Hen"
@@ -79,12 +79,12 @@
         "speak_text": "Hair",
         "options": [
           {
-            "text": "Hair",
-            "image": "assets/images/hair.svg"
+            "text": "Box",
+            "image": "assets/images/box.svg"
           },
           {
-            "text": "Lion",
-            "image": "assets/images/lion.svg"
+            "text": "Hair",
+            "image": "assets/images/hair.svg"
           }
         ],
         "correct": "Hair"
@@ -94,12 +94,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
+            "id": "drag-G",
+            "text": "G"
+          },
+          {
             "id": "drag-H",
             "text": "H"
           },
           {
-            "id": "drag-G",
-            "text": "G"
+            "id": "drag-F",
+            "text": "F"
           }
         ],
         "targets": [
@@ -112,6 +116,11 @@
             "id": "drop-g",
             "text": "g",
             "matches": "drag-G"
+          },
+          {
+            "id": "drop-f",
+            "text": "f",
+            "matches": "drag-F"
           }
         ]
       }

@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/jam.svg",
         "options": [
-          "S",
-          "L",
-          "J"
+          "J",
+          "I",
+          "Q"
         ],
         "correct": "J"
       },
@@ -24,8 +24,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/jacket.svg",
         "options": [
-          "K",
-          "C",
+          "E",
+          "D",
           "J"
         ],
         "correct": "J"
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/juice.svg",
         "options": [
-          "S",
+          "Z",
           "J",
-          "V"
+          "Y"
         ],
         "correct": "J"
       },
@@ -47,8 +47,8 @@
         "speak_text": "Jam",
         "options": [
           {
-            "text": "Hen",
-            "image": "assets/images/hen.svg"
+            "text": "Duck",
+            "image": "assets/images/duck.svg"
           },
           {
             "text": "Jam",
@@ -63,8 +63,8 @@
         "speak_text": "Jacket",
         "options": [
           {
-            "text": "Olives",
-            "image": "assets/images/olives.svg"
+            "text": "Man",
+            "image": "assets/images/man.svg"
           },
           {
             "text": "Jacket",
@@ -79,8 +79,8 @@
         "speak_text": "Juice",
         "options": [
           {
-            "text": "Axe",
-            "image": "assets/images/axe.svg"
+            "text": "Vegetable",
+            "image": "assets/images/vegetable.svg"
           },
           {
             "text": "Juice",
@@ -98,6 +98,10 @@
             "text": "J"
           },
           {
+            "id": "drag-H",
+            "text": "H"
+          },
+          {
             "id": "drag-I",
             "text": "I"
           }
@@ -112,6 +116,11 @@
             "id": "drop-i",
             "text": "i",
             "matches": "drag-I"
+          },
+          {
+            "id": "drop-h",
+            "text": "h",
+            "matches": "drag-H"
           }
         ]
       }

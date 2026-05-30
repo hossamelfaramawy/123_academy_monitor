@@ -140,9 +140,12 @@ function loadQuizEngine(skillId) {
                 if (qTypes && typeof qTypes === 'object' && !Array.isArray(qTypes)) {
                     // New dict-based granular question-type counts
                     const isRandom = (config.order === 'random');
+                    const typeOrder = Array.isArray(config.order) ? config.order : Object.keys(qTypes);
                     
-                    Object.keys(qTypes).forEach(type => {
+                    typeOrder.forEach(type => {
                         const typeConfig = qTypes[type];
+                        if (!typeConfig) return; // skip if type config is not present
+                        
                         const currentCount = typeConfig.current_skill_questions_count || 0;
                         const reviewCount = typeConfig.review_questions_count || 0;
                         
@@ -151,30 +154,26 @@ function loadQuizEngine(skillId) {
                         
                         let selectedOfType = [];
                         if (currentIdx <= 0 || reviewQuestionsPool.length === 0) {
-                            // First week: take all from active up to current + review count
-                            selectedOfType = isRandom 
-                                ? shuffleArray(activeOfType).slice(0, currentCount + reviewCount) 
-                                : activeOfType.slice(0, currentCount + reviewCount);
+                            // First week: select randomly from active up to total count
+                            selectedOfType = shuffleArray(activeOfType).slice(0, currentCount + reviewCount);
                         } else {
-                            const activeSelected = isRandom 
-                                ? shuffleArray(activeOfType).slice(0, currentCount) 
-                                : activeOfType.slice(0, currentCount);
-                            const reviewSelected = isRandom 
-                                ? shuffleArray(reviewOfType).slice(0, reviewCount) 
-                                : reviewOfType.slice(0, reviewCount);
+                            // Always select active/review questions randomly
+                            const activeSelected = shuffleArray(activeOfType).slice(0, currentCount);
+                            const reviewSelected = shuffleArray(reviewOfType).slice(0, reviewCount);
                             
                             // Fallback: if we lack review questions of this type, fill with active
                             if (reviewSelected.length < reviewCount) {
                                 const needed = reviewCount - reviewSelected.length;
                                 const remainingActive = activeOfType.filter(q => !activeSelected.includes(q));
-                                const extraActive = isRandom 
-                                    ? shuffleArray(remainingActive).slice(0, needed) 
-                                    : remainingActive.slice(0, needed);
+                                const extraActive = shuffleArray(remainingActive).slice(0, needed);
                                 selectedOfType = activeSelected.concat(reviewSelected).concat(extraActive);
                             } else {
                                 selectedOfType = activeSelected.concat(reviewSelected);
                             }
                         }
+                        
+                        // Always shuffle within the type group so review questions are mixed with active
+                        selectedOfType = shuffleArray(selectedOfType);
                         selectedQuestions = selectedQuestions.concat(selectedOfType);
                     });
                     

@@ -14,7 +14,7 @@
         "image": "assets/images/gift.svg",
         "options": [
           "S",
-          "Q",
+          "A",
           "G"
         ],
         "correct": "G"
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/goat.svg",
         "options": [
-          "O",
-          "T",
-          "G"
+          "G",
+          "S",
+          "V"
         ],
         "correct": "G"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/glass.svg",
         "options": [
-          "U",
-          "L",
-          "G"
+          "K",
+          "G",
+          "B"
         ],
         "correct": "G"
       },
@@ -47,12 +47,12 @@
         "speak_text": "Gift",
         "options": [
           {
-            "text": "Gift",
-            "image": "assets/images/gift.svg"
+            "text": "Ice cream",
+            "image": "assets/images/ice_cream.svg"
           },
           {
-            "text": "Egg",
-            "image": "assets/images/egg.svg"
+            "text": "Gift",
+            "image": "assets/images/gift.svg"
           }
         ],
         "correct": "Gift"
@@ -63,8 +63,8 @@
         "speak_text": "Goat",
         "options": [
           {
-            "text": "Queen",
-            "image": "assets/images/queen.svg"
+            "text": "Hen",
+            "image": "assets/images/hen.svg"
           },
           {
             "text": "Goat",
@@ -79,12 +79,12 @@
         "speak_text": "Glass",
         "options": [
           {
-            "text": "Yellow",
-            "image": "assets/images/yellow.svg"
-          },
-          {
             "text": "Glass",
             "image": "assets/images/glass.svg"
+          },
+          {
+            "text": "Sun",
+            "image": "assets/images/sun.svg"
           }
         ],
         "correct": "Glass"
@@ -96,6 +96,10 @@
           {
             "id": "drag-G",
             "text": "G"
+          },
+          {
+            "id": "drag-E",
+            "text": "E"
           },
           {
             "id": "drag-F",
@@ -112,6 +116,11 @@
             "id": "drop-f",
             "text": "f",
             "matches": "drag-F"
+          },
+          {
+            "id": "drop-e",
+            "text": "e",
+            "matches": "drag-E"
           }
         ]
       }

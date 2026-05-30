@@ -13,8 +13,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/umbrella.svg",
         "options": [
-          "P",
-          "I",
+          "F",
+          "K",
           "U"
         ],
         "correct": "U"
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/up.svg",
         "options": [
-          "N",
           "U",
-          "D"
+          "H",
+          "O"
         ],
         "correct": "U"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/uncle.svg",
         "options": [
+          "B",
           "U",
-          "M",
-          "P"
+          "S"
         ],
         "correct": "U"
       },
@@ -47,8 +47,8 @@
         "speak_text": "Umbrella",
         "options": [
           {
-            "text": "Dog",
-            "image": "assets/images/dog.svg"
+            "text": "Star",
+            "image": "assets/images/star.svg"
           },
           {
             "text": "Umbrella",
@@ -63,12 +63,12 @@
         "speak_text": "Up",
         "options": [
           {
-            "text": "Hand",
-            "image": "assets/images/hand.svg"
-          },
-          {
             "text": "Up",
             "image": "assets/images/up.svg"
+          },
+          {
+            "text": "Quarter",
+            "image": "assets/images/quarter.svg"
           }
         ],
         "correct": "Up"
@@ -79,12 +79,12 @@
         "speak_text": "Uncle",
         "options": [
           {
-            "text": "Uncle",
-            "image": "assets/images/uncle.svg"
+            "text": "Nose",
+            "image": "assets/images/nose.svg"
           },
           {
-            "text": "Zipper",
-            "image": "assets/images/zipper.svg"
+            "text": "Uncle",
+            "image": "assets/images/uncle.svg"
           }
         ],
         "correct": "Uncle"
@@ -100,6 +100,10 @@
           {
             "id": "drag-U",
             "text": "U"
+          },
+          {
+            "id": "drag-S",
+            "text": "S"
           }
         ],
         "targets": [
@@ -112,6 +116,11 @@
             "id": "drop-t",
             "text": "t",
             "matches": "drag-T"
+          },
+          {
+            "id": "drop-s",
+            "text": "s",
+            "matches": "drag-S"
           }
         ]
       }
