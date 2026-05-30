@@ -134,25 +134,56 @@ function loadQuizEngine(skillId) {
                 // 3. Build Spaced Repetition Quiz questions list
                 let selectedQuestions = [];
                 const activeQuestions = activeLevelData.questions || [];
+                const qTypes = config.question_types || {};
                 
-                // Determine slice sizes from config
-                const currentCount = config.current_skill_questions_count || 3;
-                const reviewCount = config.review_questions_count || 2;
-                
-                // If there are no past reviews possible (first week)
-                if (currentIdx <= 0 || reviewQuestionsPool.length === 0) {
-                    // Take questions from active level (up to total_questions)
-                    selectedQuestions = shuffleArray(activeQuestions).slice(0, config.total_questions || 5);
-                } else {
-                    // Spaced Repetition combination:
-                    const currentSelected = shuffleArray(activeQuestions).slice(0, currentCount);
-                    const reviewSelected = shuffleArray(reviewQuestionsPool).slice(0, reviewCount);
+                if (qTypes && typeof qTypes === 'object' && !Array.isArray(qTypes)) {
+                    // New dict-based granular question-type counts
+                    Object.keys(qTypes).forEach(type => {
+                        const typeConfig = qTypes[type];
+                        const currentCount = typeConfig.current_skill_questions_count || 0;
+                        const reviewCount = typeConfig.review_questions_count || 0;
+                        
+                        const activeOfType = activeQuestions.filter(q => q.type === type);
+                        const reviewOfType = reviewQuestionsPool.filter(q => q.type === type);
+                        
+                        let selectedOfType = [];
+                        if (currentIdx <= 0 || reviewQuestionsPool.length === 0) {
+                            // First week: take all from active up to current + review count
+                            selectedOfType = shuffleArray(activeOfType).slice(0, currentCount + reviewCount);
+                        } else {
+                            const activeSelected = shuffleArray(activeOfType).slice(0, currentCount);
+                            const reviewSelected = shuffleArray(reviewOfType).slice(0, reviewCount);
+                            
+                            // Fallback: if we lack review questions of this type, fill with active
+                            if (reviewSelected.length < reviewCount) {
+                                const needed = reviewCount - reviewSelected.length;
+                                const remainingActive = activeOfType.filter(q => !activeSelected.includes(q));
+                                const extraActive = shuffleArray(remainingActive).slice(0, needed);
+                                selectedOfType = activeSelected.concat(reviewSelected).concat(extraActive);
+                            } else {
+                                selectedOfType = activeSelected.concat(reviewSelected);
+                            }
+                        }
+                        selectedQuestions = selectedQuestions.concat(selectedOfType);
+                    });
                     
-                    selectedQuestions = currentSelected.concat(reviewSelected);
-                    
-                    // Shuffle the final combined list if config requires it
                     if (config.order === 'random') {
                         selectedQuestions = shuffleArray(selectedQuestions);
+                    }
+                } else {
+                    // Old list-based global counts
+                    const currentCount = config.current_skill_questions_count || 3;
+                    const reviewCount = config.review_questions_count || 2;
+                    
+                    if (currentIdx <= 0 || reviewQuestionsPool.length === 0) {
+                        selectedQuestions = shuffleArray(activeQuestions).slice(0, config.total_questions || 5);
+                    } else {
+                        const currentSelected = shuffleArray(activeQuestions).slice(0, currentCount);
+                        const reviewSelected = shuffleArray(reviewQuestionsPool).slice(0, reviewCount);
+                        selectedQuestions = currentSelected.concat(reviewSelected);
+                        if (config.order === 'random') {
+                            selectedQuestions = shuffleArray(selectedQuestions);
+                        }
                     }
                 }
                 
