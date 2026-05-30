@@ -389,6 +389,7 @@
     </div>
 </div>
 
+<script src="quiz_parser.js"></script>
 <script>
     // 1. Setup Audio Synthesis (Web Audio API for effects)
     let audioCtx = null;
@@ -536,35 +537,24 @@
     const skillId = urlParams.get('skill') || "english_3_s1";
     const studentName = urlParams.get('student_name') || "طالبنا المميز";
 
-    // Sequential curriculum list for English age 3 spaced repetition
-    const english3Sequence = ["english_3_s1", "english_3_s2", "english_3_s3", "english_3_s4"];
-    
-    let curriculum = {};
     let activeLevelData = null;
     let selectedQuizQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
     let currentQuestionFirstAttempt = true;
+    let activeQuizConfig = null;
 
-    // Load dynamic subject curriculum file path
-    const subject = skillId.split('_')[0] || 'english';
-    let fileSuffix = 'eng';
-    if (subject === 'arabic') fileSuffix = 'ar';
-    else if (subject === 'math') fileSuffix = 'math';
-    
-    const curriculumPath = `subjects/${subject}/${fileSuffix}_curriculum.json`;
-
-    console.log(`Fetching curriculum from: ${curriculumPath}`);
-    fetch(curriculumPath)
-        .then(response => response.json())
-        .then(data => {
-            curriculum = data;
-            activeLevelData = curriculum[skillId] || curriculum["english_3_s1"];
+    // Load subject configuration and curriculum dynamically via modular quiz_parser.js
+    loadQuizEngine(skillId)
+        .then(result => {
+            selectedQuizQuestions = result.questions;
+            activeLevelData = result.activeLevelData;
+            activeQuizConfig = result.quizConfig;
+            
             initApp();
-            generateSpacedRepetitionQuiz();
         })
         .catch(err => {
-            console.error('Failed to load curriculum:', err);
+            console.error('Failed to load quiz data:', err);
             document.getElementById('badge-title').innerText = 'Error!';
             document.getElementById('student-info').innerText = 'Could not load the curriculum questions.';
         });
@@ -608,36 +598,7 @@
         }
     }
 
-    // 4. Generate Spaced Repetition Quiz (3 new questions + 2 past review questions)
-    function generateSpacedRepetitionQuiz() {
-        const currentLevelIndex = english3Sequence.indexOf(skillId);
-        
-        // If the level is not found, or it's the very first week (no review possible yet)
-        if (currentLevelIndex <= 0) {
-            // Load all 3 questions from current level
-            selectedQuizQuestions = [...activeLevelData.questions];
-            return;
-        }
 
-        // 1. Get 3 questions from current level
-        const currentQuestions = shuffleArray([...activeLevelData.questions]).slice(0, 3);
-
-        // 2. Gather all questions from all PRECEDING levels in the sequence
-        let pastQuestionsPool = [];
-        for (let i = 0; i < currentLevelIndex; i++) {
-            const pastLevelId = english3Sequence[i];
-            if (curriculum[pastLevelId]) {
-                pastQuestionsPool = pastQuestionsPool.concat(curriculum[pastLevelId].questions);
-            }
-        }
-
-        // 3. Select 2 random review questions
-        const reviewQuestions = shuffleArray(pastQuestionsPool).slice(0, 2);
-
-        // 4. Combine and shuffle the 5 total questions
-        selectedQuizQuestions = shuffleArray(currentQuestions.concat(reviewQuestions));
-        console.log(`Generated spaced-rep quiz. New: ${currentQuestions.length}, Review: ${reviewQuestions.length}`);
-    }
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -1000,7 +961,7 @@
 
     // 6. Complete and submit results
     function endQuiz() {
-        const isPassed = (score >= 4);
+        const isPassed = (score >= (activeQuizConfig ? activeQuizConfig.passing_score : 4));
         
         document.getElementById('quiz-screen').style.display = 'none';
         document.getElementById('end-screen').style.display = 'block';

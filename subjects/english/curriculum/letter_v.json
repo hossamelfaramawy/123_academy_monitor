@@ -1,0 +1,120 @@
+{
+  "english_3_s22": {
+    "id": "english_3_s22",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف V",
+    "title_en": "Letter V",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف V الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter V! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/vegetable.svg",
+        "options": [
+          "S",
+          "Q",
+          "V"
+        ],
+        "correct": "V"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/violin.svg",
+        "options": [
+          "H",
+          "V",
+          "U"
+        ],
+        "correct": "V"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/vase.svg",
+        "options": [
+          "V",
+          "B",
+          "N"
+        ],
+        "correct": "V"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Vegetable",
+        "options": [
+          {
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
+          },
+          {
+            "text": "Vegetable",
+            "image": "assets/images/vegetable.svg"
+          }
+        ],
+        "correct": "Vegetable"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Violin",
+        "options": [
+          {
+            "text": "Juice",
+            "image": "assets/images/juice.svg"
+          },
+          {
+            "text": "Violin",
+            "image": "assets/images/violin.svg"
+          }
+        ],
+        "correct": "Violin"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Vase",
+        "options": [
+          {
+            "text": "Vase",
+            "image": "assets/images/vase.svg"
+          },
+          {
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
+          }
+        ],
+        "correct": "Vase"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-U",
+            "text": "U"
+          },
+          {
+            "id": "drag-V",
+            "text": "V"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-v",
+            "text": "v",
+            "matches": "drag-V"
+          },
+          {
+            "id": "drop-u",
+            "text": "u",
+            "matches": "drag-U"
+          }
+        ]
+      }
+    ]
+  }
+}

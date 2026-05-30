@@ -1,0 +1,120 @@
+{
+  "english_3_s13": {
+    "id": "english_3_s13",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف M",
+    "title_en": "Letter M",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف M الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter M! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/moon.svg",
+        "options": [
+          "K",
+          "M",
+          "S"
+        ],
+        "correct": "M"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/monkey.svg",
+        "options": [
+          "M",
+          "Q",
+          "E"
+        ],
+        "correct": "M"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/man.svg",
+        "options": [
+          "M",
+          "S",
+          "B"
+        ],
+        "correct": "M"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Moon",
+        "options": [
+          {
+            "text": "Moon",
+            "image": "assets/images/moon.svg"
+          },
+          {
+            "text": "Quiet",
+            "image": "assets/images/quiet.svg"
+          }
+        ],
+        "correct": "Moon"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Monkey",
+        "options": [
+          {
+            "text": "Monkey",
+            "image": "assets/images/monkey.svg"
+          },
+          {
+            "text": "Iron",
+            "image": "assets/images/iron.svg"
+          }
+        ],
+        "correct": "Monkey"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Man",
+        "options": [
+          {
+            "text": "Orange",
+            "image": "assets/images/orange.svg"
+          },
+          {
+            "text": "Man",
+            "image": "assets/images/man.svg"
+          }
+        ],
+        "correct": "Man"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-L",
+            "text": "L"
+          },
+          {
+            "id": "drag-M",
+            "text": "M"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-m",
+            "text": "m",
+            "matches": "drag-M"
+          },
+          {
+            "id": "drop-l",
+            "text": "l",
+            "matches": "drag-L"
+          }
+        ]
+      }
+    ]
+  }
+}

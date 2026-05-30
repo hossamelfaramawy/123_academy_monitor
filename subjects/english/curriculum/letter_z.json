@@ -1,0 +1,120 @@
+{
+  "english_3_s26": {
+    "id": "english_3_s26",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف Z",
+    "title_en": "Letter Z",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف Z الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter Z! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/zoo.svg",
+        "options": [
+          "I",
+          "J",
+          "Z"
+        ],
+        "correct": "Z"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/zebra.svg",
+        "options": [
+          "B",
+          "Z",
+          "X"
+        ],
+        "correct": "Z"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/zipper.svg",
+        "options": [
+          "N",
+          "Z",
+          "V"
+        ],
+        "correct": "Z"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Zoo",
+        "options": [
+          {
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
+          },
+          {
+            "text": "Zoo",
+            "image": "assets/images/zoo.svg"
+          }
+        ],
+        "correct": "Zoo"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Zebra",
+        "options": [
+          {
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
+          },
+          {
+            "text": "Ball",
+            "image": "assets/images/ball.svg"
+          }
+        ],
+        "correct": "Zebra"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Zipper",
+        "options": [
+          {
+            "text": "Zipper",
+            "image": "assets/images/zipper.svg"
+          },
+          {
+            "text": "Dog",
+            "image": "assets/images/dog.svg"
+          }
+        ],
+        "correct": "Zipper"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-Z",
+            "text": "Z"
+          },
+          {
+            "id": "drag-Y",
+            "text": "Y"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-z",
+            "text": "z",
+            "matches": "drag-Z"
+          },
+          {
+            "id": "drop-y",
+            "text": "y",
+            "matches": "drag-Y"
+          }
+        ]
+      }
+    ]
+  }
+}

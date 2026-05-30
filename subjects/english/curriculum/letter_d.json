@@ -1,0 +1,120 @@
+{
+  "english_3_s4": {
+    "id": "english_3_s4",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف D",
+    "title_en": "Letter D",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف D الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter D! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/duck.svg",
+        "options": [
+          "D",
+          "F",
+          "O"
+        ],
+        "correct": "D"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/dog.svg",
+        "options": [
+          "D",
+          "Y",
+          "J"
+        ],
+        "correct": "D"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/drum.svg",
+        "options": [
+          "Z",
+          "D",
+          "T"
+        ],
+        "correct": "D"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Duck",
+        "options": [
+          {
+            "text": "Monkey",
+            "image": "assets/images/monkey.svg"
+          },
+          {
+            "text": "Duck",
+            "image": "assets/images/duck.svg"
+          }
+        ],
+        "correct": "Duck"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Dog",
+        "options": [
+          {
+            "text": "Dog",
+            "image": "assets/images/dog.svg"
+          },
+          {
+            "text": "King",
+            "image": "assets/images/king.svg"
+          }
+        ],
+        "correct": "Dog"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Drum",
+        "options": [
+          {
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
+          },
+          {
+            "text": "Bee",
+            "image": "assets/images/bee.svg"
+          }
+        ],
+        "correct": "Drum"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-D",
+            "text": "D"
+          },
+          {
+            "id": "drag-C",
+            "text": "C"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-d",
+            "text": "d",
+            "matches": "drag-D"
+          },
+          {
+            "id": "drop-c",
+            "text": "c",
+            "matches": "drag-C"
+          }
+        ]
+      }
+    ]
+  }
+}

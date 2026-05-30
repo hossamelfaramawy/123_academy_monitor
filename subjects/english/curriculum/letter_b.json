@@ -1,0 +1,120 @@
+{
+  "english_3_s2": {
+    "id": "english_3_s2",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف B",
+    "title_en": "Letter B",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف B الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter B! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/ball.svg",
+        "options": [
+          "Q",
+          "B",
+          "H"
+        ],
+        "correct": "B"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/bee.svg",
+        "options": [
+          "F",
+          "D",
+          "B"
+        ],
+        "correct": "B"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/book.svg",
+        "options": [
+          "J",
+          "I",
+          "B"
+        ],
+        "correct": "B"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Ball",
+        "options": [
+          {
+            "text": "Plane",
+            "image": "assets/images/plane.svg"
+          },
+          {
+            "text": "Ball",
+            "image": "assets/images/ball.svg"
+          }
+        ],
+        "correct": "Ball"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Bee",
+        "options": [
+          {
+            "text": "Bee",
+            "image": "assets/images/bee.svg"
+          },
+          {
+            "text": "Plane",
+            "image": "assets/images/plane.svg"
+          }
+        ],
+        "correct": "Bee"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Book",
+        "options": [
+          {
+            "text": "Apple",
+            "image": "assets/images/apple.svg"
+          },
+          {
+            "text": "Book",
+            "image": "assets/images/book.svg"
+          }
+        ],
+        "correct": "Book"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-B",
+            "text": "B"
+          },
+          {
+            "id": "drag-A",
+            "text": "A"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-b",
+            "text": "b",
+            "matches": "drag-B"
+          },
+          {
+            "id": "drop-a",
+            "text": "a",
+            "matches": "drag-A"
+          }
+        ]
+      }
+    ]
+  }
+}

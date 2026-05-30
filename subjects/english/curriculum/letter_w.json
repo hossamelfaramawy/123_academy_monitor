@@ -1,0 +1,120 @@
+{
+  "english_3_s23": {
+    "id": "english_3_s23",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف W",
+    "title_en": "Letter W",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف W الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter W! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/watermelon.svg",
+        "options": [
+          "R",
+          "W",
+          "P"
+        ],
+        "correct": "W"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/window.svg",
+        "options": [
+          "S",
+          "Z",
+          "W"
+        ],
+        "correct": "W"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/watch.svg",
+        "options": [
+          "R",
+          "M",
+          "W"
+        ],
+        "correct": "W"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Watermelon",
+        "options": [
+          {
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
+          },
+          {
+            "text": "Monkey",
+            "image": "assets/images/monkey.svg"
+          }
+        ],
+        "correct": "Watermelon"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Window",
+        "options": [
+          {
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
+          },
+          {
+            "text": "Window",
+            "image": "assets/images/window.svg"
+          }
+        ],
+        "correct": "Window"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Watch",
+        "options": [
+          {
+            "text": "Watch",
+            "image": "assets/images/watch.svg"
+          },
+          {
+            "text": "Nest",
+            "image": "assets/images/nest.svg"
+          }
+        ],
+        "correct": "Watch"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-V",
+            "text": "V"
+          },
+          {
+            "id": "drag-W",
+            "text": "W"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-w",
+            "text": "w",
+            "matches": "drag-W"
+          },
+          {
+            "id": "drop-v",
+            "text": "v",
+            "matches": "drag-V"
+          }
+        ]
+      }
+    ]
+  }
+}

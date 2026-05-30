@@ -1,0 +1,120 @@
+{
+  "english_3_s6": {
+    "id": "english_3_s6",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف F",
+    "title_en": "Letter F",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف F الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter F! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/flag.svg",
+        "options": [
+          "Q",
+          "L",
+          "F"
+        ],
+        "correct": "F"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/fish.svg",
+        "options": [
+          "U",
+          "V",
+          "F"
+        ],
+        "correct": "F"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/fox.svg",
+        "options": [
+          "U",
+          "R",
+          "F"
+        ],
+        "correct": "F"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Flag",
+        "options": [
+          {
+            "text": "Flag",
+            "image": "assets/images/flag.svg"
+          },
+          {
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
+          }
+        ],
+        "correct": "Flag"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Fish",
+        "options": [
+          {
+            "text": "Ice cream",
+            "image": "assets/images/ice_cream.svg"
+          },
+          {
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
+          }
+        ],
+        "correct": "Fish"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Fox",
+        "options": [
+          {
+            "text": "Goat",
+            "image": "assets/images/goat.svg"
+          },
+          {
+            "text": "Fox",
+            "image": "assets/images/fox.svg"
+          }
+        ],
+        "correct": "Fox"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-F",
+            "text": "F"
+          },
+          {
+            "id": "drag-E",
+            "text": "E"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-f",
+            "text": "f",
+            "matches": "drag-F"
+          },
+          {
+            "id": "drop-e",
+            "text": "e",
+            "matches": "drag-E"
+          }
+        ]
+      }
+    ]
+  }
+}

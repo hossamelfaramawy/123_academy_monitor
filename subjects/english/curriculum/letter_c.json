@@ -1,0 +1,120 @@
+{
+  "english_3_s3": {
+    "id": "english_3_s3",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف C",
+    "title_en": "Letter C",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف C الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter C! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/car.svg",
+        "options": [
+          "N",
+          "V",
+          "C"
+        ],
+        "correct": "C"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/cat.svg",
+        "options": [
+          "K",
+          "C",
+          "F"
+        ],
+        "correct": "C"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/cow.svg",
+        "options": [
+          "T",
+          "C",
+          "P"
+        ],
+        "correct": "C"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Car",
+        "options": [
+          {
+            "text": "Watch",
+            "image": "assets/images/watch.svg"
+          },
+          {
+            "text": "Car",
+            "image": "assets/images/car.svg"
+          }
+        ],
+        "correct": "Car"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Cat",
+        "options": [
+          {
+            "text": "Cat",
+            "image": "assets/images/cat.svg"
+          },
+          {
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
+          }
+        ],
+        "correct": "Cat"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Cow",
+        "options": [
+          {
+            "text": "Cow",
+            "image": "assets/images/cow.svg"
+          },
+          {
+            "text": "Box",
+            "image": "assets/images/box.svg"
+          }
+        ],
+        "correct": "Cow"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-B",
+            "text": "B"
+          },
+          {
+            "id": "drag-C",
+            "text": "C"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-c",
+            "text": "c",
+            "matches": "drag-C"
+          },
+          {
+            "id": "drop-b",
+            "text": "b",
+            "matches": "drag-B"
+          }
+        ]
+      }
+    ]
+  }
+}

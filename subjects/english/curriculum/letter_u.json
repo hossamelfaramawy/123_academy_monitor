@@ -1,0 +1,120 @@
+{
+  "english_3_s21": {
+    "id": "english_3_s21",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف U",
+    "title_en": "Letter U",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف U الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter U! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/umbrella.svg",
+        "options": [
+          "P",
+          "I",
+          "U"
+        ],
+        "correct": "U"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/up.svg",
+        "options": [
+          "N",
+          "U",
+          "D"
+        ],
+        "correct": "U"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/uncle.svg",
+        "options": [
+          "U",
+          "M",
+          "P"
+        ],
+        "correct": "U"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Umbrella",
+        "options": [
+          {
+            "text": "Dog",
+            "image": "assets/images/dog.svg"
+          },
+          {
+            "text": "Umbrella",
+            "image": "assets/images/umbrella.svg"
+          }
+        ],
+        "correct": "Umbrella"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Up",
+        "options": [
+          {
+            "text": "Hand",
+            "image": "assets/images/hand.svg"
+          },
+          {
+            "text": "Up",
+            "image": "assets/images/up.svg"
+          }
+        ],
+        "correct": "Up"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Uncle",
+        "options": [
+          {
+            "text": "Uncle",
+            "image": "assets/images/uncle.svg"
+          },
+          {
+            "text": "Zipper",
+            "image": "assets/images/zipper.svg"
+          }
+        ],
+        "correct": "Uncle"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-T",
+            "text": "T"
+          },
+          {
+            "id": "drag-U",
+            "text": "U"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-u",
+            "text": "u",
+            "matches": "drag-U"
+          },
+          {
+            "id": "drop-t",
+            "text": "t",
+            "matches": "drag-T"
+          }
+        ]
+      }
+    ]
+  }
+}

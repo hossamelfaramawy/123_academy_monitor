@@ -1,0 +1,120 @@
+{
+  "english_3_s17": {
+    "id": "english_3_s17",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف Q",
+    "title_en": "Letter Q",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف Q الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter Q! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/queen.svg",
+        "options": [
+          "Q",
+          "H",
+          "W"
+        ],
+        "correct": "Q"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/quarter.svg",
+        "options": [
+          "K",
+          "Q",
+          "Z"
+        ],
+        "correct": "Q"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/quiet.svg",
+        "options": [
+          "N",
+          "J",
+          "Q"
+        ],
+        "correct": "Q"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Queen",
+        "options": [
+          {
+            "text": "King",
+            "image": "assets/images/king.svg"
+          },
+          {
+            "text": "Queen",
+            "image": "assets/images/queen.svg"
+          }
+        ],
+        "correct": "Queen"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Quarter",
+        "options": [
+          {
+            "text": "Quarter",
+            "image": "assets/images/quarter.svg"
+          },
+          {
+            "text": "Violin",
+            "image": "assets/images/violin.svg"
+          }
+        ],
+        "correct": "Quarter"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Quiet",
+        "options": [
+          {
+            "text": "Quiet",
+            "image": "assets/images/quiet.svg"
+          },
+          {
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
+          }
+        ],
+        "correct": "Quiet"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-P",
+            "text": "P"
+          },
+          {
+            "id": "drag-Q",
+            "text": "Q"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-q",
+            "text": "q",
+            "matches": "drag-Q"
+          },
+          {
+            "id": "drop-p",
+            "text": "p",
+            "matches": "drag-P"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -50,13 +50,13 @@ def main():
 
     # 1. Load Curriculum Data from subject subdirectories
     curriculum = {}
-    subject_files = {
-        "math": "subjects/math/math_curriculum.json",
-        "arabic": "subjects/arabic/ar_curriculum.json",
-        "english": "subjects/english/eng_curriculum.json"
-    }
     
-    for sub, path in subject_files.items():
+    # Load Arabic & Math (global files)
+    global_subjects = {
+        "math": "subjects/math/math_curriculum.json",
+        "arabic": "subjects/arabic/ar_curriculum.json"
+    }
+    for sub, path in global_subjects.items():
         if os.path.exists(path):
             try:
                 with open(path, "r", encoding="utf-8") as f:
@@ -68,6 +68,25 @@ def main():
                 return
         else:
             print(f"  ℹ️ Subject curriculum '{path}' not found (skipping)")
+            
+    # Load English (split letter files)
+    english_curriculum_dir = "subjects/english/curriculum"
+    if os.path.exists(english_curriculum_dir):
+        try:
+            count = 0
+            for filename in os.listdir(english_curriculum_dir):
+                if filename.endswith(".json"):
+                    path = os.path.join(english_curriculum_dir, filename)
+                    with open(path, "r", encoding="utf-8") as f:
+                        sub_data = json.load(f)
+                        curriculum.update(sub_data)
+                        count += len(sub_data)
+            print(f"  📖 Loaded {count} skills from English split curriculum files")
+        except Exception as e:
+            print(f"  ⚠️ Error loading split English curriculum: {e}")
+            return
+    else:
+        print(f"  ℹ️ English split curriculum folder '{english_curriculum_dir}' not found (skipping)")
             
     print(f"📖 Combined total: Loaded {len(curriculum)} skills across all subjects.")
 

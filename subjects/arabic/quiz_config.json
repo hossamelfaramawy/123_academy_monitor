@@ -1,0 +1,10 @@
+{
+  "subject": "arabic",
+  "total_questions": 5,
+  "current_skill_questions_count": 3,
+  "review_questions_count": 2,
+  "passing_score": 4,
+  "order": "random",
+  "question_types": ["multiple-choice", "audio-choice", "drag-and-drop"],
+  "sequence": []
+}

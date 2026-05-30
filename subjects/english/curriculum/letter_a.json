@@ -1,0 +1,111 @@
+{
+  "english_3_s1": {
+    "id": "english_3_s1",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "حرف A",
+    "title_en": "Letter A",
+    "instructions_ar": "هيا نتعلم ونلعب مع حرف A الجميل! 🌟",
+    "instructions_en": "Let's learn and play with the beautiful letter A! 🌟",
+    "questions": [
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/apple.svg",
+        "options": [
+          "A",
+          "W",
+          "V"
+        ],
+        "correct": "A"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/ant.svg",
+        "options": [
+          "A",
+          "W",
+          "Q"
+        ],
+        "correct": "A"
+      },
+      {
+        "type": "multiple-choice",
+        "question": "Which letter does this image start with?",
+        "image": "assets/images/axe.svg",
+        "options": [
+          "A",
+          "B",
+          "Y"
+        ],
+        "correct": "A"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Apple",
+        "options": [
+          {
+            "text": "Apple",
+            "image": "assets/images/apple.svg"
+          },
+          {
+            "text": "Elephant",
+            "image": "assets/images/elephant.svg"
+          }
+        ],
+        "correct": "Apple"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Ant",
+        "options": [
+          {
+            "text": "Ant",
+            "image": "assets/images/ant.svg"
+          },
+          {
+            "text": "Ring",
+            "image": "assets/images/ring.svg"
+          }
+        ],
+        "correct": "Ant"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Axe",
+        "options": [
+          {
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
+          },
+          {
+            "text": "Axe",
+            "image": "assets/images/axe.svg"
+          }
+        ],
+        "correct": "Axe"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Match the capital letters to their lowercase baskets!",
+        "items": [
+          {
+            "id": "drag-A",
+            "text": "A"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-a",
+            "text": "a",
+            "matches": "drag-A"
+          }
+        ]
+      }
+    ]
+  }
+}
