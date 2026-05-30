@@ -206,6 +206,7 @@ function loadQuizEngine(skillId) {
                 }
                 
                 console.log(`[QuizParser] Built quiz successfully. Total: ${selectedQuestions.length} questions.`);
+                console.log(`[QuizParser] Question Type Sequence:`, selectedQuestions.map(q => q.type));
                 
                 return {
                     questions: selectedQuestions,
