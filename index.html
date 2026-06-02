@@ -1001,31 +1001,7 @@
             }
         }
 
-        // Submit to Make.com Webhook & Google Apps Script
-        const webhookUrl = 'https://hook.eu1.make.com/blip3kc8jb5qg8c2lmsasbclng7ntnxo';
-        
-        const payload = {
-            student_id: studentId,
-            student_name: studentName,
-            skill_id: skillId,
-            status: isPassed ? "Passed" : "Needs Review",
-            score: score,
-            total: selectedQuizQuestions.length,
-            timestamp: new Date().toISOString()
-        };
-
-        const promises = [];
-        
-        // 1. Send to Make.com webhook
-        promises.push(
-            fetch(webhookUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            })
-        );
-
-        // 2. Send to Google Apps Script (if configured)
+        // Submit to Google Apps Script
         if (APPS_SCRIPT_URL && APPS_SCRIPT_URL !== "YOUR_APPS_SCRIPT_WEB_APP_URL") {
             const appsScriptPayload = {
                 student_id: studentId,
@@ -1037,26 +1013,26 @@
                 total: selectedQuizQuestions.length,
                 status: isPassed ? "Passed" : "Needs Review"
             };
-            promises.push(
-                fetch(APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify(appsScriptPayload)
-                })
-            );
-        }
-
-        Promise.all(promises)
-        .then(responses => {
-            if (responses.some(r => r.ok)) {
-                statusLabel.innerText = isEnglish ? "Result saved successfully! 🎉" : "تم حفظ النتيجة بنجاح! 🎉";
-            } else {
-                throw new Error("Server error");
-            }
-        })
-        .catch(err => {
-            console.error('Failed to report score:', err);
+            
+            fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify(appsScriptPayload)
+            })
+            .then(res => {
+                if (res.ok) {
+                    statusLabel.innerText = isEnglish ? "Result saved successfully! 🎉" : "تم حفظ النتيجة بنجاح! 🎉";
+                } else {
+                    throw new Error("Server error");
+                }
+            })
+            .catch(err => {
+                console.error('Failed to report score:', err);
+                statusLabel.innerText = isEnglish ? "Saved offline. Let your teacher know! ❤️" : "تم التسجيل بنجاح! شكراً لك ❤️";
+            });
+        } else {
+            console.warn("Apps Script URL is not configured. Results will not be saved.");
             statusLabel.innerText = isEnglish ? "Saved offline. Let your teacher know! ❤️" : "تم التسجيل بنجاح! شكراً لك ❤️";
-        });
+        }
     }
 
     function goToDashboard() {
