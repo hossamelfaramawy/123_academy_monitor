@@ -17,7 +17,7 @@
  */
 
 // Configure sheet names
-const MAIN_SHEET_NAME = "Sheet1";
+const MAIN_SHEET_NAME = "MVP_Skills_Tracker";
 const LOG_SHEET_NAME = "Quiz Logs";
 
 function doGet(e) {
@@ -39,7 +39,7 @@ function doGet(e) {
       return jsonResponse({ success: false, error: "Main tracker sheet not found" });
     }
     
-    // 1. Find student row in Sheet1
+    // 1. Find student row in main tracker sheet
     const mainData = mainSheet.getDataRange().getValues();
     const mainHeaders = mainData[0].map(h => h.toString().trim().toLowerCase());
     
@@ -48,7 +48,7 @@ function doGet(e) {
     const ageGroupColIdx = mainHeaders.indexOf("age group");
     
     if (studentIdColIdx === -1) {
-      return jsonResponse({ success: false, error: "'Student ID' column not found in Sheet1" });
+      return jsonResponse({ success: false, error: "'Student ID' column not found in " + MAIN_SHEET_NAME });
     }
     
     let studentRow = null;
@@ -186,7 +186,7 @@ function doPost(e) {
       status
     ]);
     
-    // 2. Update Student Status in Sheet1
+    // 2. Update Student Status in main tracker sheet
     let mainSheet = spreadsheet.getSheetByName(MAIN_SHEET_NAME);
     if (!mainSheet) {
       mainSheet = spreadsheet.getSheets()[0]; // Fallback to the first sheet in the spreadsheet
@@ -208,7 +208,7 @@ function doPost(e) {
         }
         
         if (matchedRowIdx !== -1) {
-          // Update Sheet1 status cell
+          // Update status cell in main sheet
           // Convert Status: Passed -> passed, Needs Review -> needs_review
           const formattedStatus = (status.toLowerCase() === "passed") ? "passed" : "needs_review";
           mainSheet.getRange(matchedRowIdx, statusColIdx + 1).setValue(formattedStatus);
