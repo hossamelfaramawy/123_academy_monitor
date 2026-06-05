@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/zoo.svg",
         "options": [
-          "H",
-          "Q",
-          "Z"
+          "Z",
+          "S",
+          "Y"
         ],
         "correct": "Z"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/zebra.svg",
         "options": [
+          "G",
           "Z",
-          "X",
-          "A"
+          "I"
         ],
         "correct": "Z"
       },
@@ -36,8 +36,8 @@
         "image": "assets/images/zipper.svg",
         "options": [
           "G",
-          "H",
-          "Z"
+          "Z",
+          "A"
         ],
         "correct": "Z"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Zoo",
         "options": [
           {
-            "text": "Hair",
-            "image": "assets/images/hair.png"
+            "text": "Gift",
+            "image": "assets/images/gift.svg"
           },
           {
-            "text": "Nurse",
-            "image": "assets/images/nurse.svg"
+            "text": "Snake",
+            "image": "assets/images/snake.svg"
           },
           {
             "text": "Zoo",
             "image": "assets/images/zoo.svg"
           },
           {
-            "text": "Uncle",
-            "image": "assets/images/uncle.png"
+            "text": "Fox",
+            "image": "assets/images/fox.png"
           }
         ],
         "correct": "Zoo"
@@ -71,20 +71,20 @@
         "speak_text": "Zebra",
         "options": [
           {
+            "text": "Hand",
+            "image": "assets/images/hand.svg"
+          },
+          {
+            "text": "Book",
+            "image": "assets/images/book.svg"
+          },
+          {
             "text": "Zebra",
             "image": "assets/images/zebra.svg"
           },
           {
-            "text": "Jam",
-            "image": "assets/images/jam.png"
-          },
-          {
-            "text": "Monkey",
-            "image": "assets/images/monkey.svg"
-          },
-          {
-            "text": "King",
-            "image": "assets/images/king.svg"
+            "text": "Umbrella",
+            "image": "assets/images/umbrella.svg"
           }
         ],
         "correct": "Zebra"
@@ -95,16 +95,16 @@
         "speak_text": "Zipper",
         "options": [
           {
-            "text": "Xylophone",
-            "image": "assets/images/xylophone.svg"
+            "text": "Oil",
+            "image": "assets/images/oil.png"
           },
           {
-            "text": "Star",
-            "image": "assets/images/star.svg"
+            "text": "Vase",
+            "image": "assets/images/vase.svg"
           },
           {
-            "text": "Lion",
-            "image": "assets/images/lion.png"
+            "text": "King",
+            "image": "assets/images/king.svg"
           },
           {
             "text": "Zipper",

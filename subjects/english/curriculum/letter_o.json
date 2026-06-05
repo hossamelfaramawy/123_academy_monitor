@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/orange.svg",
         "options": [
-          "N",
-          "O",
-          "Z"
+          "G",
+          "E",
+          "O"
         ],
         "correct": "O"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/oil.png",
         "options": [
-          "U",
-          "O",
-          "W"
+          "J",
+          "L",
+          "O"
         ],
         "correct": "O"
       },
@@ -35,8 +35,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/olives.svg",
         "options": [
-          "D",
-          "K",
+          "G",
+          "I",
           "O"
         ],
         "correct": "O"
@@ -47,20 +47,20 @@
         "speak_text": "Orange",
         "options": [
           {
-            "text": "Car",
-            "image": "assets/images/car.svg"
+            "text": "Xylophone",
+            "image": "assets/images/xylophone.svg"
           },
           {
-            "text": "Axe",
-            "image": "assets/images/axe.svg"
+            "text": "Plane",
+            "image": "assets/images/plane.svg"
           },
           {
             "text": "Orange",
             "image": "assets/images/orange.svg"
           },
           {
-            "text": "Queen",
-            "image": "assets/images/queen.svg"
+            "text": "Ice cream",
+            "image": "assets/images/ice_cream.svg"
           }
         ],
         "correct": "Orange"
@@ -71,20 +71,20 @@
         "speak_text": "Oil",
         "options": [
           {
-            "text": "Flag",
-            "image": "assets/images/flag.svg"
+            "text": "Zipper",
+            "image": "assets/images/zipper.svg"
+          },
+          {
+            "text": "Lemon",
+            "image": "assets/images/lemon.svg"
+          },
+          {
+            "text": "Apple",
+            "image": "assets/images/apple.png"
           },
           {
             "text": "Oil",
             "image": "assets/images/oil.png"
-          },
-          {
-            "text": "Elephant",
-            "image": "assets/images/elephant.svg"
-          },
-          {
-            "text": "Watch",
-            "image": "assets/images/watch.svg"
           }
         ],
         "correct": "Oil"
@@ -95,20 +95,20 @@
         "speak_text": "Olives",
         "options": [
           {
-            "text": "Queen",
-            "image": "assets/images/queen.svg"
-          },
-          {
-            "text": "Yoyo",
-            "image": "assets/images/yoyo.svg"
+            "text": "Lion",
+            "image": "assets/images/lion.png"
           },
           {
             "text": "Olives",
             "image": "assets/images/olives.svg"
           },
           {
-            "text": "Pen",
-            "image": "assets/images/pen.svg"
+            "text": "Yellow",
+            "image": "assets/images/yellow.svg"
+          },
+          {
+            "text": "Window",
+            "image": "assets/images/window.svg"
           }
         ],
         "correct": "Olives"

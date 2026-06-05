@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/flag.svg",
         "options": [
-          "O",
-          "F",
-          "A"
+          "Z",
+          "H",
+          "F"
         ],
         "correct": "F"
       },
@@ -24,8 +24,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/fish.svg",
         "options": [
-          "W",
-          "R",
+          "E",
+          "U",
           "F"
         ],
         "correct": "F"
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/fox.png",
         "options": [
-          "D",
-          "F",
-          "B"
+          "P",
+          "M",
+          "F"
         ],
         "correct": "F"
       },
@@ -47,16 +47,16 @@
         "speak_text": "Flag",
         "options": [
           {
-            "text": "Pencil",
-            "image": "assets/images/pencil.svg"
+            "text": "Hand",
+            "image": "assets/images/hand.svg"
           },
           {
-            "text": "Nurse",
-            "image": "assets/images/nurse.svg"
+            "text": "Star",
+            "image": "assets/images/star.svg"
           },
           {
-            "text": "Violin",
-            "image": "assets/images/violin.svg"
+            "text": "Key",
+            "image": "assets/images/key.svg"
           },
           {
             "text": "Flag",
@@ -75,16 +75,16 @@
             "image": "assets/images/fish.svg"
           },
           {
-            "text": "Monkey",
-            "image": "assets/images/monkey.svg"
+            "text": "Axe",
+            "image": "assets/images/axe.svg"
           },
           {
-            "text": "Car",
-            "image": "assets/images/car.svg"
+            "text": "Vase",
+            "image": "assets/images/vase.svg"
           },
           {
-            "text": "Vegetable",
-            "image": "assets/images/vegetable.png"
+            "text": "Moon",
+            "image": "assets/images/moon.svg"
           }
         ],
         "correct": "Fish"
@@ -95,20 +95,20 @@
         "speak_text": "Fox",
         "options": [
           {
-            "text": "Bee",
-            "image": "assets/images/bee.svg"
+            "text": "Ice cream",
+            "image": "assets/images/ice_cream.svg"
           },
           {
-            "text": "Zebra",
-            "image": "assets/images/zebra.svg"
-          },
-          {
-            "text": "Apple",
-            "image": "assets/images/apple.png"
+            "text": "Leg",
+            "image": "assets/images/leg.svg"
           },
           {
             "text": "Fox",
             "image": "assets/images/fox.png"
+          },
+          {
+            "text": "Jam",
+            "image": "assets/images/jam.png"
           }
         ],
         "correct": "Fox"
@@ -122,12 +122,12 @@
             "text": "D"
           },
           {
-            "id": "drag-F",
-            "text": "F"
-          },
-          {
             "id": "drag-E",
             "text": "E"
+          },
+          {
+            "id": "drag-F",
+            "text": "F"
           }
         ],
         "targets": [

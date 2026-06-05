@@ -13,8 +13,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/vegetable.png",
         "options": [
-          "P",
-          "E",
+          "F",
+          "W",
           "V"
         ],
         "correct": "V"
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/violin.svg",
         "options": [
-          "V",
-          "H",
-          "P"
+          "K",
+          "S",
+          "V"
         ],
         "correct": "V"
       },
@@ -36,7 +36,7 @@
         "image": "assets/images/vase.svg",
         "options": [
           "S",
-          "G",
+          "O",
           "V"
         ],
         "correct": "V"
@@ -47,20 +47,20 @@
         "speak_text": "Vegetable",
         "options": [
           {
+            "text": "Duck",
+            "image": "assets/images/duck.svg"
+          },
+          {
             "text": "Vegetable",
             "image": "assets/images/vegetable.png"
           },
           {
-            "text": "Up",
-            "image": "assets/images/up.svg"
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
           },
           {
-            "text": "Window",
-            "image": "assets/images/window.svg"
-          },
-          {
-            "text": "Yoyo",
-            "image": "assets/images/yoyo.svg"
+            "text": "Nest",
+            "image": "assets/images/nest.png"
           }
         ],
         "correct": "Vegetable"
@@ -71,20 +71,20 @@
         "speak_text": "Violin",
         "options": [
           {
-            "text": "Nurse",
-            "image": "assets/images/nurse.svg"
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
+          },
+          {
+            "text": "Train",
+            "image": "assets/images/train.svg"
+          },
+          {
+            "text": "Iron",
+            "image": "assets/images/iron.png"
           },
           {
             "text": "Violin",
             "image": "assets/images/violin.svg"
-          },
-          {
-            "text": "Plane",
-            "image": "assets/images/plane.svg"
-          },
-          {
-            "text": "Pen",
-            "image": "assets/images/pen.svg"
           }
         ],
         "correct": "Violin"
@@ -95,20 +95,20 @@
         "speak_text": "Vase",
         "options": [
           {
+            "text": "Man",
+            "image": "assets/images/man.svg"
+          },
+          {
             "text": "Vase",
             "image": "assets/images/vase.svg"
           },
           {
-            "text": "Fox",
-            "image": "assets/images/fox.png"
+            "text": "Glass",
+            "image": "assets/images/glass.svg"
           },
           {
-            "text": "Queen",
-            "image": "assets/images/queen.svg"
-          },
-          {
-            "text": "Watermelon",
-            "image": "assets/images/watermelon.svg"
+            "text": "Yoyo",
+            "image": "assets/images/yoyo.svg"
           }
         ],
         "correct": "Vase"
@@ -118,16 +118,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-T",
-            "text": "T"
+            "id": "drag-U",
+            "text": "U"
           },
           {
             "id": "drag-V",
             "text": "V"
           },
           {
-            "id": "drag-U",
-            "text": "U"
+            "id": "drag-T",
+            "text": "T"
           }
         ],
         "targets": [

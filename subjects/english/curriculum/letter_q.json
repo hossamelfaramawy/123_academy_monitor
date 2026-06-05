@@ -13,20 +13,20 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/queen.svg",
         "options": [
-          "Z",
           "Q",
-          "V"
+          "F",
+          "S"
         ],
         "correct": "Q"
       },
       {
         "type": "multiple-choice",
         "question": "Which letter does this image start with?",
-        "image": "assets/images/quarter.png",
+        "image": "assets/images/quarter.svg",
         "options": [
-          "X",
           "Q",
-          "L"
+          "L",
+          "N"
         ],
         "correct": "Q"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/quiet.svg",
         "options": [
-          "Q",
+          "I",
           "D",
-          "U"
+          "Q"
         ],
         "correct": "Q"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Queen",
         "options": [
           {
-            "text": "Egg",
-            "image": "assets/images/egg.svg"
+            "text": "Nose",
+            "image": "assets/images/nose.svg"
           },
           {
-            "text": "Olives",
-            "image": "assets/images/olives.svg"
+            "text": "Apple",
+            "image": "assets/images/apple.png"
           },
           {
             "text": "Queen",
             "image": "assets/images/queen.svg"
           },
           {
-            "text": "Nest",
-            "image": "assets/images/nest.png"
+            "text": "Pen",
+            "image": "assets/images/pen.svg"
           }
         ],
         "correct": "Queen"
@@ -71,20 +71,20 @@
         "speak_text": "Quarter",
         "options": [
           {
+            "text": "Elephant",
+            "image": "assets/images/elephant.svg"
+          },
+          {
+            "text": "X-ray",
+            "image": "assets/images/x-ray.svg"
+          },
+          {
             "text": "Quarter",
-            "image": "assets/images/quarter.png"
+            "image": "assets/images/quarter.svg"
           },
           {
-            "text": "Leg",
-            "image": "assets/images/leg.svg"
-          },
-          {
-            "text": "Watch",
-            "image": "assets/images/watch.svg"
-          },
-          {
-            "text": "Zebra",
-            "image": "assets/images/zebra.svg"
+            "text": "Train",
+            "image": "assets/images/train.svg"
           }
         ],
         "correct": "Quarter"
@@ -95,20 +95,20 @@
         "speak_text": "Quiet",
         "options": [
           {
-            "text": "Yacht",
-            "image": "assets/images/yacht.svg"
+            "text": "Ring",
+            "image": "assets/images/ring.svg"
           },
           {
-            "text": "King",
-            "image": "assets/images/king.svg"
-          },
-          {
-            "text": "Jam",
-            "image": "assets/images/jam.png"
+            "text": "Umbrella",
+            "image": "assets/images/umbrella.svg"
           },
           {
             "text": "Quiet",
             "image": "assets/images/quiet.svg"
+          },
+          {
+            "text": "Elephant",
+            "image": "assets/images/elephant.svg"
           }
         ],
         "correct": "Quiet"

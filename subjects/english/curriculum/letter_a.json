@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/apple.png",
         "options": [
+          "K",
           "A",
-          "M",
-          "L"
+          "V"
         ],
         "correct": "A"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ant.svg",
         "options": [
-          "U",
-          "W",
-          "A"
+          "A",
+          "D",
+          "X"
         ],
         "correct": "A"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/axe.svg",
         "options": [
-          "A",
-          "J",
-          "K"
+          "R",
+          "V",
+          "A"
         ],
         "correct": "A"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Apple",
         "options": [
           {
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
+          },
+          {
             "text": "Apple",
             "image": "assets/images/apple.png"
           },
           {
-            "text": "Pencil",
-            "image": "assets/images/pencil.svg"
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
           },
           {
-            "text": "Orange",
-            "image": "assets/images/orange.svg"
-          },
-          {
-            "text": "Quiet",
-            "image": "assets/images/quiet.svg"
+            "text": "Duck",
+            "image": "assets/images/duck.svg"
           }
         ],
         "correct": "Apple"
@@ -71,20 +71,20 @@
         "speak_text": "Ant",
         "options": [
           {
-            "text": "Goat",
-            "image": "assets/images/goat.svg"
-          },
-          {
-            "text": "Cat",
-            "image": "assets/images/cat.png"
-          },
-          {
-            "text": "Nurse",
-            "image": "assets/images/nurse.svg"
+            "text": "Rabbit",
+            "image": "assets/images/rabbit.png"
           },
           {
             "text": "Ant",
             "image": "assets/images/ant.svg"
+          },
+          {
+            "text": "Hen",
+            "image": "assets/images/hen.png"
+          },
+          {
+            "text": "Pencil",
+            "image": "assets/images/pencil.svg"
           }
         ],
         "correct": "Ant"
@@ -95,20 +95,20 @@
         "speak_text": "Axe",
         "options": [
           {
+            "text": "Insect",
+            "image": "assets/images/insect.svg"
+          },
+          {
+            "text": "Man",
+            "image": "assets/images/man.svg"
+          },
+          {
             "text": "Axe",
             "image": "assets/images/axe.svg"
           },
           {
-            "text": "Pencil",
-            "image": "assets/images/pencil.svg"
-          },
-          {
-            "text": "Table",
-            "image": "assets/images/table.png"
-          },
-          {
-            "text": "Dog",
-            "image": "assets/images/dog.png"
+            "text": "King",
+            "image": "assets/images/king.svg"
           }
         ],
         "correct": "Axe"

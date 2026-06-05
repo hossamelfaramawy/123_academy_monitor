@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ball.png",
         "options": [
-          "F",
+          "W",
           "B",
-          "M"
+          "P"
         ],
         "correct": "B"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/bee.svg",
         "options": [
-          "L",
-          "B",
-          "D"
+          "D",
+          "Y",
+          "B"
         ],
         "correct": "B"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/book.svg",
         "options": [
-          "J",
           "B",
-          "C"
+          "W",
+          "D"
         ],
         "correct": "B"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Ball",
         "options": [
           {
-            "text": "Dog",
-            "image": "assets/images/dog.png"
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
           },
           {
-            "text": "Yellow",
-            "image": "assets/images/yellow.svg"
-          },
-          {
-            "text": "Flag",
-            "image": "assets/images/flag.svg"
+            "text": "Watch",
+            "image": "assets/images/watch.svg"
           },
           {
             "text": "Ball",
             "image": "assets/images/ball.png"
+          },
+          {
+            "text": "Hair",
+            "image": "assets/images/hair.png"
           }
         ],
         "correct": "Ball"
@@ -71,20 +71,20 @@
         "speak_text": "Bee",
         "options": [
           {
+            "text": "Flag",
+            "image": "assets/images/flag.svg"
+          },
+          {
             "text": "Bee",
             "image": "assets/images/bee.svg"
           },
           {
-            "text": "Star",
-            "image": "assets/images/star.svg"
+            "text": "Duck",
+            "image": "assets/images/duck.svg"
           },
           {
-            "text": "Cow",
-            "image": "assets/images/cow.png"
-          },
-          {
-            "text": "Ant",
-            "image": "assets/images/ant.svg"
+            "text": "Egg",
+            "image": "assets/images/egg.svg"
           }
         ],
         "correct": "Bee"
@@ -95,20 +95,20 @@
         "speak_text": "Book",
         "options": [
           {
-            "text": "Moon",
-            "image": "assets/images/moon.svg"
-          },
-          {
-            "text": "Apple",
-            "image": "assets/images/apple.png"
+            "text": "Watch",
+            "image": "assets/images/watch.svg"
           },
           {
             "text": "Book",
             "image": "assets/images/book.svg"
           },
           {
-            "text": "Vase",
-            "image": "assets/images/vase.svg"
+            "text": "Monkey",
+            "image": "assets/images/monkey.svg"
+          },
+          {
+            "text": "Sun",
+            "image": "assets/images/sun.png"
           }
         ],
         "correct": "Book"

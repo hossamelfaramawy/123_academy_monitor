@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/gift.svg",
         "options": [
+          "D",
           "R",
-          "G",
-          "Q"
+          "G"
         ],
         "correct": "G"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/goat.svg",
         "options": [
-          "O",
-          "G",
-          "V"
+          "W",
+          "K",
+          "G"
         ],
         "correct": "G"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/glass.svg",
         "options": [
+          "L",
           "G",
-          "K",
-          "Z"
+          "W"
         ],
         "correct": "G"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Gift",
         "options": [
           {
+            "text": "Car",
+            "image": "assets/images/car.svg"
+          },
+          {
+            "text": "Lemon",
+            "image": "assets/images/lemon.svg"
+          },
+          {
             "text": "Gift",
             "image": "assets/images/gift.svg"
           },
           {
-            "text": "Cat",
-            "image": "assets/images/cat.png"
-          },
-          {
-            "text": "Fox",
-            "image": "assets/images/fox.png"
-          },
-          {
-            "text": "Moon",
-            "image": "assets/images/moon.svg"
+            "text": "Key",
+            "image": "assets/images/key.svg"
           }
         ],
         "correct": "Gift"
@@ -71,20 +71,20 @@
         "speak_text": "Goat",
         "options": [
           {
-            "text": "Yacht",
-            "image": "assets/images/yacht.svg"
-          },
-          {
-            "text": "Uncle",
-            "image": "assets/images/uncle.png"
+            "text": "Lemon",
+            "image": "assets/images/lemon.svg"
           },
           {
             "text": "Goat",
             "image": "assets/images/goat.svg"
           },
           {
-            "text": "Up",
-            "image": "assets/images/up.svg"
+            "text": "Ball",
+            "image": "assets/images/ball.png"
+          },
+          {
+            "text": "Book",
+            "image": "assets/images/book.svg"
           }
         ],
         "correct": "Goat"
@@ -95,20 +95,20 @@
         "speak_text": "Glass",
         "options": [
           {
-            "text": "Bee",
-            "image": "assets/images/bee.svg"
-          },
-          {
-            "text": "Rabbit",
-            "image": "assets/images/rabbit.png"
-          },
-          {
-            "text": "King",
-            "image": "assets/images/king.svg"
-          },
-          {
             "text": "Glass",
             "image": "assets/images/glass.svg"
+          },
+          {
+            "text": "Monkey",
+            "image": "assets/images/monkey.svg"
+          },
+          {
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
+          },
+          {
+            "text": "Train",
+            "image": "assets/images/train.svg"
           }
         ],
         "correct": "Glass"
@@ -118,16 +118,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-F",
-            "text": "F"
-          },
-          {
             "id": "drag-E",
             "text": "E"
           },
           {
             "id": "drag-G",
             "text": "G"
+          },
+          {
+            "id": "drag-F",
+            "text": "F"
           }
         ],
         "targets": [

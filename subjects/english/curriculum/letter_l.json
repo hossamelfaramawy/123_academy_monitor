@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/lemon.svg",
         "options": [
-          "U",
-          "E",
-          "L"
+          "L",
+          "V",
+          "B"
         ],
         "correct": "L"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/lion.png",
         "options": [
-          "J",
-          "L",
-          "Y"
+          "W",
+          "U",
+          "L"
         ],
         "correct": "L"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/leg.svg",
         "options": [
-          "L",
-          "Z",
-          "Y"
+          "V",
+          "A",
+          "L"
         ],
         "correct": "L"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Lemon",
         "options": [
           {
-            "text": "Rabbit",
-            "image": "assets/images/rabbit.png"
+            "text": "Ring",
+            "image": "assets/images/ring.svg"
           },
           {
-            "text": "Window",
-            "image": "assets/images/window.svg"
-          },
-          {
-            "text": "Ice cream",
-            "image": "assets/images/ice_cream.svg"
+            "text": "Apple",
+            "image": "assets/images/apple.png"
           },
           {
             "text": "Lemon",
             "image": "assets/images/lemon.svg"
+          },
+          {
+            "text": "Xylophone",
+            "image": "assets/images/xylophone.svg"
           }
         ],
         "correct": "Lemon"
@@ -71,20 +71,20 @@
         "speak_text": "Lion",
         "options": [
           {
-            "text": "Kite",
-            "image": "assets/images/kite.svg"
+            "text": "Vase",
+            "image": "assets/images/vase.svg"
+          },
+          {
+            "text": "Iron",
+            "image": "assets/images/iron.png"
           },
           {
             "text": "Lion",
             "image": "assets/images/lion.png"
           },
           {
-            "text": "King",
-            "image": "assets/images/king.svg"
-          },
-          {
-            "text": "Egg",
-            "image": "assets/images/egg.svg"
+            "text": "Box",
+            "image": "assets/images/box.svg"
           }
         ],
         "correct": "Lion"
@@ -95,20 +95,20 @@
         "speak_text": "Leg",
         "options": [
           {
-            "text": "Zipper",
-            "image": "assets/images/zipper.svg"
+            "text": "Orange",
+            "image": "assets/images/orange.svg"
+          },
+          {
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
+          },
+          {
+            "text": "Pencil",
+            "image": "assets/images/pencil.svg"
           },
           {
             "text": "Leg",
             "image": "assets/images/leg.svg"
-          },
-          {
-            "text": "Kite",
-            "image": "assets/images/kite.svg"
-          },
-          {
-            "text": "Monkey",
-            "image": "assets/images/monkey.svg"
           }
         ],
         "correct": "Leg"
@@ -122,12 +122,12 @@
             "text": "J"
           },
           {
-            "id": "drag-K",
-            "text": "K"
-          },
-          {
             "id": "drag-L",
             "text": "L"
+          },
+          {
+            "id": "drag-K",
+            "text": "K"
           }
         ],
         "targets": [
