@@ -145,8 +145,9 @@ def main():
         elif source == "wikimedia_xylophone":
             url = "https://upload.wikimedia.org/wikipedia/commons/c/cc/Xylophone_(colourful).svg"
         else:
-            # Twemoji SVG URL
-            url = f"https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/{source}.svg"
+            # Google Noto Color Emoji SVG URL (with hyphen to underscore fallback for compound emojis, stripping variation selector fe0f)
+            source_clean = source.replace("-", "_").replace("_fe0f", "").replace("_fe0f".upper(), "")
+            url = f"https://raw.githubusercontent.com/googlefonts/noto-emoji/main/svg/emoji_u{source_clean}.svg"
             
         print(f"Downloading '{word}' from {url}...")
         if download_file(url, output_path):
