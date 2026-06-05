@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/jam.svg",
         "options": [
-          "A",
+          "H",
           "J",
-          "G"
+          "E"
         ],
         "correct": "J"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/jacket.svg",
         "options": [
-          "S",
-          "D",
-          "J"
+          "B",
+          "J",
+          "S"
         ],
         "correct": "J"
       },
@@ -36,8 +36,8 @@
         "image": "assets/images/juice.svg",
         "options": [
           "J",
-          "R",
-          "L"
+          "C",
+          "E"
         ],
         "correct": "J"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Jam",
         "options": [
           {
-            "text": "Glass",
-            "image": "assets/images/glass.svg"
+            "text": "Plane",
+            "image": "assets/images/plane.svg"
           },
           {
-            "text": "Hair",
-            "image": "assets/images/hair.svg"
+            "text": "Kite",
+            "image": "assets/images/kite.svg"
+          },
+          {
+            "text": "Goat",
+            "image": "assets/images/goat.svg"
           },
           {
             "text": "Jam",
@@ -67,6 +71,10 @@
         "speak_text": "Jacket",
         "options": [
           {
+            "text": "Vase",
+            "image": "assets/images/vase.svg"
+          },
+          {
             "text": "Lemon",
             "image": "assets/images/lemon.svg"
           },
@@ -75,8 +83,8 @@
             "image": "assets/images/jacket.svg"
           },
           {
-            "text": "Train",
-            "image": "assets/images/train.svg"
+            "text": "Cow",
+            "image": "assets/images/cow.svg"
           }
         ],
         "correct": "Jacket"
@@ -87,16 +95,20 @@
         "speak_text": "Juice",
         "options": [
           {
-            "text": "Iron",
-            "image": "assets/images/iron.svg"
-          },
-          {
             "text": "Juice",
             "image": "assets/images/juice.svg"
           },
           {
-            "text": "Vase",
-            "image": "assets/images/vase.svg"
+            "text": "Duck",
+            "image": "assets/images/duck.svg"
+          },
+          {
+            "text": "Yoyo",
+            "image": "assets/images/yoyo.svg"
+          },
+          {
+            "text": "Key",
+            "image": "assets/images/key.svg"
           }
         ],
         "correct": "Juice"

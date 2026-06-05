@@ -13,8 +13,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/queen.svg",
         "options": [
-          "L",
-          "V",
+          "O",
+          "D",
           "Q"
         ],
         "correct": "Q"
@@ -24,8 +24,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/quarter.svg",
         "options": [
-          "M",
           "X",
+          "V",
           "Q"
         ],
         "correct": "Q"
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/quiet.svg",
         "options": [
-          "J",
-          "Q",
-          "H"
+          "X",
+          "E",
+          "Q"
         ],
         "correct": "Q"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Queen",
         "options": [
           {
-            "text": "Ring",
-            "image": "assets/images/ring.svg"
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
           },
           {
-            "text": "Juice",
-            "image": "assets/images/juice.svg"
+            "text": "Dog",
+            "image": "assets/images/dog.svg"
+          },
+          {
+            "text": "Leg",
+            "image": "assets/images/leg.svg"
           },
           {
             "text": "Queen",
@@ -67,16 +71,20 @@
         "speak_text": "Quarter",
         "options": [
           {
-            "text": "King",
-            "image": "assets/images/king.svg"
-          },
-          {
             "text": "Quarter",
             "image": "assets/images/quarter.svg"
           },
           {
-            "text": "Plane",
-            "image": "assets/images/plane.svg"
+            "text": "Car",
+            "image": "assets/images/car.svg"
+          },
+          {
+            "text": "Orange",
+            "image": "assets/images/orange.svg"
+          },
+          {
+            "text": "Glass",
+            "image": "assets/images/glass.svg"
           }
         ],
         "correct": "Quarter"
@@ -87,16 +95,20 @@
         "speak_text": "Quiet",
         "options": [
           {
-            "text": "Drum",
-            "image": "assets/images/drum.svg"
+            "text": "Up",
+            "image": "assets/images/up.svg"
           },
           {
             "text": "Quiet",
             "image": "assets/images/quiet.svg"
           },
           {
-            "text": "Hand",
-            "image": "assets/images/hand.svg"
+            "text": "Ball",
+            "image": "assets/images/ball.svg"
+          },
+          {
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
           }
         ],
         "correct": "Quiet"
@@ -110,12 +122,12 @@
             "text": "Q"
           },
           {
-            "id": "drag-O",
-            "text": "O"
-          },
-          {
             "id": "drag-P",
             "text": "P"
+          },
+          {
+            "id": "drag-O",
+            "text": "O"
           }
         ],
         "targets": [

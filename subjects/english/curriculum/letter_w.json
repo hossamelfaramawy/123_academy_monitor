@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/watermelon.svg",
         "options": [
-          "S",
+          "F",
           "W",
-          "U"
+          "E"
         ],
         "correct": "W"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/window.svg",
         "options": [
-          "D",
+          "W",
           "Z",
-          "W"
+          "N"
         ],
         "correct": "W"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/watch.svg",
         "options": [
-          "W",
-          "N",
-          "R"
+          "L",
+          "V",
+          "W"
         ],
         "correct": "W"
       },
@@ -47,16 +47,20 @@
         "speak_text": "Watermelon",
         "options": [
           {
+            "text": "Cat",
+            "image": "assets/images/cat.svg"
+          },
+          {
+            "text": "Tree",
+            "image": "assets/images/tree.svg"
+          },
+          {
             "text": "Watermelon",
             "image": "assets/images/watermelon.svg"
           },
           {
-            "text": "Table",
-            "image": "assets/images/table.svg"
-          },
-          {
-            "text": "Yellow",
-            "image": "assets/images/yellow.svg"
+            "text": "Hen",
+            "image": "assets/images/hen.svg"
           }
         ],
         "correct": "Watermelon"
@@ -67,16 +71,20 @@
         "speak_text": "Window",
         "options": [
           {
-            "text": "Lion",
-            "image": "assets/images/lion.svg"
+            "text": "Car",
+            "image": "assets/images/car.svg"
           },
           {
-            "text": "Key",
-            "image": "assets/images/key.svg"
+            "text": "Pen",
+            "image": "assets/images/pen.svg"
           },
           {
             "text": "Window",
             "image": "assets/images/window.svg"
+          },
+          {
+            "text": "Elephant",
+            "image": "assets/images/elephant.svg"
           }
         ],
         "correct": "Window"
@@ -87,16 +95,20 @@
         "speak_text": "Watch",
         "options": [
           {
+            "text": "Hand",
+            "image": "assets/images/hand.svg"
+          },
+          {
+            "text": "Orange",
+            "image": "assets/images/orange.svg"
+          },
+          {
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
+          },
+          {
             "text": "Watch",
             "image": "assets/images/watch.svg"
-          },
-          {
-            "text": "Violin",
-            "image": "assets/images/violin.svg"
-          },
-          {
-            "text": "Axe",
-            "image": "assets/images/axe.svg"
           }
         ],
         "correct": "Watch"

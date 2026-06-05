@@ -13,8 +13,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ruler.svg",
         "options": [
-          "F",
-          "H",
+          "O",
+          "P",
           "R"
         ],
         "correct": "R"
@@ -24,8 +24,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/rabbit.svg",
         "options": [
-          "G",
-          "E",
+          "O",
+          "B",
           "R"
         ],
         "correct": "R"
@@ -35,8 +35,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ring.svg",
         "options": [
-          "W",
-          "D",
+          "B",
+          "V",
           "R"
         ],
         "correct": "R"
@@ -47,16 +47,20 @@
         "speak_text": "Ruler",
         "options": [
           {
-            "text": "Kite",
-            "image": "assets/images/kite.svg"
+            "text": "Cat",
+            "image": "assets/images/cat.svg"
           },
           {
             "text": "Ruler",
             "image": "assets/images/ruler.svg"
           },
           {
-            "text": "Axe",
-            "image": "assets/images/axe.svg"
+            "text": "Oil",
+            "image": "assets/images/oil.svg"
+          },
+          {
+            "text": "Fox",
+            "image": "assets/images/fox.svg"
           }
         ],
         "correct": "Ruler"
@@ -67,16 +71,20 @@
         "speak_text": "Rabbit",
         "options": [
           {
-            "text": "Flag",
-            "image": "assets/images/flag.svg"
-          },
-          {
             "text": "Rabbit",
             "image": "assets/images/rabbit.svg"
           },
           {
-            "text": "Orange",
-            "image": "assets/images/orange.svg"
+            "text": "Quarter",
+            "image": "assets/images/quarter.svg"
+          },
+          {
+            "text": "Duck",
+            "image": "assets/images/duck.svg"
+          },
+          {
+            "text": "Umbrella",
+            "image": "assets/images/umbrella.svg"
           }
         ],
         "correct": "Rabbit"
@@ -87,16 +95,20 @@
         "speak_text": "Ring",
         "options": [
           {
-            "text": "Sun",
-            "image": "assets/images/sun.svg"
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
           },
           {
             "text": "Ring",
             "image": "assets/images/ring.svg"
           },
           {
-            "text": "Xylophone",
-            "image": "assets/images/xylophone.svg"
+            "text": "Flag",
+            "image": "assets/images/flag.svg"
+          },
+          {
+            "text": "Box",
+            "image": "assets/images/box.svg"
           }
         ],
         "correct": "Ring"

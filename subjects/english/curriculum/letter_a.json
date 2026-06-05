@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/apple.svg",
         "options": [
-          "Z",
+          "P",
           "A",
-          "H"
+          "C"
         ],
         "correct": "A"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ant.svg",
         "options": [
-          "Z",
+          "Q",
           "A",
-          "R"
+          "N"
         ],
         "correct": "A"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/axe.svg",
         "options": [
-          "A",
-          "S",
-          "O"
+          "N",
+          "P",
+          "A"
         ],
         "correct": "A"
       },
@@ -51,12 +51,16 @@
             "image": "assets/images/apple.svg"
           },
           {
+            "text": "Tree",
+            "image": "assets/images/tree.svg"
+          },
+          {
             "text": "Elephant",
             "image": "assets/images/elephant.svg"
           },
           {
-            "text": "Yacht",
-            "image": "assets/images/yacht.svg"
+            "text": "Zoo",
+            "image": "assets/images/zoo.svg"
           }
         ],
         "correct": "Apple"
@@ -71,8 +75,12 @@
             "image": "assets/images/uncle.svg"
           },
           {
-            "text": "Zoo",
-            "image": "assets/images/zoo.svg"
+            "text": "Dog",
+            "image": "assets/images/dog.svg"
+          },
+          {
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
           },
           {
             "text": "Ant",
@@ -87,16 +95,20 @@
         "speak_text": "Axe",
         "options": [
           {
+            "text": "Iron",
+            "image": "assets/images/iron.svg"
+          },
+          {
+            "text": "Violin",
+            "image": "assets/images/violin.svg"
+          },
+          {
+            "text": "Jacket",
+            "image": "assets/images/jacket.svg"
+          },
+          {
             "text": "Axe",
             "image": "assets/images/axe.svg"
-          },
-          {
-            "text": "Quarter",
-            "image": "assets/images/quarter.svg"
-          },
-          {
-            "text": "Star",
-            "image": "assets/images/star.svg"
           }
         ],
         "correct": "Axe"

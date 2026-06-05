@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/gift.svg",
         "options": [
-          "F",
           "G",
-          "A"
+          "L",
+          "F"
         ],
         "correct": "G"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/goat.svg",
         "options": [
-          "T",
+          "D",
           "G",
-          "P"
+          "B"
         ],
         "correct": "G"
       },
@@ -35,8 +35,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/glass.svg",
         "options": [
+          "J",
           "Y",
-          "K",
           "G"
         ],
         "correct": "G"
@@ -47,16 +47,20 @@
         "speak_text": "Gift",
         "options": [
           {
-            "text": "Insect",
-            "image": "assets/images/insect.svg"
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
           },
           {
-            "text": "Car",
-            "image": "assets/images/car.svg"
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
           },
           {
             "text": "Gift",
             "image": "assets/images/gift.svg"
+          },
+          {
+            "text": "Iron",
+            "image": "assets/images/iron.svg"
           }
         ],
         "correct": "Gift"
@@ -67,16 +71,20 @@
         "speak_text": "Goat",
         "options": [
           {
-            "text": "Cow",
-            "image": "assets/images/cow.svg"
+            "text": "Ball",
+            "image": "assets/images/ball.svg"
+          },
+          {
+            "text": "Kite",
+            "image": "assets/images/kite.svg"
           },
           {
             "text": "Goat",
             "image": "assets/images/goat.svg"
           },
           {
-            "text": "Nurse",
-            "image": "assets/images/nurse.svg"
+            "text": "Tree",
+            "image": "assets/images/tree.svg"
           }
         ],
         "correct": "Goat"
@@ -87,16 +95,20 @@
         "speak_text": "Glass",
         "options": [
           {
+            "text": "Apple",
+            "image": "assets/images/apple.svg"
+          },
+          {
+            "text": "Lion",
+            "image": "assets/images/lion.svg"
+          },
+          {
+            "text": "Ant",
+            "image": "assets/images/ant.svg"
+          },
+          {
             "text": "Glass",
             "image": "assets/images/glass.svg"
-          },
-          {
-            "text": "Ruler",
-            "image": "assets/images/ruler.svg"
-          },
-          {
-            "text": "Fish",
-            "image": "assets/images/fish.svg"
           }
         ],
         "correct": "Glass"
@@ -110,12 +122,12 @@
             "text": "F"
           },
           {
-            "id": "drag-G",
-            "text": "G"
-          },
-          {
             "id": "drag-E",
             "text": "E"
+          },
+          {
+            "id": "drag-G",
+            "text": "G"
           }
         ],
         "targets": [

@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ice_cream.svg",
         "options": [
+          "F",
           "I",
-          "W",
-          "L"
+          "M"
         ],
         "correct": "I"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/iron.svg",
         "options": [
-          "S",
-          "Y",
-          "I"
+          "A",
+          "I",
+          "D"
         ],
         "correct": "I"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/insect.svg",
         "options": [
-          "N",
+          "B",
           "I",
-          "A"
+          "Y"
         ],
         "correct": "I"
       },
@@ -47,16 +47,20 @@
         "speak_text": "Ice cream",
         "options": [
           {
-            "text": "Watermelon",
-            "image": "assets/images/watermelon.svg"
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
+          },
+          {
+            "text": "Cow",
+            "image": "assets/images/cow.svg"
+          },
+          {
+            "text": "Zoo",
+            "image": "assets/images/zoo.svg"
           },
           {
             "text": "Ice cream",
             "image": "assets/images/ice_cream.svg"
-          },
-          {
-            "text": "Table",
-            "image": "assets/images/table.svg"
           }
         ],
         "correct": "Ice cream"
@@ -67,16 +71,20 @@
         "speak_text": "Iron",
         "options": [
           {
-            "text": "Book",
-            "image": "assets/images/book.svg"
+            "text": "Egg",
+            "image": "assets/images/egg.svg"
           },
           {
             "text": "Iron",
             "image": "assets/images/iron.svg"
           },
           {
-            "text": "Hand",
-            "image": "assets/images/hand.svg"
+            "text": "Train",
+            "image": "assets/images/train.svg"
+          },
+          {
+            "text": "Rabbit",
+            "image": "assets/images/rabbit.svg"
           }
         ],
         "correct": "Iron"
@@ -87,16 +95,20 @@
         "speak_text": "Insect",
         "options": [
           {
-            "text": "Nose",
-            "image": "assets/images/nose.svg"
-          },
-          {
-            "text": "Hand",
-            "image": "assets/images/hand.svg"
+            "text": "Man",
+            "image": "assets/images/man.svg"
           },
           {
             "text": "Insect",
             "image": "assets/images/insect.svg"
+          },
+          {
+            "text": "Ear",
+            "image": "assets/images/ear.svg"
+          },
+          {
+            "text": "Apple",
+            "image": "assets/images/apple.svg"
           }
         ],
         "correct": "Insect"

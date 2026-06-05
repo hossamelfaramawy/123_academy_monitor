@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/tree.svg",
         "options": [
-          "T",
-          "F",
-          "I"
+          "W",
+          "Z",
+          "T"
         ],
         "correct": "T"
       },
@@ -25,8 +25,8 @@
         "image": "assets/images/table.svg",
         "options": [
           "T",
-          "F",
-          "M"
+          "I",
+          "V"
         ],
         "correct": "T"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/train.svg",
         "options": [
+          "X",
           "T",
-          "I",
-          "N"
+          "Y"
         ],
         "correct": "T"
       },
@@ -47,16 +47,20 @@
         "speak_text": "Tree",
         "options": [
           {
-            "text": "Uncle",
-            "image": "assets/images/uncle.svg"
+            "text": "Nose",
+            "image": "assets/images/nose.svg"
+          },
+          {
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
+          },
+          {
+            "text": "Ice cream",
+            "image": "assets/images/ice_cream.svg"
           },
           {
             "text": "Tree",
             "image": "assets/images/tree.svg"
-          },
-          {
-            "text": "Jam",
-            "image": "assets/images/jam.svg"
           }
         ],
         "correct": "Tree"
@@ -67,16 +71,20 @@
         "speak_text": "Table",
         "options": [
           {
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
+          },
+          {
+            "text": "Book",
+            "image": "assets/images/book.svg"
+          },
+          {
+            "text": "Ruler",
+            "image": "assets/images/ruler.svg"
+          },
+          {
             "text": "Table",
             "image": "assets/images/table.svg"
-          },
-          {
-            "text": "Ice cream",
-            "image": "assets/images/ice_cream.svg"
-          },
-          {
-            "text": "Car",
-            "image": "assets/images/car.svg"
           }
         ],
         "correct": "Table"
@@ -87,16 +95,20 @@
         "speak_text": "Train",
         "options": [
           {
+            "text": "Nest",
+            "image": "assets/images/nest.svg"
+          },
+          {
             "text": "Train",
             "image": "assets/images/train.svg"
           },
           {
-            "text": "Key",
-            "image": "assets/images/key.svg"
-          },
-          {
             "text": "Yacht",
             "image": "assets/images/yacht.svg"
+          },
+          {
+            "text": "King",
+            "image": "assets/images/king.svg"
           }
         ],
         "correct": "Train"
@@ -106,16 +118,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-R",
-            "text": "R"
-          },
-          {
             "id": "drag-T",
             "text": "T"
           },
           {
             "id": "drag-S",
             "text": "S"
+          },
+          {
+            "id": "drag-R",
+            "text": "R"
           }
         ],
         "targets": [

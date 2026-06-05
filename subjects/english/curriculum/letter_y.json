@@ -13,8 +13,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/yellow.svg",
         "options": [
-          "T",
-          "N",
+          "W",
+          "V",
           "Y"
         ],
         "correct": "Y"
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/yoyo.svg",
         "options": [
-          "A",
+          "E",
           "Y",
-          "K"
+          "T"
         ],
         "correct": "Y"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/yacht.svg",
         "options": [
-          "L",
+          "T",
           "Y",
-          "R"
+          "I"
         ],
         "correct": "Y"
       },
@@ -47,16 +47,20 @@
         "speak_text": "Yellow",
         "options": [
           {
-            "text": "Zebra",
-            "image": "assets/images/zebra.svg"
-          },
-          {
-            "text": "Sun",
-            "image": "assets/images/sun.svg"
+            "text": "Glass",
+            "image": "assets/images/glass.svg"
           },
           {
             "text": "Yellow",
             "image": "assets/images/yellow.svg"
+          },
+          {
+            "text": "Cat",
+            "image": "assets/images/cat.svg"
+          },
+          {
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
           }
         ],
         "correct": "Yellow"
@@ -67,16 +71,20 @@
         "speak_text": "Yoyo",
         "options": [
           {
-            "text": "Lion",
-            "image": "assets/images/lion.svg"
-          },
-          {
-            "text": "Axe",
-            "image": "assets/images/axe.svg"
-          },
-          {
             "text": "Yoyo",
             "image": "assets/images/yoyo.svg"
+          },
+          {
+            "text": "Snake",
+            "image": "assets/images/snake.svg"
+          },
+          {
+            "text": "Insect",
+            "image": "assets/images/insect.svg"
+          },
+          {
+            "text": "Box",
+            "image": "assets/images/box.svg"
           }
         ],
         "correct": "Yoyo"
@@ -87,16 +95,20 @@
         "speak_text": "Yacht",
         "options": [
           {
-            "text": "Jacket",
-            "image": "assets/images/jacket.svg"
-          },
-          {
-            "text": "Ear",
-            "image": "assets/images/ear.svg"
-          },
-          {
             "text": "Yacht",
             "image": "assets/images/yacht.svg"
+          },
+          {
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
+          },
+          {
+            "text": "Lion",
+            "image": "assets/images/lion.svg"
+          },
+          {
+            "text": "Jacket",
+            "image": "assets/images/jacket.svg"
           }
         ],
         "correct": "Yacht"
@@ -106,16 +118,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-W",
-            "text": "W"
-          },
-          {
             "id": "drag-Y",
             "text": "Y"
           },
           {
             "id": "drag-X",
             "text": "X"
+          },
+          {
+            "id": "drag-W",
+            "text": "W"
           }
         ],
         "targets": [

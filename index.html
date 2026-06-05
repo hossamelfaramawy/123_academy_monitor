@@ -141,7 +141,8 @@
             grid-template-columns: 1fr 1fr;
         }
 
-        .options-grid.three-columns {
+        .options-grid.three-columns,
+        .options-grid.four-columns {
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         }
 
@@ -393,7 +394,7 @@
     </div>
 </div>
 
-<script src="quiz_parser.js?v=5"></script>
+<script src="quiz_parser.js?v=6"></script>
 <script>
     // 1. Setup Audio Synthesis (Web Audio API for effects)
     let audioCtx = null;
@@ -699,7 +700,7 @@
 
         // Render Options Grid (supporting Cartoon Images!)
         const grid = document.createElement('div');
-        grid.className = 'options-grid three-columns';
+        grid.className = 'options-grid four-columns';
 
         q.options.forEach(opt => {
             const button = document.createElement('button');

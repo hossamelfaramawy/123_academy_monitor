@@ -80,14 +80,15 @@ for idx, (letter, words) in enumerate(alphabet_vocab, start=1):
     for w in words:
         correct_img_path = f"assets/images/{w.lower().replace(' ', '_')}.svg"
         
-        # Select 2 distinct distractor words from other letters
+        # Select 3 distinct distractor words from other letters
         distractor_pool = [item for item in all_words if item["text"] not in words]
-        distractors = random.sample(distractor_pool, 2)
+        distractors = random.sample(distractor_pool, 3)
         
         options = [
             {"text": w, "image": correct_img_path},
             {"text": distractors[0]["text"], "image": distractors[0]["image"]},
-            {"text": distractors[1]["text"], "image": distractors[1]["image"]}
+            {"text": distractors[1]["text"], "image": distractors[1]["image"]},
+            {"text": distractors[2]["text"], "image": distractors[2]["image"]}
         ]
         random.shuffle(options)
         

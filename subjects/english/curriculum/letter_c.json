@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/car.svg",
         "options": [
-          "B",
           "C",
-          "R"
+          "D",
+          "S"
         ],
         "correct": "C"
       },
@@ -25,8 +25,8 @@
         "image": "assets/images/cat.svg",
         "options": [
           "C",
-          "F",
-          "S"
+          "S",
+          "P"
         ],
         "correct": "C"
       },
@@ -37,7 +37,7 @@
         "options": [
           "O",
           "C",
-          "W"
+          "J"
         ],
         "correct": "C"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Car",
         "options": [
           {
-            "text": "Zoo",
-            "image": "assets/images/zoo.svg"
+            "text": "Window",
+            "image": "assets/images/window.svg"
           },
           {
-            "text": "Jam",
-            "image": "assets/images/jam.svg"
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
+          },
+          {
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
           },
           {
             "text": "Car",
@@ -67,16 +71,20 @@
         "speak_text": "Cat",
         "options": [
           {
-            "text": "Monkey",
-            "image": "assets/images/monkey.svg"
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
+          },
+          {
+            "text": "King",
+            "image": "assets/images/king.svg"
           },
           {
             "text": "Cat",
             "image": "assets/images/cat.svg"
           },
           {
-            "text": "Ring",
-            "image": "assets/images/ring.svg"
+            "text": "Tree",
+            "image": "assets/images/tree.svg"
           }
         ],
         "correct": "Cat"
@@ -87,16 +95,20 @@
         "speak_text": "Cow",
         "options": [
           {
-            "text": "Hair",
-            "image": "assets/images/hair.svg"
+            "text": "Flag",
+            "image": "assets/images/flag.svg"
           },
           {
             "text": "Cow",
             "image": "assets/images/cow.svg"
           },
           {
-            "text": "Kite",
-            "image": "assets/images/kite.svg"
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
+          },
+          {
+            "text": "Uncle",
+            "image": "assets/images/uncle.svg"
           }
         ],
         "correct": "Cow"
@@ -106,16 +118,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-C",
-            "text": "C"
+            "id": "drag-B",
+            "text": "B"
           },
           {
             "id": "drag-A",
             "text": "A"
           },
           {
-            "id": "drag-B",
-            "text": "B"
+            "id": "drag-C",
+            "text": "C"
           }
         ],
         "targets": [
