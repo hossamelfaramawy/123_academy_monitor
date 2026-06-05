@@ -11,11 +11,11 @@
       {
         "type": "multiple-choice",
         "question": "Which letter does this image start with?",
-        "image": "assets/images/ball.svg",
+        "image": "assets/images/ball.png",
         "options": [
-          "D",
+          "F",
           "B",
-          "O"
+          "M"
         ],
         "correct": "B"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/bee.svg",
         "options": [
+          "L",
           "B",
-          "C",
-          "P"
+          "D"
         ],
         "correct": "B"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/book.svg",
         "options": [
-          "L",
-          "M",
-          "B"
+          "J",
+          "B",
+          "C"
         ],
         "correct": "B"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Ball",
         "options": [
           {
-            "text": "Man",
-            "image": "assets/images/man.svg"
+            "text": "Dog",
+            "image": "assets/images/dog.png"
           },
           {
-            "text": "Zoo",
-            "image": "assets/images/zoo.svg"
+            "text": "Yellow",
+            "image": "assets/images/yellow.svg"
+          },
+          {
+            "text": "Flag",
+            "image": "assets/images/flag.svg"
           },
           {
             "text": "Ball",
-            "image": "assets/images/ball.svg"
-          },
-          {
-            "text": "Ice cream",
-            "image": "assets/images/ice_cream.svg"
+            "image": "assets/images/ball.png"
           }
         ],
         "correct": "Ball"
@@ -75,16 +75,16 @@
             "image": "assets/images/bee.svg"
           },
           {
-            "text": "Nest",
-            "image": "assets/images/nest.svg"
+            "text": "Star",
+            "image": "assets/images/star.svg"
           },
           {
-            "text": "Cat",
-            "image": "assets/images/cat.svg"
+            "text": "Cow",
+            "image": "assets/images/cow.png"
           },
           {
-            "text": "Yoyo",
-            "image": "assets/images/yoyo.svg"
+            "text": "Ant",
+            "image": "assets/images/ant.svg"
           }
         ],
         "correct": "Bee"
@@ -95,20 +95,20 @@
         "speak_text": "Book",
         "options": [
           {
-            "text": "Box",
-            "image": "assets/images/box.svg"
+            "text": "Moon",
+            "image": "assets/images/moon.svg"
           },
           {
-            "text": "Nose",
-            "image": "assets/images/nose.svg"
+            "text": "Apple",
+            "image": "assets/images/apple.png"
           },
           {
             "text": "Book",
             "image": "assets/images/book.svg"
           },
           {
-            "text": "Glass",
-            "image": "assets/images/glass.svg"
+            "text": "Vase",
+            "image": "assets/images/vase.svg"
           }
         ],
         "correct": "Book"
@@ -118,12 +118,12 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-A",
-            "text": "A"
-          },
-          {
             "id": "drag-B",
             "text": "B"
+          },
+          {
+            "id": "drag-A",
+            "text": "A"
           }
         ],
         "targets": [

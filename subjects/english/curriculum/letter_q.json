@@ -13,20 +13,20 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/queen.svg",
         "options": [
-          "O",
-          "D",
-          "Q"
+          "Z",
+          "Q",
+          "V"
         ],
         "correct": "Q"
       },
       {
         "type": "multiple-choice",
         "question": "Which letter does this image start with?",
-        "image": "assets/images/quarter.svg",
+        "image": "assets/images/quarter.png",
         "options": [
           "X",
-          "V",
-          "Q"
+          "Q",
+          "L"
         ],
         "correct": "Q"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/quiet.svg",
         "options": [
-          "X",
-          "E",
-          "Q"
+          "Q",
+          "D",
+          "U"
         ],
         "correct": "Q"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Queen",
         "options": [
           {
-            "text": "Fish",
-            "image": "assets/images/fish.svg"
+            "text": "Egg",
+            "image": "assets/images/egg.svg"
           },
           {
-            "text": "Dog",
-            "image": "assets/images/dog.svg"
-          },
-          {
-            "text": "Leg",
-            "image": "assets/images/leg.svg"
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
           },
           {
             "text": "Queen",
             "image": "assets/images/queen.svg"
+          },
+          {
+            "text": "Nest",
+            "image": "assets/images/nest.png"
           }
         ],
         "correct": "Queen"
@@ -72,19 +72,19 @@
         "options": [
           {
             "text": "Quarter",
-            "image": "assets/images/quarter.svg"
+            "image": "assets/images/quarter.png"
           },
           {
-            "text": "Car",
-            "image": "assets/images/car.svg"
+            "text": "Leg",
+            "image": "assets/images/leg.svg"
           },
           {
-            "text": "Orange",
-            "image": "assets/images/orange.svg"
+            "text": "Watch",
+            "image": "assets/images/watch.svg"
           },
           {
-            "text": "Glass",
-            "image": "assets/images/glass.svg"
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
           }
         ],
         "correct": "Quarter"
@@ -95,20 +95,20 @@
         "speak_text": "Quiet",
         "options": [
           {
-            "text": "Up",
-            "image": "assets/images/up.svg"
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
+          },
+          {
+            "text": "King",
+            "image": "assets/images/king.svg"
+          },
+          {
+            "text": "Jam",
+            "image": "assets/images/jam.png"
           },
           {
             "text": "Quiet",
             "image": "assets/images/quiet.svg"
-          },
-          {
-            "text": "Ball",
-            "image": "assets/images/ball.svg"
-          },
-          {
-            "text": "Olives",
-            "image": "assets/images/olives.svg"
           }
         ],
         "correct": "Quiet"
@@ -118,16 +118,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-Q",
-            "text": "Q"
-          },
-          {
             "id": "drag-P",
             "text": "P"
           },
           {
             "id": "drag-O",
             "text": "O"
+          },
+          {
+            "id": "drag-Q",
+            "text": "Q"
           }
         ],
         "targets": [

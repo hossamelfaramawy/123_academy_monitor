@@ -11,11 +11,11 @@
       {
         "type": "multiple-choice",
         "question": "Which letter does this image start with?",
-        "image": "assets/images/sun.svg",
+        "image": "assets/images/sun.png",
         "options": [
-          "S",
-          "V",
-          "B"
+          "Q",
+          "B",
+          "S"
         ],
         "correct": "S"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/snake.svg",
         "options": [
+          "U",
           "S",
-          "O",
-          "K"
+          "P"
         ],
         "correct": "S"
       },
@@ -36,8 +36,8 @@
         "image": "assets/images/star.svg",
         "options": [
           "S",
-          "R",
-          "W"
+          "J",
+          "K"
         ],
         "correct": "S"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Sun",
         "options": [
           {
-            "text": "Xylophone",
-            "image": "assets/images/xylophone.svg"
+            "text": "Fox",
+            "image": "assets/images/fox.png"
+          },
+          {
+            "text": "Oil",
+            "image": "assets/images/oil.png"
+          },
+          {
+            "text": "Hair",
+            "image": "assets/images/hair.png"
           },
           {
             "text": "Sun",
-            "image": "assets/images/sun.svg"
-          },
-          {
-            "text": "Up",
-            "image": "assets/images/up.svg"
-          },
-          {
-            "text": "Iron",
-            "image": "assets/images/iron.svg"
+            "image": "assets/images/sun.png"
           }
         ],
         "correct": "Sun"
@@ -71,20 +71,20 @@
         "speak_text": "Snake",
         "options": [
           {
-            "text": "Zebra",
-            "image": "assets/images/zebra.svg"
+            "text": "Rabbit",
+            "image": "assets/images/rabbit.png"
+          },
+          {
+            "text": "Bee",
+            "image": "assets/images/bee.svg"
+          },
+          {
+            "text": "Ruler",
+            "image": "assets/images/ruler.svg"
           },
           {
             "text": "Snake",
             "image": "assets/images/snake.svg"
-          },
-          {
-            "text": "Nose",
-            "image": "assets/images/nose.svg"
-          },
-          {
-            "text": "Jacket",
-            "image": "assets/images/jacket.svg"
           }
         ],
         "correct": "Snake"
@@ -95,20 +95,20 @@
         "speak_text": "Star",
         "options": [
           {
-            "text": "Drum",
-            "image": "assets/images/drum.svg"
-          },
-          {
-            "text": "Umbrella",
-            "image": "assets/images/umbrella.svg"
-          },
-          {
-            "text": "Zoo",
-            "image": "assets/images/zoo.svg"
-          },
-          {
             "text": "Star",
             "image": "assets/images/star.svg"
+          },
+          {
+            "text": "Window",
+            "image": "assets/images/window.svg"
+          },
+          {
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
+          },
+          {
+            "text": "Pencil",
+            "image": "assets/images/pencil.svg"
           }
         ],
         "correct": "Star"
@@ -118,12 +118,12 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-R",
-            "text": "R"
-          },
-          {
             "id": "drag-Q",
             "text": "Q"
+          },
+          {
+            "id": "drag-R",
+            "text": "R"
           },
           {
             "id": "drag-S",

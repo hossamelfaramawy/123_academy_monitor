@@ -13,19 +13,19 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ruler.svg",
         "options": [
-          "O",
-          "P",
-          "R"
+          "R",
+          "F",
+          "D"
         ],
         "correct": "R"
       },
       {
         "type": "multiple-choice",
         "question": "Which letter does this image start with?",
-        "image": "assets/images/rabbit.svg",
+        "image": "assets/images/rabbit.png",
         "options": [
-          "O",
-          "B",
+          "M",
+          "T",
           "R"
         ],
         "correct": "R"
@@ -36,7 +36,7 @@
         "image": "assets/images/ring.svg",
         "options": [
           "B",
-          "V",
+          "H",
           "R"
         ],
         "correct": "R"
@@ -47,20 +47,20 @@
         "speak_text": "Ruler",
         "options": [
           {
-            "text": "Cat",
-            "image": "assets/images/cat.svg"
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
           },
           {
             "text": "Ruler",
             "image": "assets/images/ruler.svg"
           },
           {
-            "text": "Oil",
-            "image": "assets/images/oil.svg"
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
           },
           {
-            "text": "Fox",
-            "image": "assets/images/fox.svg"
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
           }
         ],
         "correct": "Ruler"
@@ -72,19 +72,19 @@
         "options": [
           {
             "text": "Rabbit",
-            "image": "assets/images/rabbit.svg"
+            "image": "assets/images/rabbit.png"
           },
           {
-            "text": "Quarter",
-            "image": "assets/images/quarter.svg"
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
           },
           {
-            "text": "Duck",
-            "image": "assets/images/duck.svg"
+            "text": "Egg",
+            "image": "assets/images/egg.svg"
           },
           {
-            "text": "Umbrella",
-            "image": "assets/images/umbrella.svg"
+            "text": "Snake",
+            "image": "assets/images/snake.svg"
           }
         ],
         "correct": "Rabbit"
@@ -95,20 +95,20 @@
         "speak_text": "Ring",
         "options": [
           {
-            "text": "Watermelon",
-            "image": "assets/images/watermelon.svg"
-          },
-          {
             "text": "Ring",
             "image": "assets/images/ring.svg"
           },
           {
-            "text": "Flag",
-            "image": "assets/images/flag.svg"
+            "text": "Snake",
+            "image": "assets/images/snake.svg"
           },
           {
-            "text": "Box",
-            "image": "assets/images/box.svg"
+            "text": "Ball",
+            "image": "assets/images/ball.png"
+          },
+          {
+            "text": "Nest",
+            "image": "assets/images/nest.png"
           }
         ],
         "correct": "Ring"
@@ -118,16 +118,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-Q",
-            "text": "Q"
+            "id": "drag-R",
+            "text": "R"
           },
           {
             "id": "drag-P",
             "text": "P"
           },
           {
-            "id": "drag-R",
-            "text": "R"
+            "id": "drag-Q",
+            "text": "Q"
           }
         ],
         "targets": [

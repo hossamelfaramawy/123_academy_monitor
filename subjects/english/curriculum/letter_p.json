@@ -14,8 +14,8 @@
         "image": "assets/images/plane.svg",
         "options": [
           "P",
-          "G",
-          "E"
+          "B",
+          "K"
         ],
         "correct": "P"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/pen.svg",
         "options": [
-          "C",
-          "K",
-          "P"
+          "I",
+          "P",
+          "D"
         ],
         "correct": "P"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/pencil.svg",
         "options": [
-          "P",
           "W",
-          "H"
+          "G",
+          "P"
         ],
         "correct": "P"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Plane",
         "options": [
           {
+            "text": "Table",
+            "image": "assets/images/table.png"
+          },
+          {
+            "text": "Quarter",
+            "image": "assets/images/quarter.png"
+          },
+          {
             "text": "Plane",
             "image": "assets/images/plane.svg"
           },
           {
-            "text": "Sun",
-            "image": "assets/images/sun.svg"
-          },
-          {
-            "text": "Ant",
-            "image": "assets/images/ant.svg"
-          },
-          {
-            "text": "Ruler",
-            "image": "assets/images/ruler.svg"
+            "text": "Insect",
+            "image": "assets/images/insect.svg"
           }
         ],
         "correct": "Plane"
@@ -71,20 +71,20 @@
         "speak_text": "Pen",
         "options": [
           {
-            "text": "Fox",
-            "image": "assets/images/fox.svg"
-          },
-          {
             "text": "Pen",
             "image": "assets/images/pen.svg"
           },
           {
-            "text": "Lion",
-            "image": "assets/images/lion.svg"
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
           },
           {
-            "text": "Train",
-            "image": "assets/images/train.svg"
+            "text": "Zipper",
+            "image": "assets/images/zipper.svg"
+          },
+          {
+            "text": "Up",
+            "image": "assets/images/up.svg"
           }
         ],
         "correct": "Pen"
@@ -95,20 +95,20 @@
         "speak_text": "Pencil",
         "options": [
           {
+            "text": "Fox",
+            "image": "assets/images/fox.png"
+          },
+          {
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
+          },
+          {
             "text": "Pencil",
             "image": "assets/images/pencil.svg"
           },
           {
-            "text": "Glass",
-            "image": "assets/images/glass.svg"
-          },
-          {
-            "text": "Nest",
-            "image": "assets/images/nest.svg"
-          },
-          {
-            "text": "Key",
-            "image": "assets/images/key.svg"
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
           }
         ],
         "correct": "Pencil"
@@ -118,12 +118,12 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-N",
-            "text": "N"
-          },
-          {
             "id": "drag-P",
             "text": "P"
+          },
+          {
+            "id": "drag-N",
+            "text": "N"
           },
           {
             "id": "drag-O",

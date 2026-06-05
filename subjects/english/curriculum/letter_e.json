@@ -14,8 +14,8 @@
         "image": "assets/images/elephant.svg",
         "options": [
           "E",
-          "L",
-          "W"
+          "F",
+          "X"
         ],
         "correct": "E"
       },
@@ -24,8 +24,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/egg.svg",
         "options": [
-          "X",
-          "T",
+          "Z",
+          "S",
           "E"
         ],
         "correct": "E"
@@ -35,8 +35,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ear.svg",
         "options": [
-          "V",
-          "C",
+          "M",
+          "Y",
           "E"
         ],
         "correct": "E"
@@ -47,20 +47,20 @@
         "speak_text": "Elephant",
         "options": [
           {
-            "text": "Uncle",
-            "image": "assets/images/uncle.svg"
-          },
-          {
-            "text": "Ruler",
-            "image": "assets/images/ruler.svg"
-          },
-          {
-            "text": "Hair",
-            "image": "assets/images/hair.svg"
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
           },
           {
             "text": "Elephant",
             "image": "assets/images/elephant.svg"
+          },
+          {
+            "text": "Pen",
+            "image": "assets/images/pen.svg"
+          },
+          {
+            "text": "Ant",
+            "image": "assets/images/ant.svg"
           }
         ],
         "correct": "Elephant"
@@ -71,20 +71,20 @@
         "speak_text": "Egg",
         "options": [
           {
-            "text": "Watch",
-            "image": "assets/images/watch.svg"
-          },
-          {
             "text": "Egg",
             "image": "assets/images/egg.svg"
           },
           {
-            "text": "Violin",
-            "image": "assets/images/violin.svg"
+            "text": "Kite",
+            "image": "assets/images/kite.svg"
           },
           {
-            "text": "Quiet",
-            "image": "assets/images/quiet.svg"
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
+          },
+          {
+            "text": "Goat",
+            "image": "assets/images/goat.svg"
           }
         ],
         "correct": "Egg"
@@ -95,20 +95,20 @@
         "speak_text": "Ear",
         "options": [
           {
-            "text": "Yoyo",
-            "image": "assets/images/yoyo.svg"
-          },
-          {
-            "text": "Book",
-            "image": "assets/images/book.svg"
-          },
-          {
-            "text": "Nurse",
-            "image": "assets/images/nurse.svg"
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
           },
           {
             "text": "Ear",
             "image": "assets/images/ear.svg"
+          },
+          {
+            "text": "Violin",
+            "image": "assets/images/violin.svg"
+          },
+          {
+            "text": "Nose",
+            "image": "assets/images/nose.svg"
           }
         ],
         "correct": "Ear"
@@ -118,16 +118,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-C",
-            "text": "C"
+            "id": "drag-E",
+            "text": "E"
           },
           {
             "id": "drag-D",
             "text": "D"
           },
           {
-            "id": "drag-E",
-            "text": "E"
+            "id": "drag-C",
+            "text": "C"
           }
         ],
         "targets": [

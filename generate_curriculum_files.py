@@ -35,13 +35,20 @@ alphabet_vocab = [
     ("Z", ["Zoo", "Zebra", "Zipper"])
 ]
 
-# Flat list of all vocabulary words and their sanitized SVG paths to use as distractors
+def get_image_path(w):
+    base_name = w.lower().replace(' ', '_')
+    png_path = f"assets/images/{base_name}.png"
+    if os.path.exists(png_path):
+        return png_path
+    return f"assets/images/{base_name}.svg"
+
+# Flat list of all vocabulary words and their sanitized SVG/PNG paths to use as distractors
 all_words = []
 for letter, words in alphabet_vocab:
     for w in words:
         all_words.append({
             "text": w,
-            "image": f"assets/images/{w.lower().replace(' ', '_')}.svg"
+            "image": get_image_path(w)
         })
 
 # Generator
@@ -60,7 +67,7 @@ for idx, (letter, words) in enumerate(alphabet_vocab, start=1):
     
     # 1. 3 Multiple Choice Questions (one for each word)
     for w in words:
-        image_path = f"assets/images/{w.lower().replace(' ', '_')}.svg"
+        image_path = get_image_path(w)
         
         # Generate distractors (2 other random letters)
         letters_pool = [l for l, _ in alphabet_vocab if l != letter]
@@ -78,7 +85,7 @@ for idx, (letter, words) in enumerate(alphabet_vocab, start=1):
         
     # 2. 3 Audio Choice Questions (one for each word)
     for w in words:
-        correct_img_path = f"assets/images/{w.lower().replace(' ', '_')}.svg"
+        correct_img_path = get_image_path(w)
         
         # Select 3 distinct distractor words from other letters
         distractor_pool = [item for item in all_words if item["text"] not in words]

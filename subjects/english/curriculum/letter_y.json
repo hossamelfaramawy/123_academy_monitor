@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/yellow.svg",
         "options": [
-          "W",
-          "V",
-          "Y"
+          "R",
+          "Y",
+          "I"
         ],
         "correct": "Y"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/yoyo.svg",
         "options": [
-          "E",
-          "Y",
-          "T"
+          "K",
+          "X",
+          "Y"
         ],
         "correct": "Y"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/yacht.svg",
         "options": [
-          "T",
           "Y",
-          "I"
+          "S",
+          "K"
         ],
         "correct": "Y"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Yellow",
         "options": [
           {
-            "text": "Glass",
-            "image": "assets/images/glass.svg"
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
+          },
+          {
+            "text": "Nest",
+            "image": "assets/images/nest.png"
+          },
+          {
+            "text": "Vase",
+            "image": "assets/images/vase.svg"
           },
           {
             "text": "Yellow",
             "image": "assets/images/yellow.svg"
-          },
-          {
-            "text": "Cat",
-            "image": "assets/images/cat.svg"
-          },
-          {
-            "text": "Drum",
-            "image": "assets/images/drum.svg"
           }
         ],
         "correct": "Yellow"
@@ -75,16 +75,16 @@
             "image": "assets/images/yoyo.svg"
           },
           {
-            "text": "Snake",
-            "image": "assets/images/snake.svg"
+            "text": "Xylophone",
+            "image": "assets/images/xylophone.svg"
           },
           {
-            "text": "Insect",
-            "image": "assets/images/insect.svg"
+            "text": "Apple",
+            "image": "assets/images/apple.png"
           },
           {
-            "text": "Box",
-            "image": "assets/images/box.svg"
+            "text": "Uncle",
+            "image": "assets/images/uncle.png"
           }
         ],
         "correct": "Yoyo"
@@ -99,16 +99,16 @@
             "image": "assets/images/yacht.svg"
           },
           {
-            "text": "Olives",
-            "image": "assets/images/olives.svg"
+            "text": "Car",
+            "image": "assets/images/car.svg"
           },
           {
-            "text": "Lion",
-            "image": "assets/images/lion.svg"
+            "text": "Zipper",
+            "image": "assets/images/zipper.svg"
           },
           {
-            "text": "Jacket",
-            "image": "assets/images/jacket.svg"
+            "text": "Sun",
+            "image": "assets/images/sun.png"
           }
         ],
         "correct": "Yacht"

@@ -13,20 +13,20 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ice_cream.svg",
         "options": [
-          "F",
+          "D",
           "I",
-          "M"
+          "P"
         ],
         "correct": "I"
       },
       {
         "type": "multiple-choice",
         "question": "Which letter does this image start with?",
-        "image": "assets/images/iron.svg",
+        "image": "assets/images/iron.png",
         "options": [
-          "A",
           "I",
-          "D"
+          "J",
+          "N"
         ],
         "correct": "I"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/insect.svg",
         "options": [
-          "B",
           "I",
-          "Y"
+          "W",
+          "H"
         ],
         "correct": "I"
       },
@@ -47,16 +47,16 @@
         "speak_text": "Ice cream",
         "options": [
           {
-            "text": "Olives",
-            "image": "assets/images/olives.svg"
+            "text": "Violin",
+            "image": "assets/images/violin.svg"
           },
           {
-            "text": "Cow",
-            "image": "assets/images/cow.svg"
+            "text": "Hen",
+            "image": "assets/images/hen.png"
           },
           {
-            "text": "Zoo",
-            "image": "assets/images/zoo.svg"
+            "text": "Table",
+            "image": "assets/images/table.png"
           },
           {
             "text": "Ice cream",
@@ -71,20 +71,20 @@
         "speak_text": "Iron",
         "options": [
           {
-            "text": "Egg",
-            "image": "assets/images/egg.svg"
+            "text": "Nurse",
+            "image": "assets/images/nurse.svg"
+          },
+          {
+            "text": "Jam",
+            "image": "assets/images/jam.png"
+          },
+          {
+            "text": "X-ray",
+            "image": "assets/images/x-ray.svg"
           },
           {
             "text": "Iron",
-            "image": "assets/images/iron.svg"
-          },
-          {
-            "text": "Train",
-            "image": "assets/images/train.svg"
-          },
-          {
-            "text": "Rabbit",
-            "image": "assets/images/rabbit.svg"
+            "image": "assets/images/iron.png"
           }
         ],
         "correct": "Iron"
@@ -95,20 +95,20 @@
         "speak_text": "Insect",
         "options": [
           {
-            "text": "Man",
-            "image": "assets/images/man.svg"
+            "text": "Xylophone",
+            "image": "assets/images/xylophone.svg"
           },
           {
             "text": "Insect",
             "image": "assets/images/insect.svg"
           },
           {
-            "text": "Ear",
-            "image": "assets/images/ear.svg"
+            "text": "Key",
+            "image": "assets/images/key.svg"
           },
           {
-            "text": "Apple",
-            "image": "assets/images/apple.svg"
+            "text": "Pencil",
+            "image": "assets/images/pencil.svg"
           }
         ],
         "correct": "Insect"
@@ -122,12 +122,12 @@
             "text": "G"
           },
           {
-            "id": "drag-I",
-            "text": "I"
-          },
-          {
             "id": "drag-H",
             "text": "H"
+          },
+          {
+            "id": "drag-I",
+            "text": "I"
           }
         ],
         "targets": [

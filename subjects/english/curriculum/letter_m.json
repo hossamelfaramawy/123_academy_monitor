@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/moon.svg",
         "options": [
-          "H",
+          "T",
           "M",
-          "W"
+          "P"
         ],
         "correct": "M"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/monkey.svg",
         "options": [
-          "T",
-          "J",
-          "M"
+          "M",
+          "D",
+          "R"
         ],
         "correct": "M"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/man.svg",
         "options": [
+          "I",
           "Q",
-          "M",
-          "X"
+          "M"
         ],
         "correct": "M"
       },
@@ -47,20 +47,20 @@
         "speak_text": "Moon",
         "options": [
           {
+            "text": "Ant",
+            "image": "assets/images/ant.svg"
+          },
+          {
+            "text": "Tree",
+            "image": "assets/images/tree.svg"
+          },
+          {
+            "text": "Watermelon",
+            "image": "assets/images/watermelon.svg"
+          },
+          {
             "text": "Moon",
             "image": "assets/images/moon.svg"
-          },
-          {
-            "text": "Leg",
-            "image": "assets/images/leg.svg"
-          },
-          {
-            "text": "Sun",
-            "image": "assets/images/sun.svg"
-          },
-          {
-            "text": "Ball",
-            "image": "assets/images/ball.svg"
           }
         ],
         "correct": "Moon"
@@ -75,16 +75,16 @@
             "image": "assets/images/monkey.svg"
           },
           {
-            "text": "Pencil",
-            "image": "assets/images/pencil.svg"
+            "text": "Zipper",
+            "image": "assets/images/zipper.svg"
           },
           {
-            "text": "Up",
-            "image": "assets/images/up.svg"
+            "text": "Zoo",
+            "image": "assets/images/zoo.svg"
           },
           {
-            "text": "Yoyo",
-            "image": "assets/images/yoyo.svg"
+            "text": "Iron",
+            "image": "assets/images/iron.png"
           }
         ],
         "correct": "Monkey"
@@ -95,20 +95,20 @@
         "speak_text": "Man",
         "options": [
           {
-            "text": "Tree",
-            "image": "assets/images/tree.svg"
+            "text": "Sun",
+            "image": "assets/images/sun.png"
           },
           {
             "text": "Man",
             "image": "assets/images/man.svg"
           },
           {
-            "text": "Quarter",
-            "image": "assets/images/quarter.svg"
+            "text": "Ball",
+            "image": "assets/images/ball.png"
           },
           {
-            "text": "Cow",
-            "image": "assets/images/cow.svg"
+            "text": "Ear",
+            "image": "assets/images/ear.svg"
           }
         ],
         "correct": "Man"
@@ -122,12 +122,12 @@
             "text": "M"
           },
           {
-            "id": "drag-L",
-            "text": "L"
-          },
-          {
             "id": "drag-K",
             "text": "K"
+          },
+          {
+            "id": "drag-L",
+            "text": "L"
           }
         ],
         "targets": [
