@@ -1,7 +1,7 @@
 {
   "subject": "english",
   "passing_score": 4,
-  "order": ["multiple-choice", "audio-choice", "drag-and-drop"],
+  "order": ["drag-and-drop", "audio-choice", "multiple-choice" ],
   "question_types": {
     "multiple-choice": {
       "current_skill_questions_count": 2,
