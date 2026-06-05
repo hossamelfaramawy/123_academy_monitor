@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ball.svg",
         "options": [
-          "D",
-          "F",
-          "B"
+          "U",
+          "B",
+          "H"
         ],
         "correct": "B"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/bee.svg",
         "options": [
-          "B",
-          "T",
-          "M"
+          "I",
+          "R",
+          "B"
         ],
         "correct": "B"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/book.svg",
         "options": [
-          "B",
-          "K",
-          "X"
+          "F",
+          "D",
+          "B"
         ],
         "correct": "B"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Ball",
         "options": [
           {
-            "text": "Ball",
-            "image": "assets/images/ball.svg"
+            "text": "Sun",
+            "image": "assets/images/sun.svg"
           },
           {
-            "text": "Zipper",
-            "image": "assets/images/zipper.svg"
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
+          },
+          {
+            "text": "Ball",
+            "image": "assets/images/ball.svg"
           }
         ],
         "correct": "Ball"
@@ -63,12 +67,16 @@
         "speak_text": "Bee",
         "options": [
           {
+            "text": "Flag",
+            "image": "assets/images/flag.svg"
+          },
+          {
             "text": "Bee",
             "image": "assets/images/bee.svg"
           },
           {
-            "text": "Yacht",
-            "image": "assets/images/yacht.svg"
+            "text": "Xylophone",
+            "image": "assets/images/xylophone.svg"
           }
         ],
         "correct": "Bee"
@@ -83,8 +91,12 @@
             "image": "assets/images/book.svg"
           },
           {
-            "text": "Zebra",
-            "image": "assets/images/zebra.svg"
+            "text": "Pencil",
+            "image": "assets/images/pencil.svg"
+          },
+          {
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
           }
         ],
         "correct": "Book"

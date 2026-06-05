@@ -13,8 +13,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/flag.svg",
         "options": [
-          "U",
-          "D",
+          "M",
+          "I",
           "F"
         ],
         "correct": "F"
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/fish.svg",
         "options": [
-          "B",
-          "F",
-          "W"
+          "T",
+          "Y",
+          "F"
         ],
         "correct": "F"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/fox.svg",
         "options": [
-          "F",
-          "N",
-          "M"
+          "Z",
+          "O",
+          "F"
         ],
         "correct": "F"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Flag",
         "options": [
           {
-            "text": "Flag",
-            "image": "assets/images/flag.svg"
+            "text": "Window",
+            "image": "assets/images/window.svg"
           },
           {
-            "text": "Key",
-            "image": "assets/images/key.svg"
+            "text": "Lion",
+            "image": "assets/images/lion.svg"
+          },
+          {
+            "text": "Flag",
+            "image": "assets/images/flag.svg"
           }
         ],
         "correct": "Flag"
@@ -67,8 +71,12 @@
             "image": "assets/images/fish.svg"
           },
           {
-            "text": "Key",
-            "image": "assets/images/key.svg"
+            "text": "Ruler",
+            "image": "assets/images/ruler.svg"
+          },
+          {
+            "text": "Book",
+            "image": "assets/images/book.svg"
           }
         ],
         "correct": "Fish"
@@ -79,12 +87,16 @@
         "speak_text": "Fox",
         "options": [
           {
-            "text": "Fox",
-            "image": "assets/images/fox.svg"
+            "text": "Nurse",
+            "image": "assets/images/nurse.svg"
           },
           {
-            "text": "Moon",
-            "image": "assets/images/moon.svg"
+            "text": "Man",
+            "image": "assets/images/man.svg"
+          },
+          {
+            "text": "Fox",
+            "image": "assets/images/fox.svg"
           }
         ],
         "correct": "Fox"

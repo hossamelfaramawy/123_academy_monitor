@@ -14,8 +14,8 @@
         "image": "assets/images/key.svg",
         "options": [
           "K",
-          "P",
-          "I"
+          "N",
+          "F"
         ],
         "correct": "K"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/king.svg",
         "options": [
-          "K",
-          "D",
-          "J"
+          "E",
+          "U",
+          "K"
         ],
         "correct": "K"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/kite.svg",
         "options": [
-          "F",
+          "Q",
           "K",
-          "H"
+          "Z"
         ],
         "correct": "K"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Key",
         "options": [
           {
-            "text": "Jam",
-            "image": "assets/images/jam.svg"
+            "text": "Hand",
+            "image": "assets/images/hand.svg"
           },
           {
             "text": "Key",
             "image": "assets/images/key.svg"
+          },
+          {
+            "text": "Cat",
+            "image": "assets/images/cat.svg"
           }
         ],
         "correct": "Key"
@@ -63,12 +67,16 @@
         "speak_text": "King",
         "options": [
           {
-            "text": "King",
-            "image": "assets/images/king.svg"
+            "text": "Ear",
+            "image": "assets/images/ear.svg"
           },
           {
-            "text": "Nurse",
-            "image": "assets/images/nurse.svg"
+            "text": "Goat",
+            "image": "assets/images/goat.svg"
+          },
+          {
+            "text": "King",
+            "image": "assets/images/king.svg"
           }
         ],
         "correct": "King"
@@ -79,12 +87,16 @@
         "speak_text": "Kite",
         "options": [
           {
-            "text": "Kite",
-            "image": "assets/images/kite.svg"
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
           },
           {
-            "text": "Xylophone",
-            "image": "assets/images/xylophone.svg"
+            "text": "Zoo",
+            "image": "assets/images/zoo.svg"
+          },
+          {
+            "text": "Kite",
+            "image": "assets/images/kite.svg"
           }
         ],
         "correct": "Kite"
@@ -94,12 +106,12 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-K",
-            "text": "K"
-          },
-          {
             "id": "drag-I",
             "text": "I"
+          },
+          {
+            "id": "drag-K",
+            "text": "K"
           },
           {
             "id": "drag-J",

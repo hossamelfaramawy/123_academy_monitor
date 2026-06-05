@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/moon.svg",
         "options": [
+          "D",
           "M",
-          "Q",
-          "G"
+          "W"
         ],
         "correct": "M"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/monkey.svg",
         "options": [
-          "F",
           "M",
-          "H"
+          "J",
+          "N"
         ],
         "correct": "M"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/man.svg",
         "options": [
-          "I",
+          "Y",
           "M",
-          "S"
+          "Z"
         ],
         "correct": "M"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Moon",
         "options": [
           {
-            "text": "Moon",
-            "image": "assets/images/moon.svg"
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
           },
           {
-            "text": "Fish",
-            "image": "assets/images/fish.svg"
+            "text": "Queen",
+            "image": "assets/images/queen.svg"
+          },
+          {
+            "text": "Moon",
+            "image": "assets/images/moon.svg"
           }
         ],
         "correct": "Moon"
@@ -63,8 +67,12 @@
         "speak_text": "Monkey",
         "options": [
           {
-            "text": "Axe",
-            "image": "assets/images/axe.svg"
+            "text": "Kite",
+            "image": "assets/images/kite.svg"
+          },
+          {
+            "text": "Juice",
+            "image": "assets/images/juice.svg"
           },
           {
             "text": "Monkey",
@@ -79,8 +87,12 @@
         "speak_text": "Man",
         "options": [
           {
-            "text": "Book",
-            "image": "assets/images/book.svg"
+            "text": "Yoyo",
+            "image": "assets/images/yoyo.svg"
+          },
+          {
+            "text": "Ear",
+            "image": "assets/images/ear.svg"
           },
           {
             "text": "Man",
@@ -94,16 +106,16 @@
         "question": "Match the capital letters to their lowercase baskets!",
         "items": [
           {
-            "id": "drag-K",
-            "text": "K"
+            "id": "drag-M",
+            "text": "M"
           },
           {
             "id": "drag-L",
             "text": "L"
           },
           {
-            "id": "drag-M",
-            "text": "M"
+            "id": "drag-K",
+            "text": "K"
           }
         ],
         "targets": [

@@ -13,8 +13,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/elephant.svg",
         "options": [
-          "S",
-          "X",
+          "Y",
+          "B",
           "E"
         ],
         "correct": "E"
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/egg.svg",
         "options": [
-          "D",
-          "C",
-          "E"
+          "E",
+          "L",
+          "Y"
         ],
         "correct": "E"
       },
@@ -35,8 +35,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/ear.svg",
         "options": [
-          "Q",
-          "T",
+          "P",
+          "B",
           "E"
         ],
         "correct": "E"
@@ -47,12 +47,16 @@
         "speak_text": "Elephant",
         "options": [
           {
-            "text": "Ruler",
-            "image": "assets/images/ruler.svg"
-          },
-          {
             "text": "Elephant",
             "image": "assets/images/elephant.svg"
+          },
+          {
+            "text": "Book",
+            "image": "assets/images/book.svg"
+          },
+          {
+            "text": "Glass",
+            "image": "assets/images/glass.svg"
           }
         ],
         "correct": "Elephant"
@@ -63,12 +67,16 @@
         "speak_text": "Egg",
         "options": [
           {
-            "text": "Watermelon",
-            "image": "assets/images/watermelon.svg"
+            "text": "Hen",
+            "image": "assets/images/hen.svg"
           },
           {
             "text": "Egg",
             "image": "assets/images/egg.svg"
+          },
+          {
+            "text": "Glass",
+            "image": "assets/images/glass.svg"
           }
         ],
         "correct": "Egg"
@@ -79,12 +87,16 @@
         "speak_text": "Ear",
         "options": [
           {
-            "text": "Car",
-            "image": "assets/images/car.svg"
+            "text": "Bee",
+            "image": "assets/images/bee.svg"
           },
           {
             "text": "Ear",
             "image": "assets/images/ear.svg"
+          },
+          {
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
           }
         ],
         "correct": "Ear"
@@ -98,12 +110,12 @@
             "text": "E"
           },
           {
-            "id": "drag-C",
-            "text": "C"
-          },
-          {
             "id": "drag-D",
             "text": "D"
+          },
+          {
+            "id": "drag-C",
+            "text": "C"
           }
         ],
         "targets": [

@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/queen.svg",
         "options": [
-          "W",
-          "Q",
-          "F"
+          "L",
+          "V",
+          "Q"
         ],
         "correct": "Q"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/quarter.svg",
         "options": [
-          "Q",
-          "C",
-          "P"
+          "M",
+          "X",
+          "Q"
         ],
         "correct": "Q"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/quiet.svg",
         "options": [
-          "Z",
+          "J",
           "Q",
-          "G"
+          "H"
         ],
         "correct": "Q"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Queen",
         "options": [
           {
-            "text": "Queen",
-            "image": "assets/images/queen.svg"
+            "text": "Ring",
+            "image": "assets/images/ring.svg"
           },
           {
-            "text": "Kite",
-            "image": "assets/images/kite.svg"
+            "text": "Juice",
+            "image": "assets/images/juice.svg"
+          },
+          {
+            "text": "Queen",
+            "image": "assets/images/queen.svg"
           }
         ],
         "correct": "Queen"
@@ -63,12 +67,16 @@
         "speak_text": "Quarter",
         "options": [
           {
+            "text": "King",
+            "image": "assets/images/king.svg"
+          },
+          {
             "text": "Quarter",
             "image": "assets/images/quarter.svg"
           },
           {
-            "text": "Sun",
-            "image": "assets/images/sun.svg"
+            "text": "Plane",
+            "image": "assets/images/plane.svg"
           }
         ],
         "correct": "Quarter"
@@ -79,12 +87,16 @@
         "speak_text": "Quiet",
         "options": [
           {
-            "text": "Car",
-            "image": "assets/images/car.svg"
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
           },
           {
             "text": "Quiet",
             "image": "assets/images/quiet.svg"
+          },
+          {
+            "text": "Hand",
+            "image": "assets/images/hand.svg"
           }
         ],
         "correct": "Quiet"

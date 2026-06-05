@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/watermelon.svg",
         "options": [
-          "J",
+          "S",
           "W",
-          "D"
+          "U"
         ],
         "correct": "W"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/window.svg",
         "options": [
-          "Q",
-          "W",
-          "Y"
+          "D",
+          "Z",
+          "W"
         ],
         "correct": "W"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/watch.svg",
         "options": [
-          "O",
           "W",
-          "F"
+          "N",
+          "R"
         ],
         "correct": "W"
       },
@@ -51,8 +51,12 @@
             "image": "assets/images/watermelon.svg"
           },
           {
-            "text": "Rabbit",
-            "image": "assets/images/rabbit.svg"
+            "text": "Table",
+            "image": "assets/images/table.svg"
+          },
+          {
+            "text": "Yellow",
+            "image": "assets/images/yellow.svg"
           }
         ],
         "correct": "Watermelon"
@@ -63,12 +67,16 @@
         "speak_text": "Window",
         "options": [
           {
-            "text": "Window",
-            "image": "assets/images/window.svg"
+            "text": "Lion",
+            "image": "assets/images/lion.svg"
           },
           {
-            "text": "Train",
-            "image": "assets/images/train.svg"
+            "text": "Key",
+            "image": "assets/images/key.svg"
+          },
+          {
+            "text": "Window",
+            "image": "assets/images/window.svg"
           }
         ],
         "correct": "Window"
@@ -83,8 +91,12 @@
             "image": "assets/images/watch.svg"
           },
           {
-            "text": "Bee",
-            "image": "assets/images/bee.svg"
+            "text": "Violin",
+            "image": "assets/images/violin.svg"
+          },
+          {
+            "text": "Axe",
+            "image": "assets/images/axe.svg"
           }
         ],
         "correct": "Watch"
@@ -98,12 +110,12 @@
             "text": "V"
           },
           {
-            "id": "drag-W",
-            "text": "W"
-          },
-          {
             "id": "drag-U",
             "text": "U"
+          },
+          {
+            "id": "drag-W",
+            "text": "W"
           }
         ],
         "targets": [

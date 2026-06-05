@@ -141,6 +141,10 @@
             grid-template-columns: 1fr 1fr;
         }
 
+        .options-grid.three-columns {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        }
+
         .btn-option {
             background-color: #ffffff;
             color: #334155;
@@ -389,7 +393,7 @@
     </div>
 </div>
 
-<script src="quiz_parser.js?v=4"></script>
+<script src="quiz_parser.js?v=5"></script>
 <script>
     // 1. Setup Audio Synthesis (Web Audio API for effects)
     let audioCtx = null;
@@ -695,23 +699,24 @@
 
         // Render Options Grid (supporting Cartoon Images!)
         const grid = document.createElement('div');
-        grid.className = 'options-grid two-columns';
+        grid.className = 'options-grid three-columns';
 
         q.options.forEach(opt => {
             const button = document.createElement('button');
             button.className = 'btn-option';
             
-            // If option contains an image path
+            // If option contains an image path, render image only (no text label)
             if (opt.image) {
                 const img = document.createElement('img');
                 img.src = opt.image;
                 img.alt = opt.text;
                 button.appendChild(img);
+            } else {
+                // Fallback to text label only if no image is present
+                const label = document.createElement('span');
+                label.innerText = opt.text;
+                button.appendChild(label);
             }
-            
-            const label = document.createElement('span');
-            label.innerText = opt.text;
-            button.appendChild(label);
             
             button.onclick = () => selectAnswer(opt.text, q.correct, button, grid);
             grid.appendChild(button);

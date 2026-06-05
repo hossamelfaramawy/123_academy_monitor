@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/zoo.svg",
         "options": [
-          "I",
-          "L",
-          "Z"
+          "Z",
+          "A",
+          "G"
         ],
         "correct": "Z"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/zebra.svg",
         "options": [
-          "H",
           "A",
-          "Z"
+          "Z",
+          "H"
         ],
         "correct": "Z"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/zipper.svg",
         "options": [
-          "N",
-          "U",
-          "Z"
+          "Z",
+          "D",
+          "W"
         ],
         "correct": "Z"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Zoo",
         "options": [
           {
-            "text": "Plane",
-            "image": "assets/images/plane.svg"
-          },
-          {
             "text": "Zoo",
             "image": "assets/images/zoo.svg"
+          },
+          {
+            "text": "Quiet",
+            "image": "assets/images/quiet.svg"
+          },
+          {
+            "text": "Uncle",
+            "image": "assets/images/uncle.svg"
           }
         ],
         "correct": "Zoo"
@@ -67,8 +71,12 @@
             "image": "assets/images/zebra.svg"
           },
           {
-            "text": "Hen",
-            "image": "assets/images/hen.svg"
+            "text": "Rabbit",
+            "image": "assets/images/rabbit.svg"
+          },
+          {
+            "text": "Ear",
+            "image": "assets/images/ear.svg"
           }
         ],
         "correct": "Zebra"
@@ -79,8 +87,12 @@
         "speak_text": "Zipper",
         "options": [
           {
-            "text": "Car",
-            "image": "assets/images/car.svg"
+            "text": "Up",
+            "image": "assets/images/up.svg"
+          },
+          {
+            "text": "Gift",
+            "image": "assets/images/gift.svg"
           },
           {
             "text": "Zipper",

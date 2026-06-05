@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/vegetable.svg",
         "options": [
+          "Z",
           "V",
-          "S",
-          "L"
+          "B"
         ],
         "correct": "V"
       },
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/violin.svg",
         "options": [
-          "A",
           "V",
-          "W"
+          "I",
+          "F"
         ],
         "correct": "V"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/vase.svg",
         "options": [
-          "V",
-          "O",
-          "Z"
+          "J",
+          "E",
+          "V"
         ],
         "correct": "V"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Vegetable",
         "options": [
           {
-            "text": "Hen",
-            "image": "assets/images/hen.svg"
-          },
-          {
             "text": "Vegetable",
             "image": "assets/images/vegetable.svg"
+          },
+          {
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
+          },
+          {
+            "text": "Hen",
+            "image": "assets/images/hen.svg"
           }
         ],
         "correct": "Vegetable"
@@ -63,12 +67,16 @@
         "speak_text": "Violin",
         "options": [
           {
+            "text": "Duck",
+            "image": "assets/images/duck.svg"
+          },
+          {
             "text": "Violin",
             "image": "assets/images/violin.svg"
           },
           {
-            "text": "Gift",
-            "image": "assets/images/gift.svg"
+            "text": "Ice cream",
+            "image": "assets/images/ice_cream.svg"
           }
         ],
         "correct": "Violin"
@@ -79,12 +87,16 @@
         "speak_text": "Vase",
         "options": [
           {
-            "text": "Book",
-            "image": "assets/images/book.svg"
+            "text": "King",
+            "image": "assets/images/king.svg"
           },
           {
             "text": "Vase",
             "image": "assets/images/vase.svg"
+          },
+          {
+            "text": "Cat",
+            "image": "assets/images/cat.svg"
           }
         ],
         "correct": "Vase"

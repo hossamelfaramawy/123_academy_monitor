@@ -13,9 +13,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/nose.svg",
         "options": [
-          "A",
+          "Z",
           "N",
-          "K"
+          "P"
         ],
         "correct": "N"
       },
@@ -24,8 +24,8 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/nurse.svg",
         "options": [
-          "X",
           "H",
+          "A",
           "N"
         ],
         "correct": "N"
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/nest.svg",
         "options": [
-          "X",
-          "E",
-          "N"
+          "C",
+          "N",
+          "J"
         ],
         "correct": "N"
       },
@@ -51,8 +51,12 @@
             "image": "assets/images/nose.svg"
           },
           {
-            "text": "Flag",
-            "image": "assets/images/flag.svg"
+            "text": "Oil",
+            "image": "assets/images/oil.svg"
+          },
+          {
+            "text": "Sun",
+            "image": "assets/images/sun.svg"
           }
         ],
         "correct": "Nose"
@@ -63,8 +67,12 @@
         "speak_text": "Nurse",
         "options": [
           {
-            "text": "Axe",
-            "image": "assets/images/axe.svg"
+            "text": "Duck",
+            "image": "assets/images/duck.svg"
+          },
+          {
+            "text": "Pencil",
+            "image": "assets/images/pencil.svg"
           },
           {
             "text": "Nurse",
@@ -79,12 +87,16 @@
         "speak_text": "Nest",
         "options": [
           {
+            "text": "Nest",
+            "image": "assets/images/nest.svg"
+          },
+          {
             "text": "Iron",
             "image": "assets/images/iron.svg"
           },
           {
-            "text": "Nest",
-            "image": "assets/images/nest.svg"
+            "text": "Leg",
+            "image": "assets/images/leg.svg"
           }
         ],
         "correct": "Nest"
@@ -98,12 +110,12 @@
             "text": "L"
           },
           {
-            "id": "drag-M",
-            "text": "M"
-          },
-          {
             "id": "drag-N",
             "text": "N"
+          },
+          {
+            "id": "drag-M",
+            "text": "M"
           }
         ],
         "targets": [

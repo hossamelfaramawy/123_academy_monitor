@@ -13,7 +13,7 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/hand.svg",
         "options": [
-          "M",
+          "F",
           "W",
           "H"
         ],
@@ -24,9 +24,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/hen.svg",
         "options": [
-          "N",
           "H",
-          "W"
+          "Z",
+          "C"
         ],
         "correct": "H"
       },
@@ -35,9 +35,9 @@
         "question": "Which letter does this image start with?",
         "image": "assets/images/hair.svg",
         "options": [
+          "C",
           "H",
-          "T",
-          "J"
+          "W"
         ],
         "correct": "H"
       },
@@ -47,12 +47,16 @@
         "speak_text": "Hand",
         "options": [
           {
-            "text": "Jam",
-            "image": "assets/images/jam.svg"
-          },
-          {
             "text": "Hand",
             "image": "assets/images/hand.svg"
+          },
+          {
+            "text": "Oil",
+            "image": "assets/images/oil.svg"
+          },
+          {
+            "text": "Gift",
+            "image": "assets/images/gift.svg"
           }
         ],
         "correct": "Hand"
@@ -67,8 +71,12 @@
             "image": "assets/images/hen.svg"
           },
           {
-            "text": "Lion",
-            "image": "assets/images/lion.svg"
+            "text": "Zebra",
+            "image": "assets/images/zebra.svg"
+          },
+          {
+            "text": "Lemon",
+            "image": "assets/images/lemon.svg"
           }
         ],
         "correct": "Hen"
@@ -79,12 +87,16 @@
         "speak_text": "Hair",
         "options": [
           {
-            "text": "Box",
-            "image": "assets/images/box.svg"
-          },
-          {
             "text": "Hair",
             "image": "assets/images/hair.svg"
+          },
+          {
+            "text": "Insect",
+            "image": "assets/images/insect.svg"
+          },
+          {
+            "text": "Nest",
+            "image": "assets/images/nest.svg"
           }
         ],
         "correct": "Hair"
@@ -98,12 +110,12 @@
             "text": "G"
           },
           {
-            "id": "drag-H",
-            "text": "H"
-          },
-          {
             "id": "drag-F",
             "text": "F"
+          },
+          {
+            "id": "drag-H",
+            "text": "H"
           }
         ],
         "targets": [
