@@ -32,7 +32,7 @@
       },
       {
         "type": "multiple-choice",
-        "question": "Which letter does this image start with?",
+        "question": "Which letter does this image end with?",
         "image": "assets/images/box.svg",
         "options": [
           "S",
