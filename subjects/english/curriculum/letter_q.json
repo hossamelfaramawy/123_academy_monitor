@@ -22,7 +22,7 @@
       {
         "type": "multiple-choice",
         "question": "Which letter does this image start with?",
-        "image": "assets/images/quarter.svg",
+        "image": "assets/images/quarter.png",
         "options": [
           "Q",
           "L",
@@ -80,7 +80,7 @@
           },
           {
             "text": "Quarter",
-            "image": "assets/images/quarter.svg"
+            "image": "assets/images/quarter.png"
           },
           {
             "text": "Train",
