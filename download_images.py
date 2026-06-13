@@ -133,7 +133,15 @@ def main():
     
     for word, source in word_image_sources.items():
         # Sanitize filename (replace spaces with underscores)
-        filename = f"{word.replace(' ', '_')}.svg"
+        sanitized_word = word.replace(' ', '_')
+        filename = f"{sanitized_word}.svg"
+        png_filename = f"{sanitized_word}.png"
+        
+        # Check if we are using the PNG version
+        if os.path.exists(os.path.join("assets/images", png_filename)):
+            print(f"Skipping '{word}' (already using PNG version in assets/images/)...")
+            continue
+            
         output_path = os.path.join("assets/images", filename)
         
         # Build download URL
