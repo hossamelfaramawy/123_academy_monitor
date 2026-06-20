@@ -133,8 +133,20 @@ function loadQuizEngine(skillId) {
                 if (!activeLevelData) {
                     throw new Error(`Curriculum data for skill ${skillId} could not be resolved.`);
                 }
-                
                 // 3. Build Spaced Repetition Quiz questions list
+                const isShortVowel = skillId.match(/english_3_s(27|28|29|30)/i);
+                if (isShortVowel) {
+                    const activeQuestions = activeLevelData.questions || [];
+                    console.log(`[QuizParser] Short vowel skill detected. Using all ${activeQuestions.length} active questions directly without mixing review questions.`);
+                    // Dynamically set passing score to 80% of total questions
+                    const shortVowelConfig = Object.assign({}, config, { passing_score: Math.ceil(activeQuestions.length * 0.8) });
+                    return {
+                        questions: activeQuestions,
+                        activeLevelData: activeLevelData,
+                        quizConfig: shortVowelConfig
+                    };
+                }
+
                 let selectedQuestions = [];
                 const activeQuestions = activeLevelData.questions || [];
                 const qTypes = config.question_types || {};

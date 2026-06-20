@@ -1042,6 +1042,15 @@
         }
     }
 
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < selectedQuizQuestions.length) {
+            loadQuestion();
+        } else {
+            endQuiz();
+        }
+    }
+
     function checkDragAndDropCompletion() {
         const totalTargets = document.querySelectorAll('.drop-target').length;
         const matchedTargets = document.querySelectorAll('.drop-target.matched').length;
@@ -1052,12 +1061,7 @@
                 score++;
             }
             setTimeout(() => {
-                currentQuestionIndex++;
-                if (currentQuestionIndex < selectedQuizQuestions.length) {
-                    loadQuestion();
-                } else {
-                    endQuiz(); // Completed the entire quiz
-                }
+                nextQuestion(); // Completed the entire quiz or proceed
             }, 1200);
         }
     }
@@ -1081,12 +1085,7 @@
             }
 
             setTimeout(() => {
-                currentQuestionIndex++;
-                if (currentQuestionIndex < selectedQuizQuestions.length) {
-                    loadQuestion();
-                } else {
-                    endQuiz();
-                }
+                nextQuestion();
             }, 1000);
         } else {
             playSound('wrong');
@@ -1114,12 +1113,7 @@
             });
 
             setTimeout(() => {
-                currentQuestionIndex++;
-                if (currentQuestionIndex < selectedQuizQuestions.length) {
-                    loadQuestion();
-                } else {
-                    endQuiz();
-                }
+                nextQuestion();
             }, 1500);
         }
     }
