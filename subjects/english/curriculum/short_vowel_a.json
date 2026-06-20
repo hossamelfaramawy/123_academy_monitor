@@ -1,0 +1,858 @@
+{
+  "english_3_s27": {
+    "id": "english_3_s27",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "الحركات القصيرة: Short a (an_01)",
+    "title_en": "Short Vowel a (an_01)",
+    "instructions_ar": "هيا نتعلم الحركات القصيرة مع الكلمات التي تنتهي بـ an! 🌟",
+    "instructions_en": "Let's learn short vowel a words ending with an! 🌟",
+    "questions": [
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Pan",
+        "missing_letter": "p",
+        "display_word": "_an",
+        "image": "assets/images/pan.svg",
+        "options": [
+          "b",
+          "r",
+          "f",
+          "w",
+          "v",
+          "z",
+          "p",
+          "m"
+        ],
+        "correct": "p"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Fan",
+        "missing_letter": "f",
+        "display_word": "_an",
+        "image": "assets/images/fan.svg",
+        "options": [
+          "j",
+          "f",
+          "n",
+          "r",
+          "k",
+          "x",
+          "m",
+          "s"
+        ],
+        "correct": "f"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Can",
+        "missing_letter": "c",
+        "display_word": "_an",
+        "image": "assets/images/can.svg",
+        "options": [
+          "j",
+          "y",
+          "k",
+          "x",
+          "l",
+          "c",
+          "p",
+          "h"
+        ],
+        "correct": "c"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Tan",
+        "missing_letter": "t",
+        "display_word": "_an",
+        "image": "assets/images/tan.svg",
+        "options": [
+          "p",
+          "w",
+          "z",
+          "v",
+          "h",
+          "c",
+          "t",
+          "j"
+        ],
+        "correct": "t"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Pan",
+        "options": [
+          {
+            "text": "Moon",
+            "image": "assets/images/moon.svg"
+          },
+          {
+            "text": "Pan",
+            "image": "assets/images/pan.svg"
+          },
+          {
+            "text": "Lion",
+            "image": "assets/images/lion.png"
+          },
+          {
+            "text": "Train",
+            "image": "assets/images/train.svg"
+          }
+        ],
+        "correct": "Pan"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Fan",
+        "options": [
+          {
+            "text": "Uncle",
+            "image": "assets/images/uncle.png"
+          },
+          {
+            "text": "Fan",
+            "image": "assets/images/fan.svg"
+          },
+          {
+            "text": "Drum",
+            "image": "assets/images/drum.svg"
+          },
+          {
+            "text": "Axe",
+            "image": "assets/images/axe.svg"
+          }
+        ],
+        "correct": "Fan"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Can",
+        "options": [
+          {
+            "text": "Can",
+            "image": "assets/images/can.svg"
+          },
+          {
+            "text": "Jam",
+            "image": "assets/images/jam.png"
+          },
+          {
+            "text": "Quiet",
+            "image": "assets/images/quiet.svg"
+          },
+          {
+            "text": "Jacket",
+            "image": "assets/images/jacket.svg"
+          }
+        ],
+        "correct": "Can"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Tan",
+        "options": [
+          {
+            "text": "Man",
+            "image": "assets/images/man.svg"
+          },
+          {
+            "text": "Tan",
+            "image": "assets/images/tan.svg"
+          },
+          {
+            "text": "Tree",
+            "image": "assets/images/tree.svg"
+          },
+          {
+            "text": "Window",
+            "image": "assets/images/window.svg"
+          }
+        ],
+        "correct": "Tan"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Drag each picture to its matching word basket!",
+        "items": [
+          {
+            "id": "drag-can",
+            "image": "assets/images/can.svg"
+          },
+          {
+            "id": "drag-tan",
+            "image": "assets/images/tan.svg"
+          },
+          {
+            "id": "drag-pan",
+            "image": "assets/images/pan.svg"
+          },
+          {
+            "id": "drag-fan",
+            "image": "assets/images/fan.svg"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-pan",
+            "text": "Pan",
+            "matches": "drag-pan"
+          },
+          {
+            "id": "drop-fan",
+            "text": "Fan",
+            "matches": "drag-fan"
+          },
+          {
+            "id": "drop-can",
+            "text": "Can",
+            "matches": "drag-can"
+          },
+          {
+            "id": "drop-tan",
+            "text": "Tan",
+            "matches": "drag-tan"
+          }
+        ]
+      }
+    ]
+  },
+  "english_3_s28": {
+    "id": "english_3_s28",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "الحركات القصيرة: Short a (an_02)",
+    "title_en": "Short Vowel a (an_02)",
+    "instructions_ar": "هيا نتعلم المزيد من كلمات الحركة القصيرة an! 🌟",
+    "instructions_en": "Let's learn more short vowel a words ending with an! 🌟",
+    "questions": [
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Man",
+        "missing_letter": "m",
+        "display_word": "_an",
+        "image": "assets/images/man.svg",
+        "options": [
+          "f",
+          "b",
+          "r",
+          "s",
+          "h",
+          "z",
+          "m",
+          "j"
+        ],
+        "correct": "m"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Ran",
+        "missing_letter": "r",
+        "display_word": "_an",
+        "image": "assets/images/ran.svg",
+        "options": [
+          "r",
+          "m",
+          "s",
+          "t",
+          "c",
+          "z",
+          "l",
+          "j"
+        ],
+        "correct": "r"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Van",
+        "missing_letter": "v",
+        "display_word": "_an",
+        "image": "assets/images/van.svg",
+        "options": [
+          "x",
+          "j",
+          "v",
+          "l",
+          "m",
+          "w",
+          "n",
+          "c"
+        ],
+        "correct": "v"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Man",
+        "options": [
+          {
+            "text": "Star",
+            "image": "assets/images/star.svg"
+          },
+          {
+            "text": "Pencil",
+            "image": "assets/images/pencil.svg"
+          },
+          {
+            "text": "Man",
+            "image": "assets/images/man.svg"
+          },
+          {
+            "text": "Plane",
+            "image": "assets/images/plane.svg"
+          }
+        ],
+        "correct": "Man"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Ran",
+        "options": [
+          {
+            "text": "Fox",
+            "image": "assets/images/fox.png"
+          },
+          {
+            "text": "Ran",
+            "image": "assets/images/ran.svg"
+          },
+          {
+            "text": "Nest",
+            "image": "assets/images/nest.png"
+          },
+          {
+            "text": "Jacket",
+            "image": "assets/images/jacket.svg"
+          }
+        ],
+        "correct": "Ran"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Van",
+        "options": [
+          {
+            "text": "Nose",
+            "image": "assets/images/nose.svg"
+          },
+          {
+            "text": "Van",
+            "image": "assets/images/van.svg"
+          },
+          {
+            "text": "Jacket",
+            "image": "assets/images/jacket.svg"
+          },
+          {
+            "text": "Pan",
+            "image": "assets/images/pan.svg"
+          }
+        ],
+        "correct": "Van"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Drag each picture to its matching word basket!",
+        "items": [
+          {
+            "id": "drag-van",
+            "image": "assets/images/van.svg"
+          },
+          {
+            "id": "drag-man",
+            "image": "assets/images/man.svg"
+          },
+          {
+            "id": "drag-ran",
+            "image": "assets/images/ran.svg"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-man",
+            "text": "Man",
+            "matches": "drag-man"
+          },
+          {
+            "id": "drop-ran",
+            "text": "Ran",
+            "matches": "drag-ran"
+          },
+          {
+            "id": "drop-van",
+            "text": "Van",
+            "matches": "drag-van"
+          }
+        ]
+      }
+    ]
+  },
+  "english_3_s29": {
+    "id": "english_3_s29",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "الحركات القصيرة: Short a (ap_01)",
+    "title_en": "Short Vowel a (ap_01)",
+    "instructions_ar": "هيا نتعلم الحركات القصيرة مع الكلمات التي تنتهي بـ ap! 🌟",
+    "instructions_en": "Let's learn short vowel a words ending with ap! 🌟",
+    "questions": [
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Cap",
+        "missing_letter": "c",
+        "display_word": "_ap",
+        "image": "assets/images/cap.svg",
+        "options": [
+          "j",
+          "h",
+          "p",
+          "m",
+          "n",
+          "c",
+          "f",
+          "w"
+        ],
+        "correct": "c"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Tap",
+        "missing_letter": "t",
+        "display_word": "_ap",
+        "image": "assets/images/tap.svg",
+        "options": [
+          "f",
+          "c",
+          "t",
+          "r",
+          "h",
+          "k",
+          "x",
+          "j"
+        ],
+        "correct": "t"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Map",
+        "missing_letter": "m",
+        "display_word": "_ap",
+        "image": "assets/images/map.svg",
+        "options": [
+          "m",
+          "b",
+          "n",
+          "r",
+          "l",
+          "f",
+          "k",
+          "c"
+        ],
+        "correct": "m"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Nap",
+        "missing_letter": "n",
+        "display_word": "_ap",
+        "image": "assets/images/nap.svg",
+        "options": [
+          "y",
+          "s",
+          "n",
+          "h",
+          "w",
+          "r",
+          "k",
+          "z"
+        ],
+        "correct": "n"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Cap",
+        "options": [
+          {
+            "text": "Can",
+            "image": "assets/images/can.svg"
+          },
+          {
+            "text": "Cap",
+            "image": "assets/images/cap.svg"
+          },
+          {
+            "text": "Book",
+            "image": "assets/images/book.svg"
+          },
+          {
+            "text": "Snake",
+            "image": "assets/images/snake.svg"
+          }
+        ],
+        "correct": "Cap"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Tap",
+        "options": [
+          {
+            "text": "Pencil",
+            "image": "assets/images/pencil.svg"
+          },
+          {
+            "text": "Umbrella",
+            "image": "assets/images/umbrella.svg"
+          },
+          {
+            "text": "Bad",
+            "image": "assets/images/bad.svg"
+          },
+          {
+            "text": "Tap",
+            "image": "assets/images/tap.svg"
+          }
+        ],
+        "correct": "Tap"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Map",
+        "options": [
+          {
+            "text": "Box",
+            "image": "assets/images/box.svg"
+          },
+          {
+            "text": "Nest",
+            "image": "assets/images/nest.png"
+          },
+          {
+            "text": "Map",
+            "image": "assets/images/map.svg"
+          },
+          {
+            "text": "Fan",
+            "image": "assets/images/fan.svg"
+          }
+        ],
+        "correct": "Map"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Nap",
+        "options": [
+          {
+            "text": "Star",
+            "image": "assets/images/star.svg"
+          },
+          {
+            "text": "Nap",
+            "image": "assets/images/nap.svg"
+          },
+          {
+            "text": "Zipper",
+            "image": "assets/images/zipper.svg"
+          },
+          {
+            "text": "Umbrella",
+            "image": "assets/images/umbrella.svg"
+          }
+        ],
+        "correct": "Nap"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Drag each picture to its matching word basket!",
+        "items": [
+          {
+            "id": "drag-nap",
+            "image": "assets/images/nap.svg"
+          },
+          {
+            "id": "drag-tap",
+            "image": "assets/images/tap.svg"
+          },
+          {
+            "id": "drag-cap",
+            "image": "assets/images/cap.svg"
+          },
+          {
+            "id": "drag-map",
+            "image": "assets/images/map.svg"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-cap",
+            "text": "Cap",
+            "matches": "drag-cap"
+          },
+          {
+            "id": "drop-tap",
+            "text": "Tap",
+            "matches": "drag-tap"
+          },
+          {
+            "id": "drop-map",
+            "text": "Map",
+            "matches": "drag-map"
+          },
+          {
+            "id": "drop-nap",
+            "text": "Nap",
+            "matches": "drag-nap"
+          }
+        ]
+      }
+    ]
+  },
+  "english_3_s30": {
+    "id": "english_3_s30",
+    "age_group": 3,
+    "subject": "english",
+    "title_ar": "الحركات القصيرة: Short a (ad)",
+    "title_en": "Short Vowel a (ad)",
+    "instructions_ar": "هيا نتعلم الحركات القصيرة مع الكلمات التي تنتهي بـ ad! 🌟",
+    "instructions_en": "Let's learn short vowel a words ending with ad! 🌟",
+    "questions": [
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Dad",
+        "missing_letter": "d",
+        "display_word": "_ad",
+        "image": "assets/images/dad.svg",
+        "options": [
+          "f",
+          "s",
+          "h",
+          "p",
+          "l",
+          "x",
+          "d",
+          "k"
+        ],
+        "correct": "d"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Mad",
+        "missing_letter": "m",
+        "display_word": "_ad",
+        "image": "assets/images/mad.svg",
+        "options": [
+          "p",
+          "w",
+          "l",
+          "z",
+          "m",
+          "k",
+          "y",
+          "f"
+        ],
+        "correct": "m"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Bad",
+        "missing_letter": "b",
+        "display_word": "_ad",
+        "image": "assets/images/bad.svg",
+        "options": [
+          "l",
+          "c",
+          "t",
+          "x",
+          "j",
+          "k",
+          "v",
+          "b"
+        ],
+        "correct": "b"
+      },
+      {
+        "type": "missing-letter",
+        "question": "Choose the missing starting letter! ✍️",
+        "word": "Sad",
+        "missing_letter": "s",
+        "display_word": "_ad",
+        "image": "assets/images/sad.svg",
+        "options": [
+          "z",
+          "f",
+          "s",
+          "y",
+          "w",
+          "h",
+          "d",
+          "g"
+        ],
+        "correct": "s"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Dad",
+        "options": [
+          {
+            "text": "Vase",
+            "image": "assets/images/vase.svg"
+          },
+          {
+            "text": "Dad",
+            "image": "assets/images/dad.svg"
+          },
+          {
+            "text": "Olives",
+            "image": "assets/images/olives.svg"
+          },
+          {
+            "text": "Can",
+            "image": "assets/images/can.svg"
+          }
+        ],
+        "correct": "Dad"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Mad",
+        "options": [
+          {
+            "text": "Ice cream",
+            "image": "assets/images/ice_cream.svg"
+          },
+          {
+            "text": "Elephant",
+            "image": "assets/images/elephant.svg"
+          },
+          {
+            "text": "Mad",
+            "image": "assets/images/mad.svg"
+          },
+          {
+            "text": "Leg",
+            "image": "assets/images/leg.svg"
+          }
+        ],
+        "correct": "Mad"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Bad",
+        "options": [
+          {
+            "text": "Table",
+            "image": "assets/images/table.png"
+          },
+          {
+            "text": "Bad",
+            "image": "assets/images/bad.svg"
+          },
+          {
+            "text": "Uncle",
+            "image": "assets/images/uncle.png"
+          },
+          {
+            "text": "Ruler",
+            "image": "assets/images/ruler.svg"
+          }
+        ],
+        "correct": "Bad"
+      },
+      {
+        "type": "audio-choice",
+        "question": "Listen to the word and choose the matching picture! 🔊",
+        "speak_text": "Sad",
+        "options": [
+          {
+            "text": "Elephant",
+            "image": "assets/images/elephant.svg"
+          },
+          {
+            "text": "Book",
+            "image": "assets/images/book.svg"
+          },
+          {
+            "text": "Mad",
+            "image": "assets/images/mad.svg"
+          },
+          {
+            "text": "Sad",
+            "image": "assets/images/sad.svg"
+          }
+        ],
+        "correct": "Sad"
+      },
+      {
+        "type": "drag-and-drop",
+        "question": "Drag each picture to its matching word basket!",
+        "items": [
+          {
+            "id": "drag-mad",
+            "image": "assets/images/mad.svg"
+          },
+          {
+            "id": "drag-sad",
+            "image": "assets/images/sad.svg"
+          },
+          {
+            "id": "drag-dad",
+            "image": "assets/images/dad.svg"
+          },
+          {
+            "id": "drag-bad",
+            "image": "assets/images/bad.svg"
+          }
+        ],
+        "targets": [
+          {
+            "id": "drop-dad",
+            "text": "Dad",
+            "matches": "drag-dad"
+          },
+          {
+            "id": "drop-mad",
+            "text": "Mad",
+            "matches": "drag-mad"
+          },
+          {
+            "id": "drop-bad",
+            "text": "Bad",
+            "matches": "drag-bad"
+          },
+          {
+            "id": "drop-sad",
+            "text": "Sad",
+            "matches": "drag-sad"
+          }
+        ]
+      }
+    ]
+  }
+}

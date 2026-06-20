@@ -112,7 +112,22 @@ word_image_sources = {
     # Zz
     "zoo": "1f981",
     "zebra": "1f993",
-    "zipper": "1f910"
+    "zipper": "1f910",
+    # Short Vowels (a)
+    "pan": "1f373",
+    "fan": "1faad",
+    "can": "1f9ab",
+    "tan": "1f7e4",
+    "ran": "1f3c3",
+    "van": "1f690",
+    "cap": "1f9e2",
+    "tap": "1f6b0",
+    "map": "1f5fa",
+    "nap": "1f6cc",
+    "dad": "1f468_200d_1f466",
+    "mad": "1f621",
+    "bad": "1f44e",
+    "sad": "1f622"
 }
 
 def download_file(url, output_path):

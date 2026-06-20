@@ -10,10 +10,12 @@
 function getLetterFileName(skillId) {
     const match = skillId.match(/english_3_s(\d+)/i);
     if (match) {
-        const idx = parseInt(match[1]) - 1;
-        if (idx >= 0 && idx < 26) {
-            const letter = String.fromCharCode(97 + idx); // 97 is 'a'
+        const num = parseInt(match[1]);
+        if (num >= 1 && num <= 26) {
+            const letter = String.fromCharCode(97 + (num - 1)); // 97 is 'a'
             return `letter_${letter}.json`;
+        } else if (num >= 27 && num <= 30) {
+            return `short_vowel_a.json`;
         }
     }
     return null;
