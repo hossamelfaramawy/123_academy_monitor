@@ -7,29 +7,29 @@ os.makedirs("subjects/english/curriculum", exist_ok=True)
 
 short_vowel_a_skills = {
     "english_3_s27": {
-        "title_ar": "الحركات القصيرة: Short a (an_01)",
-        "title_en": "Short Vowel a (an_01)",
+        "title_ar": "short a(an_01)",
+        "title_en": "short a(an_01)",
         "instructions_ar": "هيا نتعلم الحركات القصيرة مع الكلمات التي تنتهي بـ an! 🌟",
         "instructions_en": "Let's learn short vowel a words ending with an! 🌟",
         "words": ["Pan", "Fan", "Can", "Tan"]
     },
     "english_3_s28": {
-        "title_ar": "الحركات القصيرة: Short a (an_02)",
-        "title_en": "Short Vowel a (an_02)",
+        "title_ar": "short a(an_02)",
+        "title_en": "short a(an_02)",
         "instructions_ar": "هيا نتعلم المزيد من كلمات الحركة القصيرة an! 🌟",
         "instructions_en": "Let's learn more short vowel a words ending with an! 🌟",
         "words": ["Man", "Ran", "Van"]
     },
     "english_3_s29": {
-        "title_ar": "الحركات القصيرة: Short a (ap_01)",
-        "title_en": "Short Vowel a (ap_01)",
+        "title_ar": "short a(ap_01)",
+        "title_en": "short a(ap_01)",
         "instructions_ar": "هيا نتعلم الحركات القصيرة مع الكلمات التي تنتهي بـ ap! 🌟",
         "instructions_en": "Let's learn short vowel a words ending with ap! 🌟",
         "words": ["Cap", "Tap", "Map", "Nap"]
     },
     "english_3_s30": {
-        "title_ar": "الحركات القصيرة: Short a (ad)",
-        "title_en": "Short Vowel a (ad)",
+        "title_ar": "short a(ad)",
+        "title_en": "short a(ad)",
         "instructions_ar": "هيا نتعلم الحركات القصيرة مع الكلمات التي تنتهي بـ ad! 🌟",
         "instructions_en": "Let's learn short vowel a words ending with ad! 🌟",
         "words": ["Dad", "Mad", "Bad", "Sad"]

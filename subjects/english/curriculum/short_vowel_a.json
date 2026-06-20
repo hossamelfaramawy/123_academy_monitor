@@ -3,8 +3,8 @@
     "id": "english_3_s27",
     "age_group": 3,
     "subject": "english",
-    "title_ar": "الحركات القصيرة: Short a (an_01)",
-    "title_en": "Short Vowel a (an_01)",
+    "title_ar": "short a(an_01)",
+    "title_en": "short a(an_01)",
     "instructions_ar": "هيا نتعلم الحركات القصيرة مع الكلمات التي تنتهي بـ an! 🌟",
     "instructions_en": "Let's learn short vowel a words ending with an! 🌟",
     "questions": [
@@ -16,14 +16,14 @@
         "display_word": "_an",
         "image": "assets/images/pan.svg",
         "options": [
+          "s",
+          "h",
+          "j",
+          "g",
           "b",
-          "r",
-          "f",
-          "w",
-          "v",
-          "z",
+          "l",
           "p",
-          "m"
+          "d"
         ],
         "correct": "p"
       },
@@ -35,14 +35,14 @@
         "display_word": "_an",
         "image": "assets/images/fan.svg",
         "options": [
-          "j",
-          "f",
-          "n",
-          "r",
-          "k",
           "x",
+          "f",
           "m",
-          "s"
+          "w",
+          "b",
+          "g",
+          "p",
+          "l"
         ],
         "correct": "f"
       },
@@ -54,14 +54,14 @@
         "display_word": "_an",
         "image": "assets/images/can.svg",
         "options": [
-          "j",
-          "y",
-          "k",
-          "x",
-          "l",
-          "c",
+          "t",
+          "n",
+          "b",
           "p",
-          "h"
+          "c",
+          "d",
+          "w",
+          "v"
         ],
         "correct": "c"
       },
@@ -73,14 +73,14 @@
         "display_word": "_an",
         "image": "assets/images/tan.svg",
         "options": [
-          "p",
-          "w",
-          "z",
-          "v",
           "h",
-          "c",
+          "g",
+          "n",
+          "p",
+          "m",
           "t",
-          "j"
+          "k",
+          "b"
         ],
         "correct": "t"
       },
@@ -90,20 +90,20 @@
         "speak_text": "Pan",
         "options": [
           {
-            "text": "Moon",
-            "image": "assets/images/moon.svg"
-          },
-          {
             "text": "Pan",
             "image": "assets/images/pan.svg"
           },
           {
-            "text": "Lion",
-            "image": "assets/images/lion.png"
+            "text": "Flag",
+            "image": "assets/images/flag.svg"
           },
           {
-            "text": "Train",
-            "image": "assets/images/train.svg"
+            "text": "Nap",
+            "image": "assets/images/nap.svg"
+          },
+          {
+            "text": "Yacht",
+            "image": "assets/images/yacht.svg"
           }
         ],
         "correct": "Pan"
@@ -114,20 +114,20 @@
         "speak_text": "Fan",
         "options": [
           {
-            "text": "Uncle",
-            "image": "assets/images/uncle.png"
-          },
-          {
             "text": "Fan",
             "image": "assets/images/fan.svg"
           },
           {
-            "text": "Drum",
-            "image": "assets/images/drum.svg"
+            "text": "Yellow",
+            "image": "assets/images/yellow.svg"
           },
           {
-            "text": "Axe",
-            "image": "assets/images/axe.svg"
+            "text": "Fish",
+            "image": "assets/images/fish.svg"
+          },
+          {
+            "text": "Pen",
+            "image": "assets/images/pen.svg"
           }
         ],
         "correct": "Fan"
@@ -138,20 +138,20 @@
         "speak_text": "Can",
         "options": [
           {
-            "text": "Can",
-            "image": "assets/images/can.svg"
-          },
-          {
-            "text": "Jam",
-            "image": "assets/images/jam.png"
+            "text": "Tree",
+            "image": "assets/images/tree.svg"
           },
           {
             "text": "Quiet",
             "image": "assets/images/quiet.svg"
           },
           {
-            "text": "Jacket",
-            "image": "assets/images/jacket.svg"
+            "text": "Watch",
+            "image": "assets/images/watch.svg"
+          },
+          {
+            "text": "Can",
+            "image": "assets/images/can.svg"
           }
         ],
         "correct": "Can"
@@ -162,20 +162,20 @@
         "speak_text": "Tan",
         "options": [
           {
-            "text": "Man",
-            "image": "assets/images/man.svg"
+            "text": "Watch",
+            "image": "assets/images/watch.svg"
+          },
+          {
+            "text": "Xylophone",
+            "image": "assets/images/xylophone.svg"
+          },
+          {
+            "text": "Axe",
+            "image": "assets/images/axe.svg"
           },
           {
             "text": "Tan",
             "image": "assets/images/tan.svg"
-          },
-          {
-            "text": "Tree",
-            "image": "assets/images/tree.svg"
-          },
-          {
-            "text": "Window",
-            "image": "assets/images/window.svg"
           }
         ],
         "correct": "Tan"
@@ -185,16 +185,16 @@
         "question": "Drag each picture to its matching word basket!",
         "items": [
           {
-            "id": "drag-can",
-            "image": "assets/images/can.svg"
-          },
-          {
             "id": "drag-tan",
             "image": "assets/images/tan.svg"
           },
           {
             "id": "drag-pan",
             "image": "assets/images/pan.svg"
+          },
+          {
+            "id": "drag-can",
+            "image": "assets/images/can.svg"
           },
           {
             "id": "drag-fan",
@@ -230,8 +230,8 @@
     "id": "english_3_s28",
     "age_group": 3,
     "subject": "english",
-    "title_ar": "الحركات القصيرة: Short a (an_02)",
-    "title_en": "Short Vowel a (an_02)",
+    "title_ar": "short a(an_02)",
+    "title_en": "short a(an_02)",
     "instructions_ar": "هيا نتعلم المزيد من كلمات الحركة القصيرة an! 🌟",
     "instructions_en": "Let's learn more short vowel a words ending with an! 🌟",
     "questions": [
@@ -243,14 +243,14 @@
         "display_word": "_an",
         "image": "assets/images/man.svg",
         "options": [
-          "f",
-          "b",
-          "r",
-          "s",
+          "w",
           "h",
-          "z",
           "m",
-          "j"
+          "y",
+          "j",
+          "v",
+          "n",
+          "x"
         ],
         "correct": "m"
       },
@@ -262,14 +262,14 @@
         "display_word": "_an",
         "image": "assets/images/ran.svg",
         "options": [
+          "k",
           "r",
-          "m",
-          "s",
           "t",
-          "c",
+          "y",
+          "f",
           "z",
-          "l",
-          "j"
+          "d",
+          "s"
         ],
         "correct": "r"
       },
@@ -281,14 +281,14 @@
         "display_word": "_an",
         "image": "assets/images/van.svg",
         "options": [
-          "x",
-          "j",
-          "v",
           "l",
-          "m",
-          "w",
-          "n",
-          "c"
+          "h",
+          "v",
+          "y",
+          "s",
+          "x",
+          "t",
+          "b"
         ],
         "correct": "v"
       },
@@ -298,20 +298,20 @@
         "speak_text": "Man",
         "options": [
           {
-            "text": "Star",
-            "image": "assets/images/star.svg"
-          },
-          {
-            "text": "Pencil",
-            "image": "assets/images/pencil.svg"
+            "text": "Car",
+            "image": "assets/images/car.svg"
           },
           {
             "text": "Man",
             "image": "assets/images/man.svg"
           },
           {
-            "text": "Plane",
-            "image": "assets/images/plane.svg"
+            "text": "Nose",
+            "image": "assets/images/nose.svg"
+          },
+          {
+            "text": "Monkey",
+            "image": "assets/images/monkey.svg"
           }
         ],
         "correct": "Man"
@@ -322,20 +322,20 @@
         "speak_text": "Ran",
         "options": [
           {
-            "text": "Fox",
-            "image": "assets/images/fox.png"
+            "text": "Monkey",
+            "image": "assets/images/monkey.svg"
           },
           {
             "text": "Ran",
             "image": "assets/images/ran.svg"
           },
           {
-            "text": "Nest",
-            "image": "assets/images/nest.png"
+            "text": "Hand",
+            "image": "assets/images/hand.svg"
           },
           {
-            "text": "Jacket",
-            "image": "assets/images/jacket.svg"
+            "text": "Quarter",
+            "image": "assets/images/quarter.png"
           }
         ],
         "correct": "Ran"
@@ -346,20 +346,20 @@
         "speak_text": "Van",
         "options": [
           {
-            "text": "Nose",
-            "image": "assets/images/nose.svg"
+            "text": "Tree",
+            "image": "assets/images/tree.svg"
+          },
+          {
+            "text": "Plane",
+            "image": "assets/images/plane.svg"
           },
           {
             "text": "Van",
             "image": "assets/images/van.svg"
           },
           {
-            "text": "Jacket",
-            "image": "assets/images/jacket.svg"
-          },
-          {
-            "text": "Pan",
-            "image": "assets/images/pan.svg"
+            "text": "Zipper",
+            "image": "assets/images/zipper.svg"
           }
         ],
         "correct": "Van"
@@ -369,16 +369,16 @@
         "question": "Drag each picture to its matching word basket!",
         "items": [
           {
+            "id": "drag-ran",
+            "image": "assets/images/ran.svg"
+          },
+          {
             "id": "drag-van",
             "image": "assets/images/van.svg"
           },
           {
             "id": "drag-man",
             "image": "assets/images/man.svg"
-          },
-          {
-            "id": "drag-ran",
-            "image": "assets/images/ran.svg"
           }
         ],
         "targets": [
@@ -405,8 +405,8 @@
     "id": "english_3_s29",
     "age_group": 3,
     "subject": "english",
-    "title_ar": "الحركات القصيرة: Short a (ap_01)",
-    "title_en": "Short Vowel a (ap_01)",
+    "title_ar": "short a(ap_01)",
+    "title_en": "short a(ap_01)",
     "instructions_ar": "هيا نتعلم الحركات القصيرة مع الكلمات التي تنتهي بـ ap! 🌟",
     "instructions_en": "Let's learn short vowel a words ending with ap! 🌟",
     "questions": [
@@ -418,14 +418,14 @@
         "display_word": "_ap",
         "image": "assets/images/cap.svg",
         "options": [
-          "j",
-          "h",
-          "p",
-          "m",
-          "n",
+          "l",
+          "v",
           "c",
-          "f",
-          "w"
+          "p",
+          "h",
+          "x",
+          "s",
+          "r"
         ],
         "correct": "c"
       },
@@ -437,14 +437,14 @@
         "display_word": "_ap",
         "image": "assets/images/tap.svg",
         "options": [
-          "f",
-          "c",
-          "t",
-          "r",
-          "h",
+          "v",
           "k",
-          "x",
-          "j"
+          "y",
+          "p",
+          "s",
+          "t",
+          "j",
+          "m"
         ],
         "correct": "t"
       },
@@ -456,14 +456,14 @@
         "display_word": "_ap",
         "image": "assets/images/map.svg",
         "options": [
-          "m",
-          "b",
-          "n",
+          "h",
           "r",
           "l",
-          "f",
-          "k",
-          "c"
+          "n",
+          "z",
+          "m",
+          "t",
+          "y"
         ],
         "correct": "m"
       },
@@ -475,14 +475,14 @@
         "display_word": "_ap",
         "image": "assets/images/nap.svg",
         "options": [
-          "y",
-          "s",
-          "n",
-          "h",
-          "w",
           "r",
-          "k",
-          "z"
+          "w",
+          "h",
+          "v",
+          "g",
+          "p",
+          "n",
+          "m"
         ],
         "correct": "n"
       },
@@ -492,20 +492,20 @@
         "speak_text": "Cap",
         "options": [
           {
-            "text": "Can",
-            "image": "assets/images/can.svg"
+            "text": "Insect",
+            "image": "assets/images/insect.svg"
+          },
+          {
+            "text": "Hair",
+            "image": "assets/images/hair.png"
+          },
+          {
+            "text": "Gift",
+            "image": "assets/images/gift.svg"
           },
           {
             "text": "Cap",
             "image": "assets/images/cap.svg"
-          },
-          {
-            "text": "Book",
-            "image": "assets/images/book.svg"
-          },
-          {
-            "text": "Snake",
-            "image": "assets/images/snake.svg"
           }
         ],
         "correct": "Cap"
@@ -516,20 +516,20 @@
         "speak_text": "Tap",
         "options": [
           {
-            "text": "Pencil",
-            "image": "assets/images/pencil.svg"
-          },
-          {
-            "text": "Umbrella",
-            "image": "assets/images/umbrella.svg"
-          },
-          {
-            "text": "Bad",
-            "image": "assets/images/bad.svg"
+            "text": "Snake",
+            "image": "assets/images/snake.svg"
           },
           {
             "text": "Tap",
             "image": "assets/images/tap.svg"
+          },
+          {
+            "text": "Nest",
+            "image": "assets/images/nest.png"
+          },
+          {
+            "text": "Mad",
+            "image": "assets/images/mad.svg"
           }
         ],
         "correct": "Tap"
@@ -540,20 +540,20 @@
         "speak_text": "Map",
         "options": [
           {
-            "text": "Box",
-            "image": "assets/images/box.svg"
-          },
-          {
-            "text": "Nest",
-            "image": "assets/images/nest.png"
+            "text": "Man",
+            "image": "assets/images/man.svg"
           },
           {
             "text": "Map",
             "image": "assets/images/map.svg"
           },
           {
-            "text": "Fan",
-            "image": "assets/images/fan.svg"
+            "text": "Nest",
+            "image": "assets/images/nest.png"
+          },
+          {
+            "text": "Book",
+            "image": "assets/images/book.svg"
           }
         ],
         "correct": "Map"
@@ -564,20 +564,20 @@
         "speak_text": "Nap",
         "options": [
           {
-            "text": "Star",
-            "image": "assets/images/star.svg"
+            "text": "Yellow",
+            "image": "assets/images/yellow.svg"
+          },
+          {
+            "text": "Ruler",
+            "image": "assets/images/ruler.svg"
+          },
+          {
+            "text": "Can",
+            "image": "assets/images/can.svg"
           },
           {
             "text": "Nap",
             "image": "assets/images/nap.svg"
-          },
-          {
-            "text": "Zipper",
-            "image": "assets/images/zipper.svg"
-          },
-          {
-            "text": "Umbrella",
-            "image": "assets/images/umbrella.svg"
           }
         ],
         "correct": "Nap"
@@ -587,12 +587,12 @@
         "question": "Drag each picture to its matching word basket!",
         "items": [
           {
-            "id": "drag-nap",
-            "image": "assets/images/nap.svg"
-          },
-          {
             "id": "drag-tap",
             "image": "assets/images/tap.svg"
+          },
+          {
+            "id": "drag-nap",
+            "image": "assets/images/nap.svg"
           },
           {
             "id": "drag-cap",
@@ -632,8 +632,8 @@
     "id": "english_3_s30",
     "age_group": 3,
     "subject": "english",
-    "title_ar": "الحركات القصيرة: Short a (ad)",
-    "title_en": "Short Vowel a (ad)",
+    "title_ar": "short a(ad)",
+    "title_en": "short a(ad)",
     "instructions_ar": "هيا نتعلم الحركات القصيرة مع الكلمات التي تنتهي بـ ad! 🌟",
     "instructions_en": "Let's learn short vowel a words ending with ad! 🌟",
     "questions": [
@@ -645,14 +645,14 @@
         "display_word": "_ad",
         "image": "assets/images/dad.svg",
         "options": [
+          "g",
+          "t",
           "f",
-          "s",
+          "w",
+          "r",
           "h",
-          "p",
-          "l",
-          "x",
-          "d",
-          "k"
+          "m",
+          "d"
         ],
         "correct": "d"
       },
@@ -664,13 +664,13 @@
         "display_word": "_ad",
         "image": "assets/images/mad.svg",
         "options": [
-          "p",
-          "w",
-          "l",
-          "z",
+          "h",
+          "n",
           "m",
-          "k",
-          "y",
+          "z",
+          "j",
+          "v",
+          "p",
           "f"
         ],
         "correct": "m"
@@ -683,14 +683,14 @@
         "display_word": "_ad",
         "image": "assets/images/bad.svg",
         "options": [
+          "f",
           "l",
-          "c",
-          "t",
+          "y",
+          "b",
+          "g",
           "x",
-          "j",
-          "k",
-          "v",
-          "b"
+          "r",
+          "j"
         ],
         "correct": "b"
       },
@@ -702,14 +702,14 @@
         "display_word": "_ad",
         "image": "assets/images/sad.svg",
         "options": [
-          "z",
-          "f",
+          "k",
           "s",
-          "y",
-          "w",
+          "c",
           "h",
-          "d",
-          "g"
+          "f",
+          "j",
+          "x",
+          "m"
         ],
         "correct": "s"
       },
@@ -719,20 +719,20 @@
         "speak_text": "Dad",
         "options": [
           {
-            "text": "Vase",
-            "image": "assets/images/vase.svg"
+            "text": "Van",
+            "image": "assets/images/van.svg"
           },
           {
             "text": "Dad",
             "image": "assets/images/dad.svg"
           },
           {
-            "text": "Olives",
-            "image": "assets/images/olives.svg"
+            "text": "Key",
+            "image": "assets/images/key.svg"
           },
           {
-            "text": "Can",
-            "image": "assets/images/can.svg"
+            "text": "Zoo",
+            "image": "assets/images/zoo.png"
           }
         ],
         "correct": "Dad"
@@ -743,20 +743,20 @@
         "speak_text": "Mad",
         "options": [
           {
-            "text": "Ice cream",
-            "image": "assets/images/ice_cream.svg"
-          },
-          {
-            "text": "Elephant",
-            "image": "assets/images/elephant.svg"
+            "text": "Gift",
+            "image": "assets/images/gift.svg"
           },
           {
             "text": "Mad",
             "image": "assets/images/mad.svg"
           },
           {
-            "text": "Leg",
-            "image": "assets/images/leg.svg"
+            "text": "Ear",
+            "image": "assets/images/ear.svg"
+          },
+          {
+            "text": "Lemon",
+            "image": "assets/images/lemon.svg"
           }
         ],
         "correct": "Mad"
@@ -767,20 +767,20 @@
         "speak_text": "Bad",
         "options": [
           {
-            "text": "Table",
-            "image": "assets/images/table.png"
+            "text": "Cat",
+            "image": "assets/images/cat.png"
+          },
+          {
+            "text": "Plane",
+            "image": "assets/images/plane.svg"
+          },
+          {
+            "text": "Monkey",
+            "image": "assets/images/monkey.svg"
           },
           {
             "text": "Bad",
             "image": "assets/images/bad.svg"
-          },
-          {
-            "text": "Uncle",
-            "image": "assets/images/uncle.png"
-          },
-          {
-            "text": "Ruler",
-            "image": "assets/images/ruler.svg"
           }
         ],
         "correct": "Bad"
@@ -791,20 +791,20 @@
         "speak_text": "Sad",
         "options": [
           {
-            "text": "Elephant",
-            "image": "assets/images/elephant.svg"
-          },
-          {
-            "text": "Book",
-            "image": "assets/images/book.svg"
-          },
-          {
-            "text": "Mad",
-            "image": "assets/images/mad.svg"
-          },
-          {
             "text": "Sad",
             "image": "assets/images/sad.svg"
+          },
+          {
+            "text": "Bad",
+            "image": "assets/images/bad.svg"
+          },
+          {
+            "text": "Van",
+            "image": "assets/images/van.svg"
+          },
+          {
+            "text": "Ear",
+            "image": "assets/images/ear.svg"
           }
         ],
         "correct": "Sad"
@@ -814,20 +814,20 @@
         "question": "Drag each picture to its matching word basket!",
         "items": [
           {
-            "id": "drag-mad",
-            "image": "assets/images/mad.svg"
-          },
-          {
-            "id": "drag-sad",
-            "image": "assets/images/sad.svg"
+            "id": "drag-bad",
+            "image": "assets/images/bad.svg"
           },
           {
             "id": "drag-dad",
             "image": "assets/images/dad.svg"
           },
           {
-            "id": "drag-bad",
-            "image": "assets/images/bad.svg"
+            "id": "drag-mad",
+            "image": "assets/images/mad.svg"
+          },
+          {
+            "id": "drag-sad",
+            "image": "assets/images/sad.svg"
           }
         ],
         "targets": [
