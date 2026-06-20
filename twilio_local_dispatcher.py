@@ -80,6 +80,13 @@ def resolve_skill_id(sheet_val, subject, curriculum):
             if core_val == title_en_core or core_val == title_ar_core:
                 return skill_id
                 
+    # 5. Check if it matches short vowel tags in parentheses, e.g. "an_01" -> "short vowel a (an_01)"
+    for skill_id, skill in curriculum.items():
+        if skill.get("subject") == subject:
+            title_lower = skill.get("title_en", "").strip().lower()
+            if f"({val_clean})" in title_lower:
+                return skill_id
+                
     return None
 
 def main():
